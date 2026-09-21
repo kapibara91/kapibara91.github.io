@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー ｜ Tsuzuri（つづり）</title>
+  <meta name="description" content="1日1篇の静かな和風日記帳アプリ『Tsuzuri（つづり）』のプライバシーポリシーです。日記データの完全ローカル保存とプライバシー保護について定めています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-kinari: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --card-sub-bg: #F8F5EE;
+      --text-sumi-deep: #242220;
+      --text-sumi-medium: #54514C;
+      --text-sumi-faint: #8E8A84;
+      --border-color: #E7E1D7;
+      --seal-red: #B33E35;
+      --seal-bg: #F9EBE9;
+      --accent-gray: #4C6370;
+      --shadow-subtle: 0 4px 20px rgba(36, 34, 32, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-kinari);
+      color: var(--text-sumi-deep);
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ヘッダー */
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .app-branding {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .app-title {
+      font-size: 34px;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      color: var(--text-sumi-deep);
+    }
+
+    .seal-stamp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--seal-red);
+      color: var(--seal-red);
+      font-size: 19px;
+      font-weight: 700;
+      border-radius: 4px;
+      line-height: 1;
+      background-color: #FFF9F8;
+      box-shadow: 0 1px 3px rgba(179, 62, 53, 0.15);
+    }
+
+    .app-tagline {
+      font-size: 13px;
+      color: var(--seal-red);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text-sumi-deep);
+      margin-top: 12px;
+    }
+
+    .doc-meta {
+      font-size: 12px;
+      color: var(--text-sumi-faint);
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* 誓約・理念バナー */
+    .pledge-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+    }
+
+    .pledge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .pledge-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-sumi-deep);
+      line-height: 1.5;
+    }
+
+    .pledge-text {
+      font-size: 14px;
+      color: var(--text-sumi-medium);
+      line-height: 1.9;
+    }
+
+    /* 条文セクション */
+    .policy-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .article-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 26px 30px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .article-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #F0EAE1;
+    }
+
+    .article-num {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-sumi-deep);
+      white-space: nowrap;
+    }
+
+    .article-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-sumi-deep);
+    }
+
+    .article-body {
+      font-size: 14px;
+      color: var(--text-sumi-medium);
+      line-height: 1.95;
+    }
+
+    .article-body p + p {
+      margin-top: 14px;
+    }
+
+    .article-list {
+      margin-top: 10px;
+      padding-left: 20px;
+      list-style-type: none;
+    }
+
+    .article-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 6px;
+    }
+
+    .article-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: var(--seal-red);
+    }
+
+    /* 署名フッター */
+    .signoff {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .signoff-date {
+      font-size: 13px;
+      color: var(--text-sumi-faint);
+    }
+
+    .signoff-team {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-sumi-deep);
+      margin-top: 6px;
+      letter-spacing: 0.08em;
+    }
+
+    .repo-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--accent-gray);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-gray);
+      transition: color 0.2s;
+    }
+
+    .repo-link:hover {
+      color: var(--seal-red);
+      border-color: var(--seal-red);
+    }
+
+    /* 言語切り替え・英語版アコーディオン */
+    .lang-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    details.english-summary {
+      background-color: var(--card-sub-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 24px;
+      text-align: left;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--text-sumi-medium);
+      line-height: 1.7;
+    }
+
+    details.english-summary summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text-sumi-deep);
+      outline: none;
+      padding: 4px 0;
+    }
+
+    details.english-summary .en-content {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 16px 60px;
+      }
+      .pledge-card, .article-card {
+        padding: 20px 20px;
+      }
+      .app-title {
+        font-size: 28px;
+      }
+      .page-title {
+        font-size: 19px;
+      }
+      .article-header {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-branding">
+        <h1 class="app-title">Tsuzuri</h1>
+        <div class="seal-stamp" aria-label="落款印">綴</div>
+      </div>
+      <div class="app-tagline">日々の言葉を、静かに綴じる</div>
+      <div class="page-title">プライバシーポリシー</div>
+      <div class="doc-meta">制定日：2026年9月21日 ｜ 最終更新：2026年9月21日</div>
+    </header>
+
+    <main>
+      <!-- 誓約カード -->
+      <section class="pledge-card">
+        <div class="pledge-header">
+          <div class="pledge-title">個人情報の保護と完全ローカル管理についての誓約</div>
+          <div class="seal-stamp" style="border-color: #4C6370; color: #4C6370; background: #F2F6F8;" aria-label="保護印">守</div>
+        </div>
+        <p class="pledge-text">
+          本アプリケーション『Tsuzuri（つづり）』（以下「当アプリ」）は、ユーザーの皆様の大切な言葉とプライバシーの保護を極めて重要な責務と捉え、以下の通りプライバシーポリシー（以下「本ポリシー」）を定めます。
+        </p>
+      </section>
+
+      <!-- 条文リスト -->
+      <div class="policy-sections">
+        <!-- 第1条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第1条</span>
+            <h2 class="article-title">日記データおよび個人情報のローカル完結管理</h2>
+          </div>
+          <div class="article-body">
+            <p>1. 当アプリに入力された日記の本文、題名、天候、心模様、日時、および小冊子の編纂データは、すべてお客様の端末内部（ローカルストレージ・SQLiteデータベース）にのみ暗号的・安全に保存されます。</p>
+            <p>2. 当アプリが、ユーザーの事前の明示的な同意なく、日記本文等の個人的記録を当方の管理するサーバーや第三者のサーバーへ自動的にアップロードまたは送信することは決してありません。ユーザー登録やアカウント作成も一切不要です。</p>
+          </div>
+        </article>
+
+        <!-- 第2条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第2条</span>
+            <h2 class="article-title">利用している外部サービスおよび品質解析について</h2>
+          </div>
+          <div class="article-body">
+            <p>当アプリでは、アプリケーションの安定稼働、クラッシュ障害の迅速な検知、および操作性改善を目的として、Google LLCが提供する以下の外部サービスを利用しています。</p>
+            <ul class="article-list">
+              <li><strong>Firebase Crashlytics</strong>：クラッシュ障害ログの収集解析</li>
+              <li><strong>Firebase Analytics</strong>：利用統計の匿名集計</li>
+            </ul>
+            <p>これらのツールにより収集される情報は、端末識別子、OSバージョン、クラッシュ発生箇所のスタックトレース、機能利用イベント（執筆完了、縦書き/横書き切り替え等の統計）に限られます。ここにユーザーの日記本文・題名・個人的な文章情報は一切含まれず、個人を特定することはできません。</p>
+          </div>
+        </article>
+
+        <!-- 第3条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第3条</span>
+            <h2 class="article-title">通知機能の取り扱い</h2>
+          </div>
+          <div class="article-body">
+            <p>毎夜の執筆リマインダー通知は、端末内部のシステムタイマー機能（AlarmManager）によって完全に端末内で完結して生成されるローカル通知です。通知送信を契機とした外部通信やユーザー識別情報の送信は行われません。</p>
+          </div>
+        </article>
+
+        <!-- 第4条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第4条</span>
+            <h2 class="article-title">完全ローカル保存・プライバシー保護</h2>
+          </div>
+          <div class="article-body">
+            <p>当アプリで作成された日記および小冊子（ZINE）のすべてのデータは、端末内部にのみ保持されます。外部サーバーへの自動送信や他者への意図しない公開機能は一切存在せず、完全なプライベート空間として安心してご利用いただけます。</p>
+          </div>
+        </article>
+
+        <!-- 第5条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第5条</span>
+            <h2 class="article-title">本ポリシーの改定</h2>
+          </div>
+          <div class="article-body">
+            <p>当アプリは、法令の改正や機能の追加に伴い、本ポリシーを改定することがあります。改定後のポリシーは、本ページまたはアプリ内にて掲示された時点より効力を生じるものとします。</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- 署名 -->
+      <footer class="signoff">
+        <div class="signoff-date">制定日：2026年9月21日</div>
+        <div class="signoff-team">Tsuzuri 開発チーム</div>
+        <a href="https://github.com/kapibara91/tsuzuri-daily-android" class="repo-link" target="_blank" rel="noopener noreferrer">
+          GitHub Repository: kapibara91/tsuzuri-daily-android
+        </a>
+      </footer>
+
+      <!-- 英語要約（審査用 / English Summary for App Review） -->
+      <div class="lang-section">
+        <details class="english-summary">
+          <summary>English Summary (For Google Play Reviewers & Global Users)</summary>
+          <div class="en-content">
+            <p><strong>Tsuzuri Privacy Policy Summary</strong></p>
+            <p>1. <strong>100% Offline & Local Storage</strong>: All journal entries, titles, weather icons, mood states, and compiled monthly booklets are stored strictly inside the device's local SQLite database. No account is required.</p>
+            <p>2. <strong>Zero Journal Content Transmission</strong>: The app never uploads, transmits, or syncs your diary entries or personal writings to any external server.</p>
+            <p>3. <strong>Anonymous Diagnostics Only</strong>: We use Firebase Crashlytics and Firebase Analytics solely to identify technical crash logs and anonymous aggregated usage metrics (e.g. app version, OS version). No diary text or personally identifiable information (PII) is ever collected.</p>
+            <p>4. <strong>Local Notifications</strong>: The optional evening reminder is triggered purely on-device via Android's AlarmManager without network transmission.</p>
+            <p>Contact: Please file issues or questions via our GitHub repository.</p>
+          </div>
+        </details>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
