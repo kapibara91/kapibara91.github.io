@@ -1,27 +1,428 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>カピバラ９１</title>
-  </head>
-  <body>
-    <h3>カピバラ９１</h3>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カピバラ９１ (Kapibara91) | 個人開発アプリ</title>
+  <meta name="description" content="個人アプリ開発者 カピバラ９１のプロフィールと制作アプリのご紹介。日々の暮らしを少し便利に、心を穏やかにするアプリをお届けします。">
+  
+  <!-- Google Fonts: Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <p>個人でモバイルアプリを開発しています。</p>
-    <p>Indiviaual Mobile app developer.</p>
+  <style>
+    :root {
+      --bg-color: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --text-main: #2D3139;
+      --text-muted: #6C757D;
+      --accent: #4A5568;
+      --border-color: #E9ECEF;
+      --badge-bg: #EDF2F7;
+      --badge-text: #4A5568;
+      --primary-cta: #1F2937;
+      --primary-cta-hover: #111827;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
 
-    <b>ゴミマン（Android&iOSアプリ）</b>
-    <p>ごみの日を忘れないように通知するシンプルなアプリです。</p>
-    <p><a href="https://apps.apple.com/jp/app/%E3%82%B4%E3%83%9F%E3%83%9E%E3%83%B3/id1640397269">App Store</a></p>
-    <p><a href="https://play.google.com/store/apps/details?id=co.jp.kpbr.gomiman&hl=ja">Google Play</a></p>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <b>チン！する時間（Android&iOSアプリ）</b>
-    <p>電子レンジ温め時間計算機</p>
-    <p><a href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%B3-%E3%81%99%E3%82%8B%E6%99%82%E9%96%93/id6745373633">App Store</a></p>
-   <p><a href="https://play.google.com/store/apps/details?id=com.kpbr.microwavetimer&hl=ja">Google Play</a></p>
-    <h3>連絡先</h3>
-    <a href="mailto:kapibara.developer@gmail.com">kapibara.developer@gmail.com</a>
-  </body>
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Profile Header */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      box-shadow: var(--shadow-sm);
+      border: 3px solid #fff;
+    }
+
+    .developer-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .developer-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .developer-bio {
+      font-size: 0.95rem;
+      color: #4A5568;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Section Titles */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 36px 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    /* App Cards */
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .app-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .app-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+    }
+
+    .app-desc {
+      font-size: 0.9rem;
+      color: #4A5568;
+      margin-bottom: 18px;
+    }
+
+    /* Buttons */
+    .app-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: #fff;
+      background-color: var(--primary-cta);
+    }
+
+    .store-btn:hover {
+      background-color: var(--primary-cta-hover);
+      transform: scale(1.02);
+    }
+
+    .store-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .doc-link {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: auto;
+      transition: color 0.2s;
+    }
+
+    .doc-link:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    /* Philosophy / Commitment */
+    .policy-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 0.88rem;
+      color: #4A5568;
+    }
+
+    .policy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .policy-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .check-icon {
+      color: #38A169;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Profile -->
+    <header class="profile-section">
+      <div class="avatar" aria-label="カピバラ">🦫</div>
+      <h1 class="developer-name">カピバラ９１</h1>
+      <p class="developer-role">Mobile App Developer (個人開発)</p>
+      <p class="developer-bio">
+        「毎日の暮らしを少しだけ便利に、心を穏やかに整える」をテーマに、シンプルで心地よいスマートフォンアプリを個人で企画・開発しています。
+      </p>
+    </header>
+
+    <!-- Apps Showcase -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">制作アプリ (Applications)</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="app-list">
+        
+        <!-- App 1: Tsuzuri -->
+        <article class="app-card">
+          <div class="app-header">
+            <div class="app-icon" style="background: #F4EFEA; color: #8C4035;">綴</div>
+            <div class="app-meta">
+              <h3 class="app-title">Tsuzuri (つづり)</h3>
+              <p class="app-subtitle">和の日記・私家本（ZINE）アプリ</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">一日一篇</span>
+            <span class="badge">縦書き組版</span>
+            <span class="badge">完全ローカル保存</span>
+          </div>
+          <p class="app-desc">
+            和の伝統色と静謐な佇まいの中で、日々の言葉を丁寧に綴じる日記アプリ。1日1篇の記録、美しい縦書き切り替え、月別の小冊子（ZINE）自動編纂、落款印スタンプなどを備えています。
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="./tsuzuriPrivacyPolicy.html" class="doc-link">プライバシーポリシー &rarr;</a>
+          </div>
+        </article>
+
+        <!-- App 2: ゴミマン -->
+        <article class="app-card">
+          <div class="app-header">
+            <div class="app-icon" style="background: #EBF8FF; color: #2B6CB0;">🗑️</div>
+            <div class="app-meta">
+              <h3 class="app-title">ゴミマン</h3>
+              <p class="app-subtitle">ゴミ出し忘れ防止＆収集カレンダー</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">リマインダー通知</span>
+            <span class="badge">無料</span>
+          </div>
+          <p class="app-desc">
+            「今日なんのゴミの日だっけ？」をゼロにする収集日管理アプリ。地域の複雑な収集サイクル（隔週・第何曜日など）に対応し、前日や当日の朝に確実にお知らせします。
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/jp/app/%E3%82%B4%E3%83%9F%E3%83%9E%E3%83%B3/id1640397269" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.gomiman" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387zM15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41zm0-2.828L5.817 1.176l11.96 6.84-2.57 2.57zm1.414 1.414l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/></svg>
+              Google Play
+            </a>
+            <a href="./privacypolicy.html" class="doc-link">プライバシーポリシー &rarr;</a>
+          </div>
+        </article>
+
+        <!-- App 3: チン！する時間 -->
+        <article class="app-card">
+          <div class="app-header">
+            <div class="app-icon" style="background: #FEFCBF; color: #B7791F;">⚡</div>
+            <div class="app-meta">
+              <h3 class="app-title">チン！する時間</h3>
+              <p class="app-subtitle">電子レンジのワット数換算＆タイマー</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">Android</span>
+            <span class="badge">時短ツール</span>
+            <span class="badge">シンプル</span>
+          </div>
+          <p class="app-desc">
+            食品パッケージに「500Wで3分」と書いてあるのに、自宅の電子レンジが600Wや700Wで迷ったときに。ワット数に応じた加熱時間を一瞬で換算し、そのままタイマーを開始できます。
+          </p>
+          <div class="app-links">
+            <a href="https://play.google.com/store/apps/developer?id=Kapibara91" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387zM15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41zm0-2.828L5.817 1.176l11.96 6.84-2.57 2.57zm1.414 1.414l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/></svg>
+              Google Play
+            </a>
+            <a href="./privacypolicy-microwavetimer.html" class="doc-link">プライバシーポリシー &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Development Policy / Privacy commitment -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">開発方針と安心への取り組み</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="policy-box">
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>プライバシーの最優先：</strong>不要な個人情報や位置情報の取得は行いません。日誌などの私的なデータはお使いの端末内（ローカル）に大切に保管されます。</span>
+        </div>
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>過度な通知・広告の排除：</strong>利用者の日常を邪魔しない、シンプルで清潔な設計を心がけています。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="https://github.com/kapibara91" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:your-support-email@example.com">お問い合わせ</a>
+      </div>
+      <p>&copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
 </html>
