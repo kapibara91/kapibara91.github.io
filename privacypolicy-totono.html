@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 (Privacy Policy) ｜ Totono (整物语 / ととの)</title>
+  <meta name="description" content="Totono（整物语 / ととの）官方隐私政策。本地优先架构、100%设备私有数据库存储、零云端同步追踪、匿名崩溃诊断及用户数据完全自主控制说明。">
+  
+  <!-- Favicon / App Icon -->
+  <link rel="icon" type="image/png" href="./images/icon_totono.png">
+  <link rel="apple-touch-icon" href="./images/icon_totono.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3875E8;
+      --primary-hover: #2B66D6;
+      --primary-soft: #558AF2;
+      --primary-light: #EBF2FD;
+      --primary-border: #D2E3FC;
+      --dark-text: #192A4A;
+      --body-text: #334766;
+      --muted-text: #718299;
+      --bg-canvas: #F7F9FD;
+      --card-bg: #FFFFFF;
+      --card-sub: #F9FBFE;
+      --border-color: #E2EAF7;
+      
+      --accent-mint: #1CB56D;
+      --accent-mint-light: #E8F8F0;
+      --accent-mint-border: #C7EED8;
+      
+      --accent-coral: #FF5E7E;
+      --accent-coral-light: #FFF0F3;
+      --accent-coral-border: #FFD6E0;
+
+      --accent-orange: #F59E0B;
+      --accent-orange-light: #FEF3C7;
+      --accent-orange-border: #FDE68A;
+
+      --shadow-sm: 0 2px 8px rgba(25, 42, 74, 0.04);
+      --shadow-md: 0 8px 24px rgba(25, 42, 74, 0.07);
+      --shadow-lg: 0 16px 36px rgba(56, 117, 232, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--body-text);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans SC', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.015em;
+      padding: 36px 20px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted-text);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+      border-color: var(--primary-border);
+      transform: translateX(-2px);
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: inline-flex;
+      background: #E8EEF8;
+      padding: 3px;
+      border-radius: 10px;
+      gap: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 7px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: var(--dark-text);
+    }
+
+    .lang-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 36px 24px 28px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 22px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent-mint) 50%, var(--accent-coral) 100%);
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px rgba(56, 117, 232, 0.18);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      flex-shrink: 0;
+    }
+
+    .app-name {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--dark-text);
+      letter-spacing: -0.01em;
+    }
+
+    .app-tagline {
+      font-size: 0.94rem;
+      color: var(--muted-text);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .page-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-meta {
+      font-size: 0.82rem;
+      color: var(--muted-text);
+      margin-top: 8px;
+    }
+
+    /* Quick Badges row */
+    .privacy-highlights {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .pill-green {
+      background: var(--accent-mint-light);
+      color: #0E804B;
+      border: 1px solid var(--accent-mint-border);
+    }
+
+    .pill-blue {
+      background: var(--primary-light);
+      color: var(--primary-hover);
+      border: 1px solid var(--primary-border);
+    }
+
+    .pill-coral {
+      background: var(--accent-coral-light);
+      color: #D62D50;
+      border: 1px solid var(--accent-coral-border);
+    }
+
+    .pill-orange {
+      background: var(--accent-orange-light);
+      color: #B45309;
+      border: 1px solid var(--accent-orange-border);
+    }
+
+    /* Pledge Card (安心承诺) */
+    .pledge-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F2F7FE 100%);
+      border: 1.5px solid var(--primary-border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .pledge-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .pledge-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .pledge-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+
+    .pledge-text {
+      font-size: 0.94rem;
+      color: var(--body-text);
+      line-height: 1.8;
+    }
+
+    /* Policy Content Sections */
+    .policy-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-block {
+      margin-bottom: 36px;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 750;
+      color: var(--dark-text);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-text {
+      font-size: 0.93rem;
+      color: var(--body-text);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .section-list {
+      list-style-position: inside;
+      font-size: 0.93rem;
+      color: var(--body-text);
+      margin-left: 6px;
+      margin-bottom: 14px;
+    }
+
+    .section-list li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* Cards / Sub-boxes */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .feature-card {
+      background: var(--card-sub);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .feature-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+    }
+
+    .feature-card-desc {
+      font-size: 0.85rem;
+      color: var(--body-text);
+      line-height: 1.65;
+    }
+
+    /* Permission Table */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.88rem;
+    }
+
+    .perm-table th,
+    .perm-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .perm-table th {
+      background: var(--card-sub);
+      font-weight: 700;
+      color: var(--dark-text);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .perm-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8rem;
+      background: var(--primary-light);
+      color: var(--primary-hover);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* Service / Third party Box */
+    .service-box {
+      background: var(--card-sub);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 14px;
+    }
+
+    .service-box-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .service-link:hover {
+      text-decoration: underline;
+      color: var(--primary-hover);
+    }
+
+    .tip-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
+      color: #166534;
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: var(--muted-text);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 14px 60px;
+      }
+      .policy-content {
+        padding: 26px 20px;
+      }
+      .pledge-card {
+        padding: 22px 18px;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .lang-switcher {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Navigation & Language switcher -->
+    <div class="top-bar">
+      <a href="./about.html" class="back-link">
+        <span>&larr;</span>
+        <span id="nav-home-text">返回主页 / Home</span>
+      </a>
+
+      <!-- Language selector buttons -->
+      <div class="lang-switcher" role="group" aria-label="Language Switcher">
+        <button class="lang-btn active" data-lang="zh-CN" onclick="setLanguage('zh-CN')">简体中文</button>
+        <button class="lang-btn" data-lang="zh-TW" onclick="setLanguage('zh-TW')">繁體中文</button>
+        <button class="lang-btn" data-lang="ja" onclick="setLanguage('ja')">日本語</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="app-brand">
+        <img src="./images/icon_totono.png" alt="Totono Logo" class="app-icon" width="64" height="64">
+        <div>
+          <h1 class="app-name" id="app-name">Totono (整物语)</h1>
+        </div>
+      </div>
+      <p class="app-tagline" id="app-tagline">日常生活习惯打卡 · 空间保洁秩序管理 · 宝宝成长随手记</p>
+      <h2 class="page-title">
+        <span>🛡️</span>
+        <span id="page-title-text">隐私政策与数据安全规范 (Privacy Policy)</span>
+      </h2>
+      <p class="doc-meta" id="doc-meta">生效日期：2026年9月25日 ｜ 版本：1.0.0 (Android)</p>
+
+      <!-- Highlights -->
+      <div class="privacy-highlights">
+        <span class="highlight-pill pill-green">✓ 100% 本地 SQLite / Room 存储</span>
+        <span class="highlight-pill pill-coral">✓ 无账号 · 零身份追踪</span>
+        <span class="highlight-pill pill-blue">✓ Firebase 匿名崩溃诊断（可随时关闭）</span>
+        <span class="highlight-pill pill-orange">✓ 支持 JSON 离线备份与物理销毁</span>
+      </div>
+    </header>
+
+    <!-- 安心承诺卡片 (Pledge Card) -->
+    <div class="pledge-card">
+      <div class="pledge-header">
+        <div class="pledge-icon-wrap">🔒</div>
+        <h2 class="pledge-title" id="pledge-title">基本理念与隐私安全承诺</h2>
+      </div>
+      <p class="pledge-text" id="pledge-text">
+        开发者 <strong>カピバラ９１ (Kapibara91)</strong>（以下统称「我们」）深知家庭日常、宝宝成长轨迹与生活习惯记录对每位用户的极其私密性。因此，<strong>Totono</strong>（应用包名：<code>com.kpbr.totono</code>）自立项之初便严格恪守<strong>「隐私至上、本地优先（Local-First）」</strong>的设计哲学。本应用<strong>绝不搭建私有用户数据服务器</strong>，您的日常习惯打卡、家务保洁周期、以及宝宝喂奶换尿布等日记，<strong>100% 完整保存在您本机的加密沙盒数据库中</strong>，绝不在未经您手动导出的情况下上传至任何网络服务器。
+      </p>
+    </div>
+
+    <!-- 动态多语言主体内容容器 -->
+    <main class="policy-content" id="policy-container">
+      <!-- 动态注入语言内容 -->
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+      <div class="footer-links">
+        <a href="./about.html" id="footer-home">カピバラ９１ (About)</a>
+        <a href="mailto:kapibara.developer@gmail.com">联系开发者 (Support)</a>
+        <a href="https://github.com/kapibara91" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p>&copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- 多语言数据脚本 -->
+  <script>
+    const contentData = {
+      'zh-CN': {
+        appName: 'Totono (整物语)',
+        appTagline: '日常生活习惯打卡 · 空间保洁秩序管理 · 宝宝成长随手记',
+        pageTitle: '隐私政策与数据安全规范 (Privacy Policy)',
+        docMeta: '生效日期：2026年9月25日 ｜ 版本：1.0.0 (Android)',
+        navHome: '← 返回主页 / Home',
+        pledgeTitle: '基本理念与隐私安全承诺',
+        pledgeText: '开发者 <strong>カピバラ９１ (Kapibara91)</strong>（以下统称「我们」）深知家庭日常、宝宝成长轨迹与生活习惯记录对每位用户的私密性与重要价值。因此，<strong>Totono</strong>（应用包名：<code>com.kpbr.totono</code>）自立项之初便严格恪守<strong>「隐私至上、本地优先（Local-First）」</strong>的设计哲学。本应用<strong>不搭建任何用户存储服务器</strong>，您的日常习惯、家务保洁周期、以及宝宝喂奶/换尿布/健康日记，<strong>100% 直接保存在您设备的私有 SQLite Room 数据库中</strong>，绝不在未经您主动操作的情况下离开您的手机。',
+        pills: [
+          { text: '✓ 100% 本地 SQLite / Room 存储', class: 'pill-green' },
+          { text: '✓ 无账号 · 零身份追踪', class: 'pill-coral' },
+          { text: '✓ Firebase 匿名崩溃诊断（可随时关闭）', class: 'pill-blue' },
+          { text: '✓ 支持 JSON 离线备份与物理销毁', class: 'pill-orange' }
+        ],
+        html: `
+          <section class="section-block">
+            <h3 class="section-title">一、本地优先架构与数据完全所有权</h3>
+            <p class="section-text">
+              Totono 秉持「用户数据属于用户自己」的核心原则。您在应用内录入的所有信息均采用<strong>本地持久化沙盒架构</strong>：
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-card-header">👶 宝宝成长与喂养日记</div>
+                <div class="feature-card-desc">喂奶量、辅食、便便、疫苗接种、体温与生病就医随手记等所有育儿数据，完全保存在手机本机。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">🏃 每日习惯自律打卡</div>
+                <div class="feature-card-desc">习惯名称、打卡频次、历史连续天数统计等打卡记录仅在本机计算与渲染。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">⚔️ 空间保洁与家务周期</div>
+                <div class="feature-card-desc">打扫周期倒计时、打扫历史记录、切斩互动打卡状态等均留存在本地设备。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">📊 成就看板与热力图</div>
+                <div class="feature-card-desc">28日打卡贡献热力图、7日奶量走势图、勋章成就均由本地引擎离线分析计算生成。</div>
+              </div>
+            </div>
+            <p class="section-text">
+              我们不设任何远程用户账户数据库，亦不会将您的生活记录同步或备份到任何我们控制的云端服务器。
+            </p>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">二、免注册登录与零个人身份追踪</h3>
+            <p class="section-text">
+              Totono 提供即开即用的极简体验：
+            </p>
+            <ul class="section-list">
+              <li><strong>无需注册或登录：</strong>无需绑定手机号、微信、Apple ID、Google 账号或电子邮箱。</li>
+              <li><strong>不收集可识别身份信息（PII）：</strong>不索取您的真实姓名、身份证件、通讯录好友、短信或社交账号。</li>
+              <li><strong>不使用广告跟踪标识符：</strong>应用内完全无广告，不采集或共享 Google 广告 ID (GAID) 进行跨平台商业画像追踪。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">三、系统权限申请与使用目的</h3>
+            <p class="section-text">
+              为实现流畅的核心体验，Totono 在 Android 系统中申请并使用了以下必要权限：
+            </p>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">权限代码</th>
+                  <th style="width: 25%;">权限名称</th>
+                  <th>具体使用目的与隐私边界</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="perm-code">POST_NOTIFICATIONS</span></td>
+                  <td>发送系统通知</td>
+                  <td>用于向您发送家务保洁周期到期提醒及打卡提示。通知均由本地 AlarmManager 触发，不经过外部服务器推送。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">RECEIVE_BOOT_COMPLETED</span></td>
+                  <td>开机后广播接收</td>
+                  <td>仅用于在手机重启后，重新向系统底层注重新一轮的本地提醒闹钟，确保保洁提醒不会因设备关机失效。不进行后台常驻。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">VIBRATE</span></td>
+                  <td>控制设备振动</td>
+                  <td>用于提供触觉震动反馈（例如家务卡片滑动切斩的一刀斩解压动效、打卡完成激励等），增强操作物理质感。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">INTERNET</span> / <span class="perm-code">ACCESS_NETWORK_STATE</span></td>
+                  <td>网络连接与状态</td>
+                  <td>仅供 Google Firebase Analytics SDK 发送去标识化的匿名程序崩溃日志与性能统计数据。</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">四、第三方技术支持服务（Google Firebase Analytics）</h3>
+            <p class="section-text">
+              为排查应用程序在不同 Android 机型上的意外崩溃、ANR（应用无响应）及界面流畅度瓶颈，Totono 集成了由 Google LLC 提供的 <strong>Google Firebase Analytics</strong> SDK。
+            </p>
+            <div class="service-box">
+              <div class="service-box-title">⚙️ 收集范围与严格约束</div>
+              <ul class="section-list" style="margin-bottom: 8px;">
+                <li><strong>技术统计指标：</strong>仅收集操作系统版本、手机型号、匿名会话时长、未捕获的崩溃堆栈跟踪日志、脱敏的交互频次。</li>
+                <li><strong>绝对排除敏感数据：</strong>该 SDK <strong>绝不、也无法读取</strong>您录入的任何生活日记内容、宝宝昵称、出生日期、喂奶剂量或习惯标题。</li>
+                <li><strong>随时自主关闭：</strong>您可以在应用内的「设置」页面中，随时通过「参与匿名稳定性改进」开关一键停用分析上报。关闭后应用将处于<strong>完全离线纯净状态</strong>。</li>
+              </ul>
+              <div style="font-size: 0.85rem; margin-top: 10px;">
+                详情可参阅：<a href="https://firebase.google.com/support/privacy" class="service-link" target="_blank" rel="noopener">Google Firebase 隐私与安全白皮书 &rarr;</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">五、我们坚决不收集的信息声明</h3>
+            <ul class="section-list">
+              <li>🚫 <strong>绝不索取精准或粗略地理位置（GPS / 基站定位）。</strong></li>
+              <li>🚫 <strong>绝不读取您的系统相册或调用摄像头麦克风。</strong></li>
+              <li>🚫 <strong>绝不出售、出租或与数据经纪商交换任何用户数据。</strong></li>
+              <li>🚫 <strong>绝不植入任何第三方商业广告推送 SDK。</strong></li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">六、用户的完全数据控制权（导出、恢复与彻底销毁）</h3>
+            <p class="section-text">
+              Totono 尊重并保障您对自身数据的最高裁决权：
+            </p>
+            <ul class="section-list">
+              <li><strong>开放导出（Data Portability）：</strong>在数据看板页面，您可随时将所有生活日记与打卡历史一键生成结构化标准 JSON 文件，自由复制、保存或转移至其他平台。</li>
+              <li><strong>离线恢复：</strong>支持将先前备份的 JSON 字符串一键粘贴恢复，完全由本地解析，无需联网。</li>
+              <li><strong>彻底物理销毁（Right to Erasure）：</strong>在 Android 系统「设置 - 应用管理 - Totono」中点击「清除全部数据」，或直接卸载本应用，保存在设备沙盒内的 SQLite 数据库文件将被操作系统立即物理抹除，不残留任何痕迹。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">七、政策更新与联系方式</h3>
+            <p class="section-text">
+              若因法律法规更新或应用新增功能而对本隐私政策进行修订，我们将及时更新本网页及应用内的说明文本。您可以随时访问此官方地址查阅最新版本。
+            </p>
+            <div class="service-box">
+              <div class="service-box-title">📮 开发者联系渠道</div>
+              <p class="section-text" style="margin-bottom: 6px;">
+                如您对本隐私政策有任何疑问、建议或隐私反馈，欢迎通过以下方式与我们联系：
+              </p>
+              <div style="font-size: 0.9rem; line-height: 1.8;">
+                <strong>开发者：</strong>カピバラ９１ (Kapibara91)<br>
+                <strong>官方支持邮箱：</strong><a href="mailto:kapibara.developer@gmail.com" class="service-link">kapibara.developer@gmail.com</a><br>
+                <strong>开源与项目主页：</strong><a href="https://github.com/kapibara91" class="service-link" target="_blank" rel="noopener">https://github.com/kapibara91</a>
+              </div>
+            </div>
+          </section>
+        `
+      },
+      'zh-TW': {
+        appName: 'Totono (整物語)',
+        appTagline: '日常生活習慣打卡 · 空間清潔秩序管理 · 寶寶成長隨手記',
+        pageTitle: '隱私政策與資料安全規範 (Privacy Policy)',
+        docMeta: '生效日期：2026年9月25日 ｜ 版本：1.0.0 (Android)',
+        navHome: '← 返回首頁 / Home',
+        pledgeTitle: '基本理念與隱私安全承諾',
+        pledgeText: '開發者 <strong>カピバラ９１ (Kapibara91)</strong>（以下統稱「我們」）深知家庭日常、寶寶成長軌跡與生活習慣記錄對每位使用者的極致隱私性。因此，<strong>Totono</strong>（應用程式識別碼：<code>com.kpbr.totono</code>）自開發之初即嚴格恪守<strong>「隱私至上、本地優先（Local-First）」</strong>的設計理念。本應用<strong>絕不架設遠端使用者儲存伺服器</strong>，您的日常習慣、家務清潔週期、以及寶寶餵奶/換尿布/健康日記，<strong>100% 完整儲存在您本機的 SQLite Room 私有資料庫中</strong>，絕不會在未經您手動導出的情況下上傳至任何雲端伺服器。',
+        pills: [
+          { text: '✓ 100% 本地 SQLite / Room 儲存', class: 'pill-green' },
+          { text: '✓ 無需註冊 · 零身份追蹤', class: 'pill-coral' },
+          { text: '✓ Firebase 匿名穩定性診斷（可隨時關閉）', class: 'pill-blue' },
+          { text: '✓ 支援 JSON 離線備份與徹底銷毀', class: 'pill-orange' }
+        ],
+        html: `
+          <section class="section-block">
+            <h3 class="section-title">一、本地優先架構與資料完全所有權</h3>
+            <p class="section-text">
+              Totono 秉持「使用者資料完全屬於使用者自身」的核心原則。您在應用中錄入的所有資訊皆採用<strong>本地持久化沙盒架構</strong>：
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-card-header">👶 寶寶成長與哺育日記</div>
+                <div class="feature-card-desc">餵奶量、副食品、排便、疫苗接種、生病用藥等所有育兒記錄，完全保存在手機本機。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">🏃 每日習慣自律打卡</div>
+                <div class="feature-card-desc">習慣名稱、打卡頻率、連續天數統計等打卡記錄僅在本機計算與渲染。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">⚔️ 空間清潔與家務週期</div>
+                <div class="feature-card-desc">打掃週期倒數、打掃歷史記錄、一刀斬切擊打卡狀態均留存在本地裝置。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">📊 成就看板與熱力圖</div>
+                <div class="feature-card-desc">28日打卡貢獻熱力圖、7日奶量趨勢圖、勳章成就皆由本機引擎離線分析計算生成。</div>
+              </div>
+            </div>
+            <p class="section-text">
+              我們不設任何遠端使用者帳戶資料庫，亦不會將您的生活記錄同步或備份到任何雲端伺服器。
+            </p>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">二、免註冊登入與零個人身份追蹤</h3>
+            <ul class="section-list">
+              <li><strong>無需註冊或登入：</strong>無需綁定手機號、Google 帳號、Apple ID 或電子郵件。</li>
+              <li><strong>不收集可識別身份資訊（PII）：</strong>不索取您的真實姓名、身分證件、通訊錄好友、簡訊或社群帳號。</li>
+              <li><strong>不使用廣告追蹤識別碼：</strong>應用內完全無廣告，不擷取或共享 Google 廣告 ID (GAID) 進行跨平台商業追蹤。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">三、系統權限申請與使用目的</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">權限代碼</th>
+                  <th style="width: 25%;">權限名稱</th>
+                  <th>具體使用目的與隱私邊界</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="perm-code">POST_NOTIFICATIONS</span></td>
+                  <td>發送系統通知</td>
+                  <td>用於向您發送家務保潔週期到期提醒與打卡提示。通知由本機 AlarmManager 觸發，不經過外部伺服器推播。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">RECEIVE_BOOT_COMPLETED</span></td>
+                  <td>開機廣播接收</td>
+                  <td>僅用於在裝置重開機後，重新向系統底層註冊本地提醒鬧鐘，確保提醒功能正常運作。不進行常駐。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">VIBRATE</span></td>
+                  <td>控制裝置震動</td>
+                  <td>用於提供觸覺震動回饋（例如家務卡片切斬動畫、打卡完成等），提升操作體感。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">INTERNET</span> / <span class="perm-code">ACCESS_NETWORK_STATE</span></td>
+                  <td>網路連線與狀態</td>
+                  <td>僅供 Google Firebase Analytics SDK 傳送去識別化的匿名程式當機記錄與效能統計資料。</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">四、第三方技術支援服務（Google Firebase Analytics）</h3>
+            <p class="section-text">
+              為排查應用程式在不同 Android 機型上的異常當機及介面流暢度瓶頸，Totono 整合了 Google LLC 提供的 <strong>Google Firebase Analytics</strong> SDK。
+            </p>
+            <div class="service-box">
+              <div class="service-box-title">⚙️ 收集範圍與嚴格約束</div>
+              <ul class="section-list" style="margin-bottom: 8px;">
+                <li><strong>技術統計指標：</strong>僅收集作業系統版本、裝置型號、匿名工作階段時長、當機堆疊追蹤資訊、去識別化互動頻次。</li>
+                <li><strong>絕對排除敏感內容：</strong>該 SDK <strong>絕不讀取</strong>您錄入的任何生活日記內容、寶寶姓名、出生日期、備註或習慣名稱。</li>
+                <li><strong>隨時自主停用：</strong>您可以在應用程式「設定」中隨時透過「參與匿名穩定性改進」開關一鍵停用分析回傳。關閉後應用程式處於<strong>完全離線狀態</strong>。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">五、使用者資料完全掌控權</h3>
+            <ul class="section-list">
+              <li><strong>自由匯出備份：</strong>在數據看板中，隨時將全部生活日記與打卡歷史匯出為結構化 JSON 檔案儲存至本地。</li>
+              <li><strong>離線還原：</strong>支援貼上 JSON 字串本機解析還原，無需聯網。</li>
+              <li><strong>物理徹底抹除：</strong>在系統「設定 - 應用程式 - Totono」清除資料或直接解除安裝，裝置沙盒內的 SQLite 資料庫將被作業系統物理抹除。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">六、政策更新與聯絡方式</h3>
+            <div class="service-box">
+              <div class="service-box-title">📮 開發者聯絡管道</div>
+              <div style="font-size: 0.9rem; line-height: 1.8;">
+                <strong>開發者：</strong>カピバラ９１ (Kapibara91)<br>
+                <strong>官方支援電子郵件：</strong><a href="mailto:kapibara.developer@gmail.com" class="service-link">kapibara.developer@gmail.com</a><br>
+                <strong>GitHub 主頁：</strong><a href="https://github.com/kapibara91" class="service-link" target="_blank" rel="noopener">https://github.com/kapibara91</a>
+              </div>
+            </div>
+          </section>
+        `
+      },
+      'ja': {
+        appName: 'Totono (ととの)',
+        appTagline: '習慣記録 · おうちの掃除サイクル · 赤ちゃん生活メモ',
+        pageTitle: 'プライバシーポリシー (Privacy Policy)',
+        docMeta: '制定日：2026年9月25日 ｜ バージョン：1.0.0 (Android)',
+        navHome: '← カピバラ９１ ホームへ戻る',
+        pledgeTitle: '安心への取り組みと基本理念',
+        pledgeText: '開発者 <strong>カピバラ９１ (Kapibara91)</strong> は、利用者のプライバシーを尊重し、大切なご家庭の生活記録やお子様の成長メモを安心して残していただけるよう努めています。<strong>Totono（ととの）</strong>（パッケージ名：<code>com.kpbr.totono</code>）は、<strong>「プライバシー第一・ローカル優先（Local-First）」</strong>の設計思想で作られています。当社が管理する外部サーバーへ皆様の日記や打刻データを保存することは一切なく、<strong>すべてのデータはお使いの端末内部（SQLite Room データベース）にのみ安全に保管されます。</strong>',
+        pills: [
+          { text: '✓ 100% 完全ローカル SQLite / Room 保存', class: 'pill-green' },
+          { text: '✓ 会員登録不要 · 個人追跡ゼロ', class: 'pill-coral' },
+          { text: '✓ Firebase 匿名クラッシュ解析（いつでも停止可能）', class: 'pill-blue' },
+          { text: '✓ JSON バックアップと完全消去に対応', class: 'pill-orange' }
+        ],
+        html: `
+          <section class="section-block">
+            <h3 class="section-title">1. ローカルファーストとデータの完全所有</h3>
+            <p class="section-text">
+              Totonoは「入力されたデータはお客様だけのもの」という原則に基づき、<strong>端末内完結型サンドボックス構造</strong>を採用しています。
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-card-header">👶 育児・赤ちゃんの成長メモ</div>
+                <div class="feature-card-desc">授乳量、離乳食、おむつ交換、予防接種、体調記録などはすべて端末内部にのみ保存されます。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">🏃 日々の習慣打刻</div>
+                <div class="feature-card-desc">習慣のタイトル、達成状況、連続達成日数などの記録は端末内でのみ集計・表示されます。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">⚔️ お掃除サイクル管理</div>
+                <div class="feature-card-desc">掃除の期限カウントダウン、実施履歴、フルーツ忍者風スライスタスクの状態もすべてローカル保持です。</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">📊 統計グラフと実績看板</div>
+                <div class="feature-card-desc">過去28日の習慣ヒートマップや7日間の授乳推移グラフは、端末内エンジンにより完全オフラインで算出されます。</div>
+              </div>
+            </div>
+            <p class="section-text">
+              当開発者がお客様の私的な記録を閲覧・収集・外部転送することは一切ありません。
+            </p>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">2. アカウント登録不要と個人特定の排除</h3>
+            <ul class="section-list">
+              <li><strong>会員登録やログイン不要：</strong>メールアドレス、電話番号、SNSアカウントの連携なしですぐにご利用いただけます。</li>
+              <li><strong>個人特定情報（PII）の非収集：</strong>氏名、住所、連絡先、生年月日などの個人を直接特定可能な情報は取得しません。</li>
+              <li><strong>広告トラッキング識別子の不使用：</strong>本アプリには広告枠が存在せず、行動追跡用ID（GAID等）の収集や第三者への販売は行いません。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">3. 端末権限の利用目的について</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">権限コード</th>
+                  <th style="width: 25%;">名称</th>
+                  <th>利用目的およびプライバシー保護</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="perm-code">POST_NOTIFICATIONS</span></td>
+                  <td>通知の送信</td>
+                  <td>お掃除の期日リマインダーや習慣打刻の通知を端末内で表示するために利用します。外部サーバー経由ではありません。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">RECEIVE_BOOT_COMPLETED</span></td>
+                  <td>端末起動時の受信</td>
+                  <td>端末再起動時にリマインダー用アラームをローカル再登録するために利用します。バックグラウンド常駐は行いません。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">VIBRATE</span></td>
+                  <td>バイブレーション</td>
+                  <td>家事カードをスラッシュした際の一刀両断演出や打刻完了時の触覚フィードバック（振動）に使用します。</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">INTERNET</span> / <span class="perm-code">ACCESS_NETWORK_STATE</span></td>
+                  <td>ネットワーク接続</td>
+                  <td>Google Firebase による匿名のクラッシュログおよびアプリ安定性向上データ送信のためにのみ使用します。</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">4. 品質改善とクラッシュ診断（Google Firebase）</h3>
+            <p class="section-text">
+              アプリの予期せぬ強制終了（クラッシュ）や動作改善のため、Google LLCが提供する <strong>Google Firebase Analytics</strong> を利用しています。
+            </p>
+            <div class="service-box">
+              <div class="service-box-title">⚙️ 取得内容と安全性の担保</div>
+              <ul class="section-list" style="margin-bottom: 8px;">
+                <li><strong>取得情報：</strong>OSバージョン、端末モデル名、エラー発生時のクラッシュスタックトレース、匿名の利用統計のみ。</li>
+                <li><strong>私的記録の除外：</strong>お客様が入力された日記本文、お子様のお名前、生年月日、習慣タイトルなどは<strong>一切収集されません</strong>。</li>
+                <li><strong>いつでも停止可能：</strong>アプリ内の「設定」画面から「匿名の品質向上データ共有」をオフにすることで、いつでも送信を停止し、<strong>完全オフライン状態</strong>でご利用いただけます。</li>
+              </ul>
+              <div style="font-size: 0.85rem; margin-top: 10px;">
+                詳細は公式ドキュメントをご覧ください：<a href="https://firebase.google.com/support/privacy" class="service-link" target="_blank" rel="noopener">Firebase のプライバシーとセキュリティ &rarr;</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">5. 収集しない情報の明言</h3>
+            <ul class="section-list">
+              <li>🚫 <strong>位置情報（GPS・Wi-Fi基地局）へのアクセスは行いません。</strong></li>
+              <li>🚫 <strong>端末内の写真アルバム、カメラ、マイクへはアクセスしません。</strong></li>
+              <li>🚫 <strong>広告配信ネットワークやデータブローカーへの情報提供は一切行いません。</strong></li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">6. ユーザーによる完全なデータ管理</h3>
+            <ul class="section-list">
+              <li><strong>バックアップとエクスポート：</strong>データ管理画面から、いつでも全データを標準JSON形式で書き出し、手元に保存できます。</li>
+              <li><strong>データの復元：</strong>保存したJSONテキストを貼り付けることで、オフラインで即座に復元可能です。</li>
+              <li><strong>完全なデータ消去：</strong>端末の「設定 ＞ アプリ ＞ Totono」から「ストレージ消去」を行うか、アプリをアンインストールすることで、端末内のすべてのデータが物理的に完全に消去されます。</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">7. お問い合わせ窓口</h3>
+            <div class="service-box">
+              <div class="service-box-title">📮 お問い合わせ先</div>
+              <div style="font-size: 0.9rem; line-height: 1.8;">
+                <strong>開発者：</strong>カピバラ９１ (Kapibara91)<br>
+                <strong>お問い合わせ用メール：</strong><a href="mailto:kapibara.developer@gmail.com" class="service-link">kapibara.developer@gmail.com</a><br>
+                <strong>GitHub / 公式情報：</strong><a href="https://github.com/kapibara91" class="service-link" target="_blank" rel="noopener">https://github.com/kapibara91</a>
+              </div>
+            </div>
+          </section>
+        `
+      },
+      'en': {
+        appName: 'Totono',
+        appTagline: 'Daily Habits · Home Cleaning Routine · Baby Growth & Daily Log',
+        pageTitle: 'Privacy Policy & Data Security (Privacy Policy)',
+        docMeta: 'Effective Date: September 25, 2026 | Version: 1.0.0 (Android)',
+        navHome: '← Back to Home (Kapibara91)',
+        pledgeTitle: 'Our Privacy Philosophy & Core Pledge',
+        pledgeText: 'Developer <strong>カピバラ９１ (Kapibara91)</strong> is committed to protecting your personal and family privacy. <strong>Totono</strong> (Package Name: <code>com.kpbr.totono</code>) is engineered with a strict <strong>"Local-First, Privacy-First"</strong> architecture. We operate <strong>zero remote user storage servers</strong>. All your daily habits, cleaning schedules, and baby care logs (feedings, diaper changes, medications) are <strong>stored 100% locally in your device\'s encrypted SQLite Room database</strong> and never uploaded to any cloud server.',
+        pills: [
+          { text: '✓ 100% Local SQLite / Room Database', class: 'pill-green' },
+          { text: '✓ Zero Accounts · Zero Identity Tracking', class: 'pill-coral' },
+          { text: '✓ Firebase Anonymous Diagnostics (Opt-out anytime)', class: 'pill-blue' },
+          { text: '✓ JSON Local Backup & Full Erasure Supported', class: 'pill-orange' }
+        ],
+        html: `
+          <section class="section-block">
+            <h3 class="section-title">1. Local-First Architecture & Complete Data Ownership</h3>
+            <p class="section-text">
+              Totono believes that your personal life records belong strictly to you. All information entered in the app resides inside an on-device sandboxed storage environment:
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-card-header">👶 Baby Care & Growth Diary</div>
+                <div class="feature-card-desc">Feeding volumes, solid food notes, diaper changes, vaccinations, and temperature records remain strictly on your physical phone.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">🏃 Daily Habit Tracking</div>
+                <div class="feature-card-desc">Habit names, check-in history, and continuous streak counters are computed and stored purely on-device.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">⚔️ Household Hygiene & Chores</div>
+                <div class="feature-card-desc">Cleaning countdown cycles, task completion logs, and Fruit-Ninja slice interactions are preserved locally.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-header">📊 Stats & Heatmaps</div>
+                <div class="feature-card-desc">The 28-day habit consistency heatmap and 7-day milk charts are rendered by an offline calculation engine.</div>
+              </div>
+            </div>
+            <p class="section-text">
+              We do not maintain any cloud-based user databases, and your personal diary data is never transmitted over the internet to us.
+            </p>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">2. No Account Registration & Zero Identity Tracking</h3>
+            <ul class="section-list">
+              <li><strong>No sign-up or login required:</strong> You can start using Totono instantly without linking phone numbers, Google accounts, Apple IDs, or email addresses.</li>
+              <li><strong>Zero PII Collection:</strong> We do not collect Personally Identifiable Information (PII) such as legal names, physical addresses, contacts, or phone numbers.</li>
+              <li><strong>No Ad Trackers:</strong> Totono is completely ad-free. We do not gather or share Google Advertising IDs (GAID) for third-party commercial profiling.</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">3. System Permissions & Purpose</h3>
+            <table class="perm-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">Permission</th>
+                  <th style="width: 25%;">System Purpose</th>
+                  <th>Usage Scope & Privacy Safeguards</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="perm-code">POST_NOTIFICATIONS</span></td>
+                  <td>System Notifications</td>
+                  <td>Delivers local reminder alerts when household chores are due or for scheduled habit check-ins. Dispatched via local Android AlarmManager without cloud intermediaries.</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">RECEIVE_BOOT_COMPLETED</span></td>
+                  <td>Re-register Alarms</td>
+                  <td>Reschedules local reminder alarms after a device reboot to maintain uninterrupted chore alerts. Does not keep persistent background services.</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">VIBRATE</span></td>
+                  <td>Haptic Feedback</td>
+                  <td>Provides tactile feedback during interactive events (e.g. slicing chore cards, completing habits).</td>
+                </tr>
+                <tr>
+                  <td><span class="perm-code">INTERNET</span> / <span class="perm-code">ACCESS_NETWORK_STATE</span></td>
+                  <td>Network Connectivity</td>
+                  <td>Used exclusively by the Google Firebase Analytics SDK to deliver de-identified application crash stack traces and performance telemetry.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">4. Third-Party Telemetry (Google Firebase Analytics)</h3>
+            <p class="section-text">
+              To diagnose crashes and measure responsiveness across thousands of Android models, Totono integrates <strong>Google Firebase Analytics</strong> SDK provided by Google LLC.
+            </p>
+            <div class="service-box">
+              <div class="service-box-title">⚙️ Scope of Telemetry & Strict Isolation</div>
+              <ul class="section-list" style="margin-bottom: 8px;">
+                <li><strong>Technical Diagnostics:</strong> Collects only anonymous technical metrics (operating system version, device model, session duration, and uncaught crash traces).</li>
+                <li><strong>No Access to Personal Content:</strong> The SDK <strong>CANNOT and NEVER reads</strong> your entered notes, baby names, birthdays, feeding amounts, or habit names.</li>
+                <li><strong>Full User Control (Opt-Out):</strong> You can disable analytics telemetry at any time in the app\'s Settings screen under "Share Anonymous Diagnostics". When disabled, the app operates in a <strong>100% offline mode</strong>.</li>
+              </ul>
+              <div style="font-size: 0.85rem; margin-top: 10px;">
+                Learn more: <a href="https://firebase.google.com/support/privacy" class="service-link" target="_blank" rel="noopener">Firebase Privacy and Security Guidelines &rarr;</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">5. Data Never Collected</h3>
+            <ul class="section-list">
+              <li>🚫 <strong>Zero Precise or Coarse Location (GPS / Cell Towers).</strong></li>
+              <li>🚫 <strong>Zero Access to Device Photos, Camera, or Audio Microphone.</strong></li>
+              <li>🚫 <strong>Zero Selling or Renting of User Data to Brokers.</strong></li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">6. User Autonomy & Right to Complete Erasure</h3>
+            <ul class="section-list">
+              <li><strong>Data Portability:</strong> You can export your entire database as a standard JSON text backup from the Stats screen at any time.</li>
+              <li><strong>Offline Restore:</strong> You can restore a previously backed up JSON snapshot locally without needing an internet connection.</li>
+              <li><strong>Permanent Erasure:</strong> Clearing app storage in Android Settings or uninstalling Totono permanently wipes the SQLite database and all cached files from your physical device immediately.</li>
+            </ul>
+          </section>
+
+          <section class="section-block">
+            <h3 class="section-title">7. Contact & Developer Information</h3>
+            <div class="service-box">
+              <div class="service-box-title">📮 Contact Channel</div>
+              <div style="font-size: 0.9rem; line-height: 1.8;">
+                <strong>Developer:</strong> カピバラ９１ (Kapibara91)<br>
+                <strong>Support Email:</strong> <a href="mailto:kapibara.developer@gmail.com" class="service-link">kapibara.developer@gmail.com</a><br>
+                <strong>GitHub / Project Home:</strong> <a href="https://github.com/kapibara91" class="service-link" target="_blank" rel="noopener">https://github.com/kapibara91</a>
+              </div>
+            </div>
+          </section>
+        `
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!contentData[lang]) lang = 'zh-CN';
+      const data = contentData[lang];
+
+      // Update text
+      document.getElementById('app-name').innerText = data.appName;
+      document.getElementById('app-tagline').innerText = data.appTagline;
+      document.getElementById('page-title-text').innerText = data.pageTitle;
+      document.getElementById('doc-meta').innerText = data.docMeta;
+      document.getElementById('nav-home-text').innerText = data.navHome;
+      document.getElementById('pledge-title').innerText = data.pledgeTitle;
+      document.getElementById('pledge-text').innerHTML = data.pledgeText;
+      document.getElementById('policy-container').innerHTML = data.html;
+
+      // Update pills
+      const pillContainer = document.querySelector('.privacy-highlights');
+      if (pillContainer) {
+        pillContainer.innerHTML = data.pills.map(p => `<span class="highlight-pill ${p.class}">${p.text}</span>`).join('');
+      }
+
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update html lang
+      document.documentElement.lang = lang;
+
+      // Update URL hash
+      window.history.replaceState(null, '', '#' + lang);
+    }
+
+    // Auto-detect language on load
+    window.addEventListener('DOMContentLoaded', () => {
+      let initialLang = 'zh-CN';
+      const hash = window.location.hash.replace('#', '').trim();
+      
+      if (['zh-CN', 'zh-TW', 'ja', 'en'].includes(hash)) {
+        initialLang = hash;
+      } else if (hash.toLowerCase() === 'zh' || hash.toLowerCase() === 'zh-cn') {
+        initialLang = 'zh-CN';
+      } else if (hash.toLowerCase() === 'zh-tw' || hash.toLowerCase() === 'tw') {
+        initialLang = 'zh-TW';
+      } else if (hash.toLowerCase() === 'ja' || hash.toLowerCase() === 'jp') {
+        initialLang = 'ja';
+      } else if (hash.toLowerCase() === 'en') {
+        initialLang = 'en';
+      } else {
+        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (browserLang.startsWith('ja')) {
+          initialLang = 'ja';
+        } else if (browserLang.startsWith('zh-tw') || browserLang.startsWith('zh-hk')) {
+          initialLang = 'zh-TW';
+        } else if (browserLang.startsWith('zh')) {
+          initialLang = 'zh-CN';
+        } else if (browserLang.startsWith('en')) {
+          initialLang = 'en';
+        }
+      }
+
+      setLanguage(initialLang);
+    });
+  </script>
+</body>
+</html>
