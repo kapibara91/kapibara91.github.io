@@ -298,7 +298,7 @@
       </div>
       <div class="app-tagline">日々の言葉を、静かに綴じる</div>
       <div class="page-title">プライバシーポリシー</div>
-      <div class="doc-meta">制定日：2026年9月21日 ｜ 最終更新：2026年9月21日</div>
+      <div class="doc-meta">制定日：2026年9月21日 ｜ 最終改定：2026年10月1日</div>
     </header>
 
     <main>
@@ -358,10 +358,13 @@
         <article class="article-card">
           <div class="article-header">
             <span class="article-num">第4条</span>
-            <h2 class="article-title">完全ローカル保存・プライバシー保護</h2>
+            <h2 class="article-title">Google ドライブ連携とクラウドバックアップの保護</h2>
           </div>
           <div class="article-body">
-            <p>当アプリで作成された日記および小冊子（ZINE）のすべてのデータは、端末内部にのみ保持されます。外部サーバーへの自動送信や他者への意図しない公開機能は一切存在せず、完全なプライベート空間として安心してご利用いただけます。</p>
+            <p>1. ユーザーが明示的に「Google ドライブ連携」を有効化した場合に限り、端末内の日記および小冊子データのバックアップ保存および復元を目的として、Google LLC が提供する Google Drive API（専用の隠し領域 appDataFolder）にアクセスします。</p>
+            <p>2. 当アプリがアクセスする領域は、当アプリ自身が作成した専用のバックアップファイル（JSON形式）のみであり、ユーザーの Google ドライブ内に保存されている他のファイルや個人データを閲覧、取得、変更、削除することは一切ありません。</p>
+            <p>3. バックアップおよび復元の送受信は、ユーザーの端末と Google のサーバー間で直接 TLS 暗号化通信を介して行われます。当開発者および第三者が管理する外部中継サーバーを経由することは決してありません。</p>
+            <p>4. Google アカウントのログイン認証情報（パスワード等）は端末および当アプリに保存されず、Google の標準 OAuth 認証システムによって安全に処理されます。また、Google ドライブとの連携は、アプリ内の設定画面よりいつでも即座に解除・切断することができます。</p>
           </div>
         </article>
 
@@ -369,6 +372,17 @@
         <article class="article-card">
           <div class="article-header">
             <span class="article-num">第5条</span>
+            <h2 class="article-title">完全ローカル保存の原則とプライバシー保護</h2>
+          </div>
+          <div class="article-body">
+            <p>当アプリは、Google ドライブ連携機能を利用しない場合、すべてのデータを端末内部（ローカルストレージ・SQLite）にのみ保持し、完全なオフライン環境で動作します。外部サーバーへの自動送信や他者への意図しない公開機能は一切存在せず、完全なプライベート空間として安心してご利用いただけます。</p>
+          </div>
+        </article>
+
+        <!-- 第6条 -->
+        <article class="article-card">
+          <div class="article-header">
+            <span class="article-num">第6条</span>
             <h2 class="article-title">本ポリシーの改定</h2>
           </div>
           <div class="article-body">
@@ -379,7 +393,7 @@
 
       <!-- 署名 -->
       <footer class="signoff">
-        <div class="signoff-date">制定日：2026年9月21日</div>
+        <div class="signoff-date">制定日：2026年9月21日 ｜ 最終改定：2026年10月1日</div>
         <div class="signoff-team">Tsuzuri 開発チーム</div>
         <a href="https://github.com/kapibara91/tsuzuri-daily-android" class="repo-link" target="_blank" rel="noopener noreferrer">
           GitHub Repository: kapibara91/tsuzuri-daily-android
@@ -392,10 +406,11 @@
           <summary>English Summary (For Google Play Reviewers & Global Users)</summary>
           <div class="en-content">
             <p><strong>Tsuzuri Privacy Policy Summary</strong></p>
-            <p>1. <strong>100% Offline & Local Storage</strong>: All journal entries, titles, weather icons, mood states, and compiled monthly booklets are stored strictly inside the device's local SQLite database. No account is required.</p>
-            <p>2. <strong>Zero Journal Content Transmission</strong>: The app never uploads, transmits, or syncs your diary entries or personal writings to any external server.</p>
-            <p>3. <strong>Anonymous Diagnostics Only</strong>: We use Firebase Crashlytics and Firebase Analytics solely to identify technical crash logs and anonymous aggregated usage metrics (e.g. app version, OS version). No diary text or personally identifiable information (PII) is ever collected.</p>
-            <p>4. <strong>Local Notifications</strong>: The optional evening reminder is triggered purely on-device via Android's AlarmManager without network transmission.</p>
+            <p>1. <strong>100% Offline & Local Storage by Default</strong>: All journal entries, titles, weather icons, mood states, and compiled monthly booklets are stored strictly inside the device's local SQLite database. No account is required.</p>
+            <p>2. <strong>Optional Private Google Drive Backup</strong>: If explicitly enabled by the user, the app uses Google Drive's hidden `appDataFolder` solely to store and restore Tsuzuri backup files. The app never accesses, reads, or modifies any other files in your Google Drive. All communications are direct and encrypted between your device and Google servers without any intermediary third-party servers.</p>
+            <p>3. <strong>Zero Journal Content Transmission</strong>: The app never uploads, transmits, or syncs your diary entries or personal writings to developer-owned or third-party servers.</p>
+            <p>4. <strong>Anonymous Diagnostics Only</strong>: We use Firebase Crashlytics and Firebase Analytics solely to identify technical crash logs and anonymous aggregated usage metrics (e.g. app version, OS version). No diary text or personally identifiable information (PII) is ever collected.</p>
+            <p>5. <strong>Local Notifications</strong>: The optional evening reminder is triggered purely on-device via Android's AlarmManager without network transmission.</p>
             <p>Contact: Please file issues or questions via our GitHub repository.</p>
           </div>
         </details>
