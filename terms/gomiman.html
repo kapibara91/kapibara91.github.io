@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約 ｜ ゴミマン</title>
+  <meta name="description" content="ゴミ出し忘れ防止アプリ『ゴミマン』の利用規約（Terms of Service）です。定期購入（サブスクリプション）、サービス利用条件、免責事項について定めています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #F4F7FB;
+      --card-bg: #FFFFFF;
+      --card-sub-bg: #EEF4FA;
+      --text-main: #1E293B;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --accent: #0D9488;
+      --border-color: #E2E8F0;
+      --badge-bg: #DBEAFE;
+      --badge-text: #1E40AF;
+      --shadow-sm: 0 2px 8px rgba(37, 99, 235, 0.04);
+      --shadow-md: 0 8px 24px rgba(30, 41, 59, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* Back to Home */
+    .back-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-privacy-link {
+      font-size: 0.85rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-privacy-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .app-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .app-tagline {
+      font-size: 0.88rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .page-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 8px;
+    }
+
+    .doc-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Summary Card */
+    .summary-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0F7FF 100%);
+      border: 1px solid #BFDBFE;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .summary-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-bottom: 10px;
+    }
+
+    .summary-text {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.75;
+    }
+
+    /* Content */
+    .terms-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-block {
+      margin-bottom: 32px;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-main);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-text {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .section-list {
+      list-style-position: inside;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-left: 6px;
+      margin-bottom: 12px;
+    }
+
+    .section-list li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: var(--card-sub-bg);
+      border: 1px solid #DCE6F1;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .highlight-box-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .service-link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .service-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 16px 60px;
+      }
+      .terms-content {
+        padding: 24px 18px;
+      }
+      .summary-card {
+        padding: 20px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="back-nav">
+      <a href="../" class="back-link">&larr; カピバラ９１ ホーム へ戻る</a>
+      <a href="../privacies/gomiman.html" class="nav-privacy-link">プライバシーポリシー &rarr;</a>
+    </nav>
+
+    <header>
+      <div class="app-brand">
+        <img src="../images/icon_gomiman.png" alt="ゴミマン" class="app-icon" width="56" height="56">
+        <h1 class="app-name">ゴミマン</h1>
+      </div>
+      <p class="app-tagline">ゴミ出し忘れ防止＆収集カレンダー</p>
+      <h2 class="page-title">利用規約 (Terms of Service)</h2>
+      <p class="doc-meta">制定日: 2026年10月15日（Ver 2.0.0 適用）</p>
+    </header>
+
+    <!-- 概要カード -->
+    <div class="summary-card">
+      <div class="summary-title">
+        <span>📜</span>
+        <span>はじめに</span>
+      </div>
+      <p class="summary-text">
+        本利用規約（以下「本規約」）は、カピバラ９１（以下「当開発者」）が提供するスマートフォン向けアプリケーション『ゴミマン』（以下「本アプリ」）の利用条件を定めるものです。利用者の皆様（以下「ユーザー」）には、本規約に同意いただいた上で本アプリをご利用いただきます。
+      </p>
+    </div>
+
+    <!-- 条文本体 -->
+    <main class="terms-content">
+
+      <section class="section-block">
+        <h3 class="section-title">第1条（規約への同意）</h3>
+        <p class="section-text">
+          1. ユーザーは、本アプリを端末にダウンロード、インストール、または起動した時点で、本規約の全条項に有効かつ取消不能な同意をしたものとみなされます。
+        </p>
+        <p class="section-text">
+          2. 未成年者が本アプリ（特に有料サブスクリプション機能）を利用する場合は、親権者等の法定代理人の包括的な同意を得た上でご利用ください。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第2条（サービス内容）</h3>
+        <p class="section-text">
+          本アプリは、ユーザーがお住まいの地域のごみ収集日や分別ルールを管理し、リマインダー通知、ウィジェット表示、分別事典の参照、端末カレンダー連携等を通じて、ごみの出し忘れ防止を支援するための生活支援ツールです。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第3条（定期購入・サブスクリプション）</h3>
+        <p class="section-text">
+          本アプリでは、無料プランに加え、追加機能を提供する有料定期購入プラン「ゴミマン プレミアム（Pro）」（以下「サブスクリプション」）を提供しています。
+        </p>
+        
+        <div class="highlight-box">
+          <div class="highlight-box-title">【プレミアム会員の主な特典】</div>
+          <ul class="section-list" style="margin-bottom: 0;">
+            <li>すべてのバナー広告の完全非表示（No Ads）</li>
+            <li>自治体独自・カスタムごみ種別の無制限作成・管理</li>
+            <li>500品目以上を網羅した完全版ごみ分別クイック事典</li>
+            <li>ホーム画面 4×2 全景日程ウィジェットの利用</li>
+            <li>通知内「出した！」打刻・スヌーズ再通知機能</li>
+            <li>家族クラウド自動同期機能（解禁時）の優先利用</li>
+          </ul>
+        </div>
+
+        <p class="section-text">
+          <strong>1. 提供プランおよび料金：</strong><br>
+          月額プラン（自動更新・1か月）および年額プラン（自動更新・1年）を提供しています。料金は各アプリストア（Apple App Store または Google Play）の購入画面に表示される金額に準じます。
+        </p>
+
+        <p class="section-text">
+          <strong>2. 請求および自動更新：</strong><br>
+          サブスクリプション料金はお客様の Apple ID または Google アカウントに請求されます。現在の購読期間終了の24時間前までに自動更新を解除しない限り、購読期間は同一条件で自動的に更新されます。
+        </p>
+
+        <p class="section-text">
+          <strong>3. 無料トライアル（無料体験期間）：</strong><br>
+          無料トライアルが提供されている場合、指定された期間（例：7日間）は無料でプレミアム機能をお試しいただけます。無料トライアル期間終了の24時間前までに解約を行わない場合、トライアル終了時に選択したプランの通常料金が自動的に課金されます。
+        </p>
+
+        <p class="section-text">
+          <strong>4. サブスクリプションの解約方法：</strong><br>
+          アプリをアンインストールまたは削除しても、定期購入は自動的に解約されません。解約をご希望の場合は、必ず以下の手順により端末の設定画面から自動更新を停止してください：
+        </p>
+        <ul class="section-list">
+          <li><strong>iOS (App Store)：</strong>「設定」 ＞ 「Apple ID（画面上部のお名前）」 ＞ 「サブスクリプション」 ＞ 「ゴミマン」を選択して「サブスクリプションをキャンセルする」。</li>
+          <li><strong>Android (Google Play)：</strong>「Google Play ストア」 ＞ 右上のプロフィールアイコン ＞ 「お支払いと定期購入」 ＞ 「定期購入」 ＞ 「ゴミマン」を選択して「定期購入を解約」。</li>
+        </ul>
+
+        <p class="section-text">
+          <strong>5. 返金およびキャンセル：</strong><br>
+          定期購入の解約手続き完了後も、すでに支払済みの有効期間内はプレミアム機能をご利用いただけます。日割り計算による返金は行っておりません。また、決済完了後の返金は各プラットフォーム（Apple Inc. または Google LLC）の返金規約に準拠して処理されます。
+        </p>
+
+        <p class="section-text">
+          <strong>6. 機種変更時の購入情報の復元：</strong><br>
+          同一の Apple ID または Google アカウントでログインしている同一プラットフォームの端末であれば、アプリ内「購入情報の復元」ボタンより追加料金なしでプレミアム状態を再適用できます。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第4条（端末権限および外部連携）</h3>
+        <p class="section-text">
+          1. <strong>ローカル通知権限：</strong>ごみ収集日のリマインダー通知および通知内アクションを実行するために使用します。通知の許可・無効化は端末の設定画面から随時変更可能です。
+        </p>
+        <p class="section-text">
+          2. <strong>カレンダー書き込み権限：</strong>ユーザーが明示的に「カレンダーへ一括登録」を実行した際にのみ、端末標準カレンダーに収集予定を追加するために使用します。本アプリが他の個人的な予定を読み取ったり、外部へ送信することは一切ありません。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第5条（知的財産権）</h3>
+        <p class="section-text">
+          本アプリに含まれるプログラム、デザイン、グラフィック、アイコン、テキスト、キャラクターその他すべての著作物に関する著作権、商標権等の知的財産権は、当開発者または正当な権利者に帰属します。私的使用の範囲を超えて、無断で転載、複製、翻案、リバースエンジニアリングを行うことを禁止します。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第6条（禁止事項）</h3>
+        <p class="section-text">
+          ユーザーは、本アプリの利用にあたり以下の行為を行ってはなりません。
+        </p>
+        <ul class="section-list">
+          <li>本アプリの不具合や脆弱性を意図的に利用・拡散する行為</li>
+          <li>アプリ内課金システムの迂回や不正な決済認証を行う行為</li>
+          <li>当開発者または第三者の名誉、プライバシー、財産権を侵害する行為</li>
+          <li>法令または公序良俗に反する行為</li>
+          <li>その他、当開発者が不適切と合理的に判断する行為</li>
+        </ul>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第7条（免責事項）</h3>
+        <p class="section-text">
+          1. <strong>自治体公式日程との整合性：</strong>本アプリはユーザーご自身のスケジュール管理を支援するツールです。祝日、振替休日、年末年始、悪天候等に伴う自治体独自のスケジュール変更や振替日について、本アプリのスケジュールが正確であることを保証するものではありません。各自治体の公式広報物・ウェブサイトをご確認の上ご利用ください。
+        </p>
+        <p class="section-text">
+          2. <strong>通知の到達性：</strong>OSの省電力モード、バックグラウンド実行制限、端末の通知設定、または端末の電源状態等により、リマインダー通知が遅延または未到達となったことにより生じたゴミの出し忘れ等の損害について、当開発者は一切の責任を負いません。
+        </p>
+        <p class="section-text">
+          3. <strong>データの保全：</strong>端末の故障、水没、初期化、OSアップデート等に伴うローカルデータの消失について、当開発者は復元の義務を負わないものとします。
+        </p>
+        <p class="section-text">
+          4. 当開発者は、消費者契約法その他の強行法規が適用される場合を除き、本アプリの利用または利用不能により生じた直接的、間接的、特別、付随的な損害について一切の責任を負いません。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第8条（サービスの変更・中断・終了）</h3>
+        <p class="section-text">
+          当開発者は、アプリの保守点検、機能改善、天災地変等のやむを得ない事由がある場合、ユーザーへの事前の通知なく本アプリの全部または一部の提供を変更、一時中断、または終了することができます。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第9条（規約の改定）</h3>
+        <p class="section-text">
+          当開発者は、必要に応じて本規約を改定することができます。改定後の規約は本ウェブサイトに掲載された時点で効力を生じるものとし、改定後に本アプリを利用したユーザーは、変更後の規約に同意したものとみなされます。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第10条（プライバシーポリシーとの関係）</h3>
+        <p class="section-text">
+          本アプリにおける個人情報・端末情報の取り扱いについては、当開発者が別途定める<a href="../privacies/gomiman.html" class="service-link">プライバシーポリシー</a>をご確認ください。プライバシーポリシーは本規約の一部を構成するものとします。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第11条（準拠法および裁判管轄）</h3>
+        <p class="section-text">
+          本規約の解釈および適用にあたっては、日本法を準拠法とします。本アプリまたは本規約に関して紛争が生じた場合は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">第12条（お問い合わせ窓口）</h3>
+        <p class="section-text">
+          本規約に関するご質問、お問い合わせは下記窓口までご連絡ください。
+        </p>
+        <p class="section-text">
+          <strong>開発者：</strong>カピバラ９１ (Kapibara91)<br>
+          <strong>連絡先：</strong><a href="mailto:kapibara.developer@gmail.com" class="service-link">kapibara.developer@gmail.com</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><a href="../">カピバラ９１ ホーム</a> ｜ &copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

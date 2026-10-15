@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー ｜ ゴミマン</title>
-  <meta name="description" content="ゴミ出し忘れ防止アプリ『ゴミマン』のプライバシーポリシーです。個人情報の取り扱い、端末内データの保護、第三者配信ツール（広告・解析）について定めています。">
+  <meta name="description" content="ゴミ出し忘れ防止アプリ『ゴミマン』のプライバシーポリシーです。個人情報の取り扱い、端末内データの保護、定期購入決済、第三者配信ツール（広告・解析）について定めています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -46,8 +46,11 @@
       margin: 0 auto;
     }
 
-    /* Back to Home */
+    /* Back to Home & Nav */
     .back-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 24px;
     }
 
@@ -63,6 +66,17 @@
 
     .back-link:hover {
       color: var(--primary);
+    }
+
+    .nav-terms-link {
+      font-size: 0.85rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-terms-link:hover {
+      text-decoration: underline;
     }
 
     /* Header */
@@ -191,8 +205,8 @@
       background: var(--card-sub-bg);
       border: 1px solid #DCE6F1;
       border-radius: 10px;
-      padding: 16px;
-      margin-top: 12px;
+      padding: 16px 20px;
+      margin-top: 14px;
     }
 
     .service-box-title {
@@ -205,7 +219,7 @@
     .service-links {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 12px;
       font-size: 0.85rem;
     }
 
@@ -254,6 +268,7 @@
   <div class="container">
     <nav class="back-nav">
       <a href="../" class="back-link">&larr; カピバラ９１ ホーム へ戻る</a>
+      <a href="../terms/gomiman.html" class="nav-terms-link">利用規約 &rarr;</a>
     </nav>
 
     <header>
@@ -263,7 +278,7 @@
       </div>
       <p class="app-tagline">ゴミ出し忘れ防止＆収集カレンダー</p>
       <h2 class="page-title">プライバシーポリシー (Privacy Policy)</h2>
-      <p class="doc-meta">制定日: 2022年9月1日 ｜ 最終改定日: 2026年9月22日</p>
+      <p class="doc-meta">制定日: 2022年9月1日 ｜ 最終改定日: 2026年10月15日（Ver 2.0.0 改定）</p>
     </header>
 
     <!-- 安心宣言 -->
@@ -273,7 +288,7 @@
         <span>安心への取り組み（基本理念）</span>
       </div>
       <p class="pledge-text">
-        カピバラ９１（以下「当開発者」）が提供するスマートフォン向けアプリケーション『ゴミマン』（以下「本アプリ」）は、利用者のプライバシーを最優先に尊重しています。本アプリはお住まいの地域のゴミ収集日を忘れず管理するためのツールであり、<strong>氏名、住所、電話番号、位置情報（GPS）などの個人を特定できる情報を収集・サーバーに保存することは一切ありません。</strong>
+        カピバラ９１（以下「当開発者」）が提供するスマートフォン向けアプリケーション『ゴミマン』（以下「本アプリ」）は、利用者のプライバシーを最優先に尊重しています。本アプリはお住まいの地域のゴミ収集日を忘れず管理するためのツールであり、<strong>氏名、住所、電話番号、位置情報（GPS）などの個人を特定できる情報を収集・サーバーに保存することは一切ありません。アカウント登録やログインも不要で安心してご利用いただけます。</strong>
       </p>
     </div>
 
@@ -286,39 +301,48 @@
           本アプリの機能をご利用いただくにあたり、以下の通り情報を取り扱います。
         </p>
         <ul class="section-list">
-          <li><strong>ゴミ収集スケジュール・通知設定：</strong>設定されたゴミの分別種類、収集周期（毎週、隔週、第何曜日など）、リマインダー通知の時刻設定は、<strong>すべてお使いの端末内部（ローカル）にのみ保存</strong>されます。当開発者がこれらのデータを取得・保管することはありません。</li>
-          <li><strong>端末情報の自動取得：</strong>後述の広告配信およびクラッシュ不具合解析のため、匿名の端末識別情報、OSバージョン、通信状況などの統計データが外部SDKにより自動的に収集される場合があります。</li>
+          <li><strong>ゴミ収集スケジュール・カスタム分別・メモ・打刻データ：</strong>ユーザーが登録した収集日程、自治体独自ルールに基づくカスタムごみ種別、分別事典の個人メモ、年末年始の収集休止設定、臨時収集予定、および「出した！」打刻の達成記録は、<strong>すべてお使いの端末内部（ローカルストレージ）にのみ保存</strong>されます。当開発者がこれらのデータを取得・保管・閲覧することは一切ありません。</li>
+          <li><strong>有料定期購入（サブスクリプション）の決済情報：</strong>「ゴミマン プレミアム（Pro）」の購入処理および購入復元は、Apple Inc.（StoreKit 2）および Google LLC（Google Play Billing）の公式決済インフラを介して行われます。当開発者は暗号化された製品IDおよび購入ステータス（有効・無効）のみを参照し、クレジットカード番号、銀行口座情報、請求先住所等の個人決済情報を取得・保持することは一切ありません。</li>
+          <li><strong>端末情報の自動取得：</strong>無料プランにおける広告配信およびクラッシュ等の不具合解析のため、匿名の端末識別情報、OSバージョン、通信状況などの統計データが外部SDKにより自動的に収集される場合があります。</li>
         </ul>
       </section>
 
       <section class="section-block">
         <h3 class="section-title">2. 端末権限の利用について</h3>
         <p class="section-text">
-          本アプリは、ゴミ出しの直前または当日の朝にリマインダーを届けるため、OS標準の<strong>「通知（ローカルプッシュ通知）」</strong>権限を使用します。
+          本アプリは、以下の機能を提供するために端末の標準権限を使用します。
         </p>
-        <p class="section-text">
-          この通知は端末内部のスケジュール機能によって直接行われるものであり、外部サーバーを介したプッシュ通信は行いません。通知の許可・拒否は、端末の「設定」アプリよりいつでも変更が可能です。
-        </p>
+        <ul class="section-list">
+          <li><strong>通知（ローカルプッシュ通知）権限：</strong>ゴミ出しの前日や当日の朝にリマインダーを届けるほか、ロック画面通知から直接「出した！」打刻や「15分後スヌーズ再通知」を行うインタラクティブ通知機能のために使用します。この通知は端末内部のスケジュール機能で直接発火するものであり、外部サーバーを介したプッシュ通信は行いません。通知の許可・無効化は端末の設定画面からいつでも変更できます。</li>
+          <li><strong>カレンダー連携（予定の書き込み）権限：</strong>ユーザーが「カレンダーへ予定を一括登録」を実行した際にのみ、端末標準のカレンダー（iOS EventKit / Android Calendar）へ向こう1年間の収集予定を追加するために使用します。本アプリが他の個人的な予定を読み取ったり、外部へ送信することは一切ありません。</li>
+        </ul>
       </section>
 
       <section class="section-block">
         <h3 class="section-title">3. 第三者配信サービス（広告および解析ツール）</h3>
         <p class="section-text">
-          本アプリは、無料でのサービス提供およびアプリ品質の向上・不具合の早期改善のため、以下の第三者配信事業者のサービスを利用しています。各事業者が取得する情報や利用目的については、各社のプライバシーポリシーをご確認ください。
+          本アプリは、サービスの安定提供および品質向上のため、以下の外部事業者のサービスを利用しています。
         </p>
         
         <div class="service-box">
           <div class="service-box-title">■ 利用している外部モジュール</div>
           <div class="service-links">
             <div>
-              <strong>Google AdMob</strong>（広告配信）<br>
-              広告表示および効果測定のため、広告識別子（IDFA / AAID等）を使用する場合があります。<br>
+              <strong>Google AdMob（Google LLC）</strong><br>
+              無料プランご利用時に画面下部へバナー広告を配信するために広告識別子（IDFA / AAID等）を使用する場合があります。<br>
+              <span style="color: #0D9488; font-weight: 600;">※ 有料サブスクリプション「ゴミマン プレミアム」にご加入いただいたユーザーには、すべての広告表示が完全撤去（No Ads）され、広告トラッキングも停止されます。</span><br>
               <a href="https://policies.google.com/technologies/ads?hl=ja" class="service-link" target="_blank" rel="noopener">&rarr; Google 広告に関するポリシー</a>
             </div>
-            <div style="margin-top: 10px;">
-              <strong>Google Analytics for Firebase / Firebase Crashlytics</strong>（アクセス解析・不具合検知）<br>
-              アプリのクラッシュログや利用状況の統計的把握に使用しています。<br>
+            <div>
+              <strong>Firebase Crashlytics / Google Analytics for Firebase（Google LLC）</strong><br>
+              アプリのクラッシュログや利用状況の統計的把握に使用しています。個人を特定する情報は送信されません。<br>
               <a href="https://firebase.google.com/support/privacy" class="service-link" target="_blank" rel="noopener">&rarr; Firebase のプライバシーとセキュリティ</a>
+            </div>
+            <div>
+              <strong>Apple StoreKit 2（Apple Inc.） / Google Play In-App Billing（Google LLC）</strong><br>
+              定期購入の安全な決済、自動更新、および購入情報の復元処理のために使用しています。<br>
+              <a href="https://www.apple.com/legal/privacy/data/ja/apple-pay-and-wallet/" class="service-link" target="_blank" rel="noopener">&rarr; Apple プライバシーポリシー</a> ｜ 
+              <a href="https://policies.google.com/privacy?hl=ja" class="service-link" target="_blank" rel="noopener">&rarr; Google プライバシーポリシー</a>
             </div>
           </div>
         </div>
@@ -334,19 +358,26 @@
       <section class="section-block">
         <h3 class="section-title">5. 免責事項</h3>
         <p class="section-text">
-          本アプリの利用によって生じた直接的・間接的な損害（端末の通知不達によるゴミの出し忘れ、祝祭日・年末年始等に伴う自治体スケジュール変更との差異を含みます）について、当開発者は法令上免責が認められない場合を除き、一切の責任を負いかねます。各自治体の公式情報をご確認の上ご利用ください。
+          本アプリの利用によって生じた直接的・間接的な損害（端末の通知不達や省電力制限によるゴミの出し忘れ、祝祭日・年末年始等に伴う自治体スケジュール変更との差異、端末故障に伴うローカルデータの消失を含みます）について、当開発者は法令上免責が認められない場合を除き、一切の責任を負いかねます。各自治体の公式情報をご確認の上ご利用ください。
         </p>
       </section>
 
       <section class="section-block">
-        <h3 class="section-title">6. プライバシーポリシーの改定</h3>
+        <h3 class="section-title">6. 利用規約へのリンク</h3>
         <p class="section-text">
-          法令の改正やアプリの機能更新に伴い、本ポリシーを改定することがあります。重要な改定を行う場合は、本ウェブサイト上でお知らせいたします。
+          本アプリのサービス利用条件および定期購入に関する詳細については、<a href="../terms/gomiman.html" class="service-link">利用規約（Terms of Service）</a>をご確認ください。
         </p>
       </section>
 
       <section class="section-block">
-        <h3 class="section-title">7. お問い合わせ窓口</h3>
+        <h3 class="section-title">7. プライバシーポリシーの改定</h3>
+        <p class="section-text">
+          法令の改正やアプリの機能更新（Ver 2.0.0 以降の新機能導入等）に伴い、本ポリシーを改定することがあります。重要な改定を行う場合は、本ウェブサイト上またはアプリ内でお知らせいたします。
+        </p>
+      </section>
+
+      <section class="section-block">
+        <h3 class="section-title">8. お問い合わせ窓口</h3>
         <p class="section-text">
           本ポリシーまたは本アプリに関するご質問、ご意見、不具合のご報告は、下記までお気軽にお問い合わせください。
         </p>
