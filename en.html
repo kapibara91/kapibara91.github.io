@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapibara91 (カピバラ９１) | Full-Stack &amp; Mobile App Architect</title>
+  <meta name="description" content="Official portfolio and support portal of Kapibara91, a Japan-based Full-Stack &amp; Mobile App Architect specializing in upstream system design, Java/Python/Go backend APIs, cloud security, and native iOS/Android development.">
+  
+  <!-- Google Fonts: Inter & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --text-main: #1A202C;
+      --text-body: #4A5568;
+      --text-muted: #718096;
+      --border-color: #E2E8F0;
+      --badge-bg: #EDF2F7;
+      --badge-text: #4A5568;
+      --primary-btn: #1A202C;
+      --primary-btn-hover: #000000;
+      --dev-badge-bg: #FEF3C7;
+      --dev-badge-text: #92400E;
+      --dev-badge-border: #FDE68A;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      padding: 48px 20px 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Language Switcher */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: var(--shadow-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .lang-link {
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .lang-link:hover {
+      color: var(--text-main);
+    }
+
+    .lang-link.active {
+      background: var(--primary-btn);
+      color: #FFFFFF;
+    }
+
+    /* Profile Header */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F3E8DF 0%, #E2D3C4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      box-shadow: var(--shadow-sm);
+      border: 3px solid #fff;
+    }
+
+    .developer-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .developer-role {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .developer-bio {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      max-width: 580px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .header-cta-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta:hover {
+      border-color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .status-dot-green {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #38A169;
+      display: inline-block;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    /* App List & Cards */
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .app-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .app-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .app-subtitle {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* Badges */
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+    }
+
+    .app-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    /* Action Links & Buttons */
+    .app-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 9px 15px;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: #FFFFFF;
+      background-color: var(--primary-btn);
+    }
+
+    .store-btn:hover {
+      background-color: var(--primary-btn-hover);
+      transform: scale(1.02);
+    }
+
+    .store-btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .store-btn svg:not(.colored-icon) {
+      fill: currentColor;
+    }
+
+    .doc-link {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: auto;
+      transition: color 0.2s;
+    }
+
+    .doc-link:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    /* Expertise & Services Section */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+    }
+
+    .skill-tag-security {
+      background: #ECFDF5;
+      color: #065F46;
+      border-color: #A7F3D0;
+    }
+
+    /* Contact / Inquiry Box */
+    .contact-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .contact-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      max-width: 540px;
+      margin: 0 auto 20px;
+      line-height: 1.75;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      background-color: var(--primary-btn);
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--primary-btn-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Policy Section */
+    .policy-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .policy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .policy-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .check-icon {
+      color: #38A169;
+      font-weight: bold;
+      flex-shrink: 0;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 32px 16px 60px;
+      }
+      .app-card {
+        padding: 20px 16px;
+      }
+      .app-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .store-btn {
+        justify-content: center;
+      }
+      .doc-link {
+        margin-left: 0;
+        text-align: center;
+        padding-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Language Switcher -->
+    <nav class="lang-bar" aria-label="Language switcher">
+      <div class="lang-switch">
+        <a href="./index.html" class="lang-link" onclick="try{sessionStorage.setItem('kapibara_lang_manual','ja')}catch(e){}">日本語</a>
+        <a href="./en.html" class="lang-link active" aria-current="page" onclick="try{sessionStorage.setItem('kapibara_lang_manual','en')}catch(e){}">English</a>
+        <a href="./cn.html" class="lang-link" onclick="try{sessionStorage.setItem('kapibara_lang_manual','zh')}catch(e){}">中文</a>
+      </div>
+    </nav>
+
+    <!-- Profile -->
+    <header class="profile-section">
+      <div class="avatar" aria-label="Capybara">🦫</div>
+      <h1 class="developer-name">Kapibara91 (カピバラ９１)</h1>
+      <p class="developer-role">Full-Stack &amp; Mobile App Architect (System Design · Backend APIs · Native iOS/Android)</p>
+      <p class="developer-bio">
+        Japan-based IT Architect &amp; Product Engineer. Alongside crafting mindful consumer apps for everyday life in Japan, I deliver end-to-end engineering solutions—from upstream requirements definition and system architecture to robust Java / Python / Go backend APIs, hardened cloud infrastructure, and native iOS / Android applications.
+      </p>
+      <div class="header-cta-wrap">
+        <a href="#services" class="header-cta">
+          <span class="status-dot-green"></span>
+          Available for Development &amp; Technical Consulting (Architecture / API / Mobile / Security) &darr;
+        </a>
+      </div>
+    </header>
+
+    <!-- Apps Showcase -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Published Applications</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="app-list">
+        
+        <!-- App 1: Tsuzuri -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_tsuzuri.png" alt="Tsuzuri Icon" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Tsuzuri (つづり)</h3>
+              </div>
+              <p class="app-subtitle">Japanese Aesthetic Journal &amp; Personal ZINE Maker</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">One Entry a Day</span>
+            <span class="badge">Vertical Typography</span>
+            <span class="badge">Traditional Japanese Colors</span>
+            <span class="badge">100% Local Storage</span>
+            <span class="badge">Free</span>
+          </div>
+          <p class="app-desc">
+            A serene journaling app inspired by traditional Japanese colors and typography. Features a mindful one-entry-per-day commitment, authentic Japanese vertical text layout switching, automated monthly booklet (ZINE) compilation, and traditional Hanko stamp seals.
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/jp/app/id6814824082" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.tsuzuri.app&hl=ja" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="colored-icon">
+                <path style="fill:#00C3FF;" d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387z"/>
+                <path style="fill:#FFE000;" d="M15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41z"/>
+                <path style="fill:#00F076;" d="M15.207 10.586L5.817 1.176l11.96 6.84-2.57 2.57z"/>
+                <path style="fill:#FF3A44;" d="M16.621 12l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/>
+              </svg>
+              Google Play
+            </a>
+            <a href="./tsuzuriPrivacyPolicy.html" class="doc-link">Privacy Policy &rarr;</a>
+          </div>
+        </article>
+
+        <!-- App 2: ゴミマン -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_gomiman.png" alt="Gomiman Icon" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Gomiman (ゴミマン)</h3>
+              </div>
+              <p class="app-subtitle">Japan Waste Sorting Guide &amp; Collection Schedule (Family Cloud Sync · Widgets)</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">Real-Time Family Sync</span>
+            <span class="badge">523-Item Sorting Encyclopedia</span>
+            <span class="badge">Home Screen Widgets</span>
+            <span class="badge">Smart Reminders</span>
+          </div>
+          <p class="app-desc">
+            Eliminates the daily question of "Which trash day is it today?" across Japanese municipalities. Features real-time family cloud synchronization, a searchable 523-item waste sorting encyclopedia, home screen widgets, customizable municipal rules, and calendar integration.
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/jp/app/%E3%82%B4%E3%83%9F%E3%83%9E%E3%83%B3/id1640397269" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=co.jp.kpbr.gomiman&hl=ja" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="colored-icon">
+                <path style="fill:#00C3FF;" d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387z"/>
+                <path style="fill:#FFE000;" d="M15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41z"/>
+                <path style="fill:#00F076;" d="M15.207 10.586L5.817 1.176l11.96 6.84-2.57 2.57z"/>
+                <path style="fill:#FF3A44;" d="M16.621 12l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/>
+              </svg>
+              Google Play
+            </a>
+            <a href="./privacies/gomiman.html" class="doc-link">Privacy Policy &rarr;</a>
+            <a href="./terms/gomiman.html" class="doc-link">Terms of Use &rarr;</a>
+          </div>
+        </article>
+
+        <!-- App 3: チン！する時間 -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_microwavetimer.png" alt="Microwave Timer Icon" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Chin! Suru Jikan (チン！する時間)</h3>
+              </div>
+              <p class="app-subtitle">Smart Microwave Wattage Converter &amp; Timer</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">Time-Saving Utility</span>
+            <span class="badge">Quick Reference Table</span>
+          </div>
+          <p class="app-desc">
+            Built for everyday cooking in Japan when food packaging lists heating times for 500W, while your home microwave runs at 600W or 700W. Instantly calculates the exact heating time across wattages and starts the countdown timer in a single tap.
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%B3-%E3%81%99%E3%82%8B%E6%99%82%E9%96%93/id6745373633" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.kpbr.microwavetimer&hl=ja" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="colored-icon">
+                <path style="fill:#00C3FF;" d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387z"/>
+                <path style="fill:#FFE000;" d="M15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41z"/>
+                <path style="fill:#00F076;" d="M15.207 10.586L5.817 1.176l11.96 6.84-2.57 2.57z"/>
+                <path style="fill:#FF3A44;" d="M16.621 12l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/>
+              </svg>
+              Google Play
+            </a>
+            <a href="./privacypolicy-microwavetimer.html" class="doc-link">Privacy Policy &rarr;</a>
+          </div>
+        </article>
+
+        <!-- App 4: Totono -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_totono.png" alt="Totono Icon" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Totono (整物語 / ととの)</h3>
+              </div>
+              <p class="app-subtitle">Daily Routines · Household Chore Cycles · Baby Growth Tracker</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">Habit Tracking</span>
+            <span class="badge">Chore Cycle Manager</span>
+            <span class="badge">Baby Care Log</span>
+            <span class="badge">100% Local Storage</span>
+            <span class="badge">Free</span>
+          </div>
+          <p class="app-desc">
+            An all-in-one daily life organizer designed to bring calm order to busy households. Combines habit check-ins, recurring household chore cycle management with tactile swipe interactions, and baby feeding/health logs. All data stays strictly on-device via SQLite Room.
+          </p>
+          <div class="app-links">
+            <a href="https://apps.apple.com/jp/app/id6816599649" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.94-2.91-.91.04-2.02.61-2.67 1.38-.58.67-1.09 1.76-.95 2.81 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.kpbr.totono&hl=ja" class="store-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="colored-icon">
+                <path style="fill:#00C3FF;" d="M3.609 1.814L13.792 12 3.61 22.186a1.59 1.59 0 0 1-.22-.387L3 21.05V2.95l.39-.749c.063-.14.137-.27.219-.387z"/>
+                <path style="fill:#FFE000;" d="M15.207 13.414l2.57 2.57-11.96 6.84 9.39-9.41z"/>
+                <path style="fill:#00F076;" d="M15.207 10.586L5.817 1.176l11.96 6.84-2.57 2.57z"/>
+                <path style="fill:#FF3A44;" d="M16.621 12l3.77-2.155a1.285 1.285 0 0 1 0 2.227l-3.77 2.155v-2.227z"/>
+              </svg>
+              Google Play
+            </a>
+            <a href="./privacypolicy-totono.html" class="doc-link">Privacy Policy &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Technical Expertise & B2B Services -->
+    <section id="services">
+      <div class="section-header">
+        <h2 class="section-title">Services &amp; Technical Expertise</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <h3 class="service-title">📐 Upstream Architecture: Resilient Systems × Intuitive UX</h3>
+          <p class="service-desc">
+            True engineering value lies not in being tied to a single language or framework, but in <strong>architecting resilient, fault-tolerant backend systems</strong> and <strong>crafting intuitive, user-friendly applications</strong>. By combining extensive Japanese upstream design experience (requirements definition &amp; system architecture) with AI-augmented development workflows, I deliver production-grade systems in a fraction of traditional agency timelines.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Requirements &amp; Upstream Design</span>
+            <span class="skill-tag">Resilient System Architecture</span>
+            <span class="skill-tag">User-Centric UI/UX</span>
+            <span class="skill-tag">AI-Accelerated Delivery</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-title">⚙️ Backend APIs &amp; High-Quality Native Mobile Engineering</h3>
+          <p class="service-desc">
+            Specializing in enterprise-grade backend API development with <strong>Java (Spring Boot)</strong>, <strong>Python</strong>, and <strong>Go (Golang)</strong>, paired with high-craft <strong>native iOS / Android development</strong> for superior performance, OS-level integration, and UX polish. When budget efficiency or Web/Desktop multi-platform reach is prioritized, I also flexibly architect solutions using <strong>Flutter</strong>, <strong>FastAPI</strong>, and modern cloud-native stacks.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Native iOS / Android</span>
+            <span class="skill-tag">Java (Spring Boot)</span>
+            <span class="skill-tag">Python (FastAPI)</span>
+            <span class="skill-tag">Go (Golang)</span>
+            <span class="skill-tag">Flutter (Cost-Effective / Web &amp; Desktop)</span>
+            <span class="skill-tag">RESTful APIs &amp; DB Design</span>
+            <span class="skill-tag">App Store &amp; Play Store Release</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-title">🛡️ Cloud Security &amp; Data Breach Prevention</h3>
+          <p class="service-desc">
+            In response to the rising wave of server breaches and data leaks across Japan, I enforce strict <em>Security by Design</em> principles from day one. Leveraging proven cloud platforms including <strong>Google Cloud (GCP) / Firebase</strong> and <strong>AWS</strong>, I implement least-privilege IAM policies, end-to-end encryption in transit and at rest, and hardened API authentication to safeguard corporate reputation and user data.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-security">Data Breach &amp; Intrusion Prevention</span>
+            <span class="skill-tag skill-tag-security">Google Cloud (GCP) / Firebase</span>
+            <span class="skill-tag skill-tag-security">AWS Architecture</span>
+            <span class="skill-tag skill-tag-security">Secure API Auth &amp; Encryption</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Development Policy / Privacy commitment -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Security &amp; Engineering Principles</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="policy-box">
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Hardened Cloud &amp; API Security:</strong> Backend systems are built on major cloud best practices with rigorous vulnerability mitigation, strict access control, and encrypted communications.</span>
+        </div>
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Privacy by Design:</strong> No unnecessary personal data or behavioral tracking is ever collected. Sensitive user data is stored strictly on-device or within isolated, encrypted cloud environments.</span>
+        </div>
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Trilingual Communication (JP / EN / ZH):</strong> Seamless business and technical communication for Japanese enterprises, international teams, and cross-border founders in Japan.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Inquiry / Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Work With Me (Contact)</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-title">Looking for a Reliable Full-Stack &amp; Mobile Engineering Partner?</h3>
+        <p class="contact-desc">
+          From initial product planning and MVP prototyping to Java / Python / Go backend APIs, native iOS / Android apps, and cloud security hardening—I provide end-to-end technical execution.<br>
+          Feel free to reach out whether you have an early-stage concept or need an experienced architect to build both your backend and mobile app seamlessly.
+        </p>
+        <a href="mailto:kapibara.developer@gmail.com?subject=%5BProject%20%26%20Development%20Inquiry%5D" class="contact-btn">
+          ✉️ Contact for Projects &amp; Consulting (kapibara.developer@gmail.com)
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="mailto:kapibara.developer@gmail.com">Support &amp; Inquiry</a>
+        <a href="https://github.com/kapibara91" target="_blank" rel="noopener">GitHub</a>
+        <a href="./index.html" onclick="try{sessionStorage.setItem('kapibara_lang_manual','ja')}catch(e){}">日本語</a>
+        <a href="./cn.html" onclick="try{sessionStorage.setItem('kapibara_lang_manual','zh')}catch(e){}">中文</a>
+      </div>
+      <p>&copy; 2026 Kapibara91 (カピバラ９１). All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
