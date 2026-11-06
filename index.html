@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カピバラ９１ (Kapibara91) | 個人開発アプリ</title>
-  <meta name="description" content="個人アプリ開発者 カピバラ９１の公式ポートフォリオ・サポートページです。ゴミマン、チン！する時間、Tsuzuriなど、日々の暮らしに寄り添うアプリを開発しています。">
+  <title>カピバラ９１ (Kapibara91) | フルスタック・アプリ開発 &amp; ポートフォリオ</title>
+  <meta name="description" content="上流設計・Java/PythonバックエンドAPI・高セキュリティなクラウド構築から、iOS/Androidアプリ開発まで一気通貫で対応するエンジニア カピバラ９１の公式ポートフォリオ・サポートページです。">
   
   <!-- Google Fonts: Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,9 +87,46 @@
     .developer-bio {
       font-size: 0.95rem;
       color: var(--text-body);
-      max-width: 500px;
-      margin: 0 auto;
+      max-width: 560px;
+      margin: 0 auto 18px;
       text-align: center;
+    }
+
+    .header-cta-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .header-cta:hover {
+      border-color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .status-dot-green {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #38A169;
+      display: inline-block;
     }
 
     /* Section Header */
@@ -323,6 +360,106 @@
       text-decoration: underline;
     }
 
+    /* Expertise & Services Section */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+    }
+
+    .skill-tag-security {
+      background: #ECFDF5;
+      color: #065F46;
+      border-color: #A7F3D0;
+    }
+
+    /* Contact / Inquiry Box */
+    .contact-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .contact-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      max-width: 520px;
+      margin: 0 auto 20px;
+      line-height: 1.75;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      background-color: var(--primary-btn);
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--primary-btn-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
     /* Policy Section */
     .policy-box {
       background: #FFFFFF;
@@ -410,10 +547,16 @@
     <header class="profile-section">
       <div class="avatar" aria-label="カピバラ">🦫</div>
       <h1 class="developer-name">カピバラ９１</h1>
-      <p class="developer-role">Mobile App Developer (個人開発)</p>
+      <p class="developer-role">Full-Stack &amp; Mobile App Architect (上流設計・バックエンドAPI・iOS/Android)</p>
       <p class="developer-bio">
-        「毎日の暮らしを少しだけ便利に、心を穏やかに整える」をテーマに、シンプルで心地よいスマートフォンアプリを企画・開発しています。
+        「毎日の暮らしを少しだけ便利に、心を穏やかに整える」自社アプリの企画・開発に加え、上流工程（要件定義・基本設計）からJava / Pythonによる堅牢なバックエンドAPI構築、セキュアなクラウド設計、モバイルアプリ開発まで一気通貫で手がけています。
       </p>
+      <div class="header-cta-wrap">
+        <a href="#services" class="header-cta">
+          <span class="status-dot-green"></span>
+          開発・技術支援のご相談受付中（上流設計 / API / アプリ / セキュリティ） &darr;
+        </a>
+      </div>
     </header>
 
     <!-- Apps Showcase -->
@@ -589,21 +732,94 @@
       </div>
     </section>
 
+    <!-- Technical Expertise & B2B Services -->
+    <section id="services">
+      <div class="section-header">
+        <h2 class="section-title">提供サービス・技術領域 (Services &amp; Expertise)</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <h3 class="service-title">📐 上流工程・要件定義 × AI駆動の高速開発</h3>
+          <p class="service-desc">
+            豊富な上流設計（要件定義・基本設計・UI/UX設計）の知見をベースに、抽象的なビジネスアイデアを確実な仕様へと落とし込みます。さらにAI駆動開発を取り入れることで、高品質な設計を維持したまま、従来の開発会社の数分の一の期間でMVP（実用最小限の製品）や本番システムを迅速に構築します。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">要件定義・基本設計</span>
+            <span class="skill-tag">アーキテクチャ設計</span>
+            <span class="skill-tag">UI/UX設計</span>
+            <span class="skill-tag">AI駆動高速プロトタイピング</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-title">⚙️ バックエンドAPI（Java / Python）＆ モバイルアプリ一気通貫開発</h3>
+          <p class="service-desc">
+            スマートフォンアプリの表面的なUIだけでなく、システムの心臓部であるバックエンドAPI設計・開発を本業として深く手がけています。JavaおよびPythonを用いた拡張性の高いサーバーサイド構築、データベース設計から、iOS / Android両対応アプリの実装・ストア審査公開まで、1人で一気通貫の対応が可能です。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">RESTful API / バックエンド構築</span>
+            <span class="skill-tag">RDBMS / SQLite設計</span>
+            <span class="skill-tag">iOS / Android両対応</span>
+            <span class="skill-tag">ストア申請・公開</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-title">🛡️ クラウドセキュリティ設計・情報漏洩対策</h3>
+          <p class="service-desc">
+            近年日本国内で相次ぐサーバーへの不正アクセスや情報漏洩リスクに対し、設計段階からセキュリティを組み込む「Security by Design」を徹底しています。実績ある大手クラウド基盤（AWS / GCP / Firebase等）を活用し、最小権限の原則（IAM管理）、通信・保存データの暗号化、安全なAPI認証・認可基盤を構築することで、企業の信用とユーザーの大切なデータを守ります。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-security">情報漏洩・不正アクセス対策</span>
+            <span class="skill-tag skill-tag-security">クラウドセキュリティ設計</span>
+            <span class="skill-tag skill-tag-security">セキュアAPI認証・暗号化</span>
+            <span class="skill-tag skill-tag-security">AWS / GCP / Firebase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Development Policy / Privacy commitment -->
     <section>
       <div class="section-header">
-        <h2 class="section-title">開発方針と安心への取り組み</h2>
+        <h2 class="section-title">セキュリティ・開発方針と安心への取り組み</h2>
         <div class="section-line"></div>
       </div>
       <div class="policy-box">
         <div class="policy-item">
           <span class="check-icon">✓</span>
-          <span><strong>プライバシーの最優先：</strong>不要な個人情報や行動履歴の取得は行いません。日誌などの私的なデータはお使いの端末内（ローカル）に大切に保管されます。</span>
+          <span><strong>堅牢なクラウド・APIセキュリティ：</strong>サーバーサイド開発では大手クラウドのベストプラクティスに準拠し、脆弱性対策・アクセス制御・通信暗号化を徹底した安全なシステム基盤を提供します。</span>
         </div>
         <div class="policy-item">
           <span class="check-icon">✓</span>
-          <span><strong>過度な通知・広告の排除：</strong>利用者の日常を邪魔しない、シンプルで清潔な設計を心がけています。</span>
+          <span><strong>プライバシーの最優先（Privacy by Design）：</strong>不要な個人情報や行動履歴の取得は行いません。日誌などの私的なデータはお使いの端末内（ローカル）または厳格に保護されたクラウド環境にのみ大切に保管されます。</span>
         </div>
+        <div class="policy-item">
+          <span class="check-icon">✓</span>
+          <span><strong>過度な通知・広告の排除：</strong>利用者の日常や業務を邪魔しない、シンプルで清潔・高信頼な設計を心がけています。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Inquiry / Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title">お仕事のご依頼・開発のご相談 (Contact)</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-title">システム・アプリ開発パートナーをお探しの方へ</h3>
+        <p class="contact-desc">
+          新規アプリの企画・MVP開発、Java / PythonによるバックエンドAPI構築、既存システムのセキュリティ強化やクラウド移行など、上流工程から実装まで柔軟に対応いたします。<br>
+          「まだアイデア段階だけど相談したい」「セキュアなサーバー基盤とアプリをまとめて依頼したい」といったご相談も歓迎しております。
+        </p>
+        <a href="mailto:kapibara.developer@gmail.com?subject=%E3%80%90%E9%96%8B%E7%99%BA%E3%83%BB%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%E3%80%91" class="contact-btn">
+          ✉️ お仕事・開発のご相談はこちら (kapibara.developer@gmail.com)
+        </a>
       </div>
     </section>
 
