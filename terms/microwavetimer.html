@@ -47,6 +47,9 @@
     }
 
     .back-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 24px;
     }
 
@@ -63,6 +66,14 @@
 
     .back-nav a:hover {
       color: var(--primary);
+    }
+
+    .back-nav .nav-privacy-link {
+      color: var(--primary);
+    }
+
+    .back-nav .nav-privacy-link:hover {
+      text-decoration: underline;
     }
 
     header {
@@ -173,9 +184,10 @@
 </head>
 <body>
   <div class="container">
-    <div class="back-nav">
-      <a href="https://kapibara91.github.io/">← トップページに戻る</a>
-    </div>
+    <nav class="back-nav">
+      <a href="../" class="back-link">&larr; カピバラ９１ ホーム へ戻る</a>
+      <a href="../privacypolicy-microwavetimer.html" class="nav-privacy-link">プライバシーポリシー &rarr;</a>
+    </nav>
 
     <header>
       <span class="header-badge">TERMS OF SERVICE</span>

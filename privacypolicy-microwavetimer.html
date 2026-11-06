@@ -48,6 +48,9 @@
 
     /* Back to Home */
     .back-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 24px;
     }
 
@@ -63,6 +66,17 @@
 
     .back-link:hover {
       color: var(--primary);
+    }
+
+    .nav-terms-link {
+      font-size: 0.85rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-terms-link:hover {
+      text-decoration: underline;
     }
 
     /* Header */
@@ -253,7 +267,8 @@
 
   <div class="container">
     <nav class="back-nav">
-      <a href="./about.html" class="back-link">&larr; カピバラ９１ (About) へ戻る</a>
+      <a href="./" class="back-link">&larr; カピバラ９１ ホーム へ戻る</a>
+      <a href="./terms/microwavetimer.html" class="nav-terms-link">利用規約 &rarr;</a>
     </nav>
 
     <header>
@@ -360,7 +375,7 @@
     </main>
 
     <footer>
-      <p><a href="./about.html">カピバラ９１ ホーム</a> ｜ &copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
+      <p><a href="./">カピバラ９１ ホーム</a> ｜ &copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
     </footer>
   </div>
 
