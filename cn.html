@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カピバラ９１ (Kapibara91) | フルスタック・アプリ開発 &amp; ポートフォリオ</title>
-  <meta name="description" content="上流設計・Java/Python/GoバックエンドAPI・高セキュリティなクラウド構築から、iOS/Androidネイティブアプリ開発まで一気通貫で対応するエンジニア カピバラ９１の公式ポートフォリオ・サポートページです。">
+  <title>カピバラ９１ (Kapibara91) | 在日全栈架构师 &amp; 独立应用开发作品集</title>
+  <meta name="description" content="旅日资深全栈与移动端架构师 Kapibara91 官方作品集与技术服务门户。提供从需求定义、上流设计、Java/Python/Go 后端 API、高安全性云架构到 iOS/Android 原生应用开发与上架的一站式交付。">
   
-  <!-- Google Fonts: Noto Sans JP -->
+  <!-- Google Fonts: Noto Sans SC & Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -37,7 +37,7 @@
     }
 
     body {
-      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Noto Sans SC', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.75;
@@ -48,6 +48,42 @@
     .container {
       max-width: 680px;
       margin: 0 auto;
+    }
+
+    /* Language Switcher */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: var(--shadow-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .lang-link {
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .lang-link:hover {
+      color: var(--text-main);
+    }
+
+    .lang-link.active {
+      background: var(--primary-btn);
+      color: #FFFFFF;
     }
 
     /* Profile Header */
@@ -279,74 +315,6 @@
       fill: currentColor;
     }
 
-    .store-btn-dev {
-      background-color: var(--primary-btn);
-      cursor: default;
-      user-select: none;
-    }
-
-    .store-btn-dev:hover {
-      transform: none;
-      background-color: var(--primary-btn);
-    }
-
-    .btn-tag-dev {
-      font-size: 0.68rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 5px;
-      background: #FEF3C7;
-      color: #92400E;
-      margin-left: 2px;
-      line-height: 1.2;
-    }
-
-    /* Development Status Badge */
-    .dev-status-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-      background: #FFFBEB;
-      color: #92400E;
-      border: 1px solid #FCD34D;
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: #D97706;
-      display: inline-block;
-      position: relative;
-    }
-
-    .pulse-dot::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      border-radius: 50%;
-      background-color: #D97706;
-      animation: pulse 2s infinite ease-out;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(2.4);
-        opacity: 0;
-      }
-    }
-
     .doc-link {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -529,7 +497,7 @@
         flex-direction: column;
         align-items: stretch;
       }
-      .store-btn, .dev-status-tag {
+      .store-btn {
         justify-content: center;
       }
       .doc-link {
@@ -543,18 +511,26 @@
 <body>
 
   <div class="container">
+    <!-- Language Switcher -->
+    <nav class="lang-bar" aria-label="语言切换">
+      <div class="lang-switch">
+        <a href="./index.html" class="lang-link">日本語</a>
+        <a href="./cn.html" class="lang-link active" aria-current="page">中文</a>
+      </div>
+    </nav>
+
     <!-- Profile -->
     <header class="profile-section">
       <div class="avatar" aria-label="カピバラ">🦫</div>
-      <h1 class="developer-name">カピバラ９１</h1>
-      <p class="developer-role">Full-Stack &amp; Mobile App Architect (上流設計・バックエンドAPI・iOS/Android)</p>
+      <h1 class="developer-name">カピバラ９１ (Kapibara91)</h1>
+      <p class="developer-role">Full-Stack &amp; Mobile App Architect (上流设计 · 后端 API · iOS/Android 原生开发)</p>
       <p class="developer-bio">
-        「毎日の暮らしを少しだけ便利に、心を穏やかに整える」自社アプリの企画・開発に加え、上流工程（要件定義・基本設計）からJava / Python / Goによる堅牢なバックエンドAPI構築、セキュアなクラウド設計、モバイルアプリ開発まで一気通貫で手がけています。
+        常驻日本的资深 IT 工程师。除独立企划研发贴近日本日常生活的高品质自有 App 外，更提供从需求定义、上流架构设计，到 Java / Python / Go 后端 API 构建、高安全性云底座搭建，以及 iOS / Android 原生应用开发与日本双商店上架的一站式交付。
       </p>
       <div class="header-cta-wrap">
         <a href="#services" class="header-cta">
           <span class="status-dot-green"></span>
-          開発・技術支援のご相談受付中（上流設計 / API / アプリ / セキュリティ） &darr;
+          承接在日项目开发与技术顾问咨询（上流设计 / API / App / 云安全） &darr;
         </a>
       </div>
     </header>
@@ -562,7 +538,7 @@
     <!-- Apps Showcase -->
     <section>
       <div class="section-header">
-        <h2 class="section-title">制作アプリ (Applications)</h2>
+        <h2 class="section-title">已上架自研应用 (Applications)</h2>
         <div class="section-line"></div>
       </div>
 
@@ -571,25 +547,25 @@
         <!-- App 1: Tsuzuri -->
         <article class="app-card">
           <div class="app-header">
-            <img src="./images/icon_tsuzuri.png" alt="Tsuzuri アイコン" class="app-icon" width="60" height="60">
+            <img src="./images/icon_tsuzuri.png" alt="Tsuzuri 图标" class="app-icon" width="60" height="60">
             <div class="app-meta">
               <div class="app-title-row">
                 <h3 class="app-title">Tsuzuri (つづり)</h3>
               </div>
-              <p class="app-subtitle">和の日記・私家本（ZINE）アプリ</p>
+              <p class="app-subtitle">和风日记 · 私家小册子（ZINE）自动编纂应用</p>
             </div>
           </div>
           <div class="app-badges">
             <span class="badge">iOS</span>
             <span class="badge">Android</span>
             <span class="badge">一日一篇</span>
-            <span class="badge">縦書き組版</span>
-            <span class="badge">和の伝統色</span>
-            <span class="badge">完全ローカル保存</span>
-            <span class="badge">無料</span>
+            <span class="badge">日语竖排排版</span>
+            <span class="badge">日本传统色</span>
+            <span class="badge">纯本地存储</span>
+            <span class="badge">免费</span>
           </div>
           <p class="app-desc">
-            和の伝統色と静謐な佇まいの中で、日々の言葉を丁寧に綴じる日記アプリ。1日1篇の約束、美しい縦書き組版の切り替え、月別の小冊子（ZINE）自動編纂、落款印スタンプなどを備えています。
+            融合日本传统色彩美学与静谧体验的日记应用。支持“每日一篇”记录、优美的日语竖排/横排切换、按月自动编纂成册（ZINE）以及传统落款印章等功能，深度契合日本本土审美与排版习惯。
           </p>
           <div class="app-links">
             <a href="https://apps.apple.com/jp/app/id6814824082" class="store-btn" target="_blank" rel="noopener">
@@ -605,31 +581,31 @@
               </svg>
               Google Play
             </a>
-            <a href="./tsuzuriPrivacyPolicy.html" class="doc-link">プライバシーポリシー &rarr;</a>
+            <a href="./tsuzuriPrivacyPolicy.html" class="doc-link">隐私政策 &rarr;</a>
           </div>
         </article>
 
         <!-- App 2: ゴミマン -->
         <article class="app-card">
           <div class="app-header">
-            <img src="./images/icon_gomiman.png" alt="ゴミマン アイコン" class="app-icon" width="60" height="60">
+            <img src="./images/icon_gomiman.png" alt="ゴミマン 图标" class="app-icon" width="60" height="60">
             <div class="app-meta">
               <div class="app-title-row">
-                <h3 class="app-title">ゴミマン</h3>
+                <h3 class="app-title">ゴミマン (Gomiman)</h3>
               </div>
-              <p class="app-subtitle">ごみ分別アプリ＆収集日通知（家族同期・ウィジェット）</p>
+              <p class="app-subtitle">日本垃圾分类查询 &amp; 收集日提醒（家庭云同步 · 桌面小组件）</p>
             </div>
           </div>
           <div class="app-badges">
             <span class="badge">iOS</span>
             <span class="badge">Android</span>
-            <span class="badge">家族クラウド同期</span>
-            <span class="badge">523品目分別事典</span>
-            <span class="badge">ウィジェット</span>
-            <span class="badge">リマインダー通知</span>
+            <span class="badge">家庭云端实时同步</span>
+            <span class="badge">523项分类辞典</span>
+            <span class="badge">桌面小组件</span>
+            <span class="badge">定时通知提醒</span>
           </div>
           <p class="app-desc">
-            「今日なんのゴミの日だっけ？」をゼロにする生活サポートアプリ。家族クラウド自動同期で誰かが出したら全員へリアルタイム反映。523品目の分別事典、ホーム画面ウィジェット、自治体独自ルールの追加やカレンダー連携にも対応しています。
+            彻底解决在日生活“今天扔什么垃圾？”痛点的家庭助手。支持家庭成员云端实时同步（一人打卡全员同步更新），内置 523 项日本垃圾分类辞典、手机桌面 Widget 小组件、各自治体规则自定义与日历联动。
           </p>
           <div class="app-links">
             <a href="https://apps.apple.com/jp/app/%E3%82%B4%E3%83%9F%E3%83%9E%E3%83%B3/id1640397269" class="store-btn" target="_blank" rel="noopener">
@@ -645,30 +621,30 @@
               </svg>
               Google Play
             </a>
-            <a href="./privacies/gomiman.html" class="doc-link">プライバシーポリシー &rarr;</a>
-            <a href="./terms/gomiman.html" class="doc-link">利用規約 &rarr;</a>
+            <a href="./privacies/gomiman.html" class="doc-link">隐私政策 &rarr;</a>
+            <a href="./terms/gomiman.html" class="doc-link">使用条款 &rarr;</a>
           </div>
         </article>
 
         <!-- App 3: チン！する時間 -->
         <article class="app-card">
           <div class="app-header">
-            <img src="./images/icon_microwavetimer.png" alt="チン！する時間 アイコン" class="app-icon" width="60" height="60">
+            <img src="./images/icon_microwavetimer.png" alt="チン！する時間 图标" class="app-icon" width="60" height="60">
             <div class="app-meta">
               <div class="app-title-row">
                 <h3 class="app-title">チン！する時間</h3>
               </div>
-              <p class="app-subtitle">電子レンジ温め時間計算機＆タイマー</p>
+              <p class="app-subtitle">日本便当/冷冻食品微波炉功率换算与计时器</p>
             </div>
           </div>
           <div class="app-badges">
             <span class="badge">iOS</span>
             <span class="badge">Android</span>
-            <span class="badge">時短ツール</span>
-            <span class="badge">早見表つき</span>
+            <span class="badge">效率工具</span>
+            <span class="badge">速查表联动</span>
           </div>
           <p class="app-desc">
-            食品パッケージに「500Wで2分30秒」と書いてあるのに、ご自宅の電子レンジが600Wや700Wで迷ったときに。ワット数に応じた加熱時間を一瞬で自動換算し、そのままタイマーを開始できます。
+            针对日本超市便当包装上标注“500W 2分30秒”，而家中微波炉是 600W 或 700W 时的换算痛点。一键根据瓦数自动精准换算加热时间，并可直接启动倒计时提醒。
           </p>
           <div class="app-links">
             <a href="https://apps.apple.com/jp/app/%E3%83%81%E3%83%B3-%E3%81%99%E3%82%8B%E6%99%82%E9%96%93/id6745373633" class="store-btn" target="_blank" rel="noopener">
@@ -684,32 +660,32 @@
               </svg>
               Google Play
             </a>
-            <a href="./privacypolicy-microwavetimer.html" class="doc-link">プライバシーポリシー &rarr;</a>
+            <a href="./privacypolicy-microwavetimer.html" class="doc-link">隐私政策 &rarr;</a>
           </div>
         </article>
 
         <!-- App 4: Totono -->
         <article class="app-card">
           <div class="app-header">
-            <img src="./images/icon_totono.png" alt="Totono アイコン" class="app-icon" width="60" height="60">
+            <img src="./images/icon_totono.png" alt="Totono 图标" class="app-icon" width="60" height="60">
             <div class="app-meta">
               <div class="app-title-row">
                 <h3 class="app-title">Totono (整物語 / ととの)</h3>
               </div>
-              <p class="app-subtitle">生活リズム・お掃除秩序・赤ちゃん成長メモ</p>
+              <p class="app-subtitle">生活节律 · 家务周期管理 · 宝宝成长随手记</p>
             </div>
           </div>
           <div class="app-badges">
             <span class="badge">iOS</span>
             <span class="badge">Android</span>
-            <span class="badge">習慣打刻</span>
-            <span class="badge">家事サイクル管理</span>
-            <span class="badge">育児メモ</span>
-            <span class="badge">完全ローカル保存</span>
-            <span class="badge">無料</span>
+            <span class="badge">习惯打卡</span>
+            <span class="badge">家务周期管理</span>
+            <span class="badge">育儿记录</span>
+            <span class="badge">纯本地存储</span>
+            <span class="badge">免费</span>
           </div>
           <p class="app-desc">
-            暮らしのリズムを心地よく整えるオールインワン・デイリートラッカー。日々の習慣打刻、期限が迫る家事のお掃除サイクル管理（爽快な一刀両断スライスタスク）、赤ちゃんの授乳・排便・健康随手記をこれひとつで。データは外部サーバーを介さず端末内（SQLite Room）に大切に保管されます。
+            帮家庭理顺生活节奏的多合一日常记录工具。涵盖日常习惯打卡、到期家务清洁周期管理（解压的滑动切分交互）、宝宝喂奶/排便/健康随手记。数据无需经过外部服务器，安全保存在手机本地（SQLite Room）。
           </p>
           <div class="app-links">
             <a href="https://apps.apple.com/jp/app/id6816599649" class="store-btn" target="_blank" rel="noopener">
@@ -725,7 +701,7 @@
               </svg>
               Google Play
             </a>
-            <a href="./privacypolicy-totono.html" class="doc-link">プライバシーポリシー &rarr;</a>
+            <a href="./privacypolicy-totono.html" class="doc-link">隐私政策 &rarr;</a>
           </div>
         </article>
 
@@ -735,50 +711,50 @@
     <!-- Technical Expertise & B2B Services -->
     <section id="services">
       <div class="section-header">
-        <h2 class="section-title">提供サービス・技術領域 (Services &amp; Expertise)</h2>
+        <h2 class="section-title">技术服务与核心优势 (Services &amp; Expertise)</h2>
         <div class="section-line"></div>
       </div>
 
       <div class="service-grid">
         <div class="service-card">
-          <h3 class="service-title">📐 「堅牢なシステム × 心地よいUI」を形にする上流設計</h3>
+          <h3 class="service-title">📐 兼顾“稳健系统架构 × 友好用户体验”的上流设计</h3>
           <p class="service-desc">
-            開発において最も重要なのは、特定の言語やフレームワークの枠にとらわれることではなく、<strong>「いかに堅牢で破綻しないシステムを構築するか」「いかに使う人に寄り添った使いやすいアプリを届けるか」</strong>という設計の本質です。豊富な上流工程（要件定義・基本設計）の経験とAI駆動開発を掛け合わせ、確かな設計品質を保ちながら、従来の数分の一のスピードで形にします。
+            软件工程的核心从不在于拘泥某一种语言或框架，而在于<strong>“如何构建一套稳健不崩的后台系统”</strong>以及<strong>“如何打磨出符合日本本土习惯、真正好用的 App”</strong>。凭借丰富的日本上流工程（要件定义、基本设计）经验与 AI 协同高速开发模式，在保障高标准设计质量的同时，能以传统外包公司数分之一的周期快速交付。
           </p>
           <div class="skill-tags">
-            <span class="skill-tag">要件定義・基本設計</span>
-            <span class="skill-tag">堅牢なシステムアーキテクチャ</span>
-            <span class="skill-tag">ユーザー本位のUI/UX設計</span>
-            <span class="skill-tag">AI駆動高速開発</span>
+            <span class="skill-tag">需求定义 · 上流设计</span>
+            <span class="skill-tag">高可用系统架构</span>
+            <span class="skill-tag">日本本土化 UI/UX 设计</span>
+            <span class="skill-tag">AI 驱动极速交付</span>
           </div>
         </div>
 
         <div class="service-card">
-          <h3 class="service-title">⚙️ バックエンドAPI ＆ 高品質ネイティブアプリ一気通貫開発</h3>
+          <h3 class="service-title">⚙️ 后端 API 与高品质原生 App 一站式闭环开发</h3>
           <p class="service-desc">
-            本業として深く手がける <strong>Java（Spring Boot）</strong>、<strong>Python</strong>、<strong>Go（Golang）</strong> によるバックエンドAPI構築と、操作性やパフォーマンス・完成度において圧倒的な優位性を持つ <strong>iOS / Android ネイティブ開発</strong> を強みとしています。また、ご予算を抑えたい場合やWeb・デスクトップを含むマルチプラットフォーム展開には <strong>Flutter</strong> を選択するなど、お客様の目的・コストに応じた最適な技術選定（<strong>FastAPI</strong> 等の各種モダン技術を含む）に柔軟に対応します。
+            本职深耕 <strong>Java（Spring Boot）</strong>、<strong>Python</strong>、<strong>Go（Golang）</strong> 后端 API 架构设计，同时具备深厚的 <strong>iOS / Android 原生开发</strong>功底（在流畅度、系统级小组件及复杂交互上远超普通跨平台方案）。若您希望控制预算或同步拓展 Web / 桌面端，也可灵活采用 <strong>Flutter</strong> 及 <strong>FastAPI</strong> 等技术栈，按您的商业目标量身选型。
           </p>
           <div class="skill-tags">
-            <span class="skill-tag">iOS / Android ネイティブ開発</span>
+            <span class="skill-tag">iOS / Android 原生开发</span>
             <span class="skill-tag">Java (Spring Boot)</span>
             <span class="skill-tag">Python (FastAPI 等)</span>
             <span class="skill-tag">Go (Golang)</span>
-            <span class="skill-tag">Flutter (低コスト・Web/PC展開)</span>
-            <span class="skill-tag">RESTful API / DB設計</span>
-            <span class="skill-tag">ストア審査・公開</span>
+            <span class="skill-tag">Flutter (高性价比·Web/PC多端)</span>
+            <span class="skill-tag">RESTful API / 数据库设计</span>
+            <span class="skill-tag">苹果/谷歌双商店审核上架</span>
           </div>
         </div>
 
         <div class="service-card">
-          <h3 class="service-title">🛡️ クラウドセキュリティ設計・情報漏洩対策</h3>
+          <h3 class="service-title">🛡️ 云安全架构设计与防数据泄漏体系</h3>
           <p class="service-desc">
-            近年日本国内で相次ぐサーバーへの不正アクセスや情報漏洩リスクに対し、設計段階から安全性を組み込む「Security by Design」を徹底しています。<strong>Google Cloud (GCP) / Firebase</strong> や <strong>AWS</strong> など実績ある大手クラウド基盤を活用し、最小権限の原則（IAM管理）、通信・保存データの暗号化、堅牢なAPI認証基盤を構築することで、企業の信用と大切なデータを守ります。
+            针对近年来日本频繁发生的服务器遭黑客入侵与个人信息泄漏事件，在架构设计阶段即严格贯彻“Security by Design”。依托 <strong>Google Cloud (GCP) / Firebase</strong> 及 <strong>AWS</strong> 等成熟云服务商，严格实施最小权限原则（IAM）、传输与落盘数据加密、高安全性 API 认证鉴权，全方位守护企业的商业信誉与客户数据资产。
           </p>
           <div class="skill-tags">
-            <span class="skill-tag skill-tag-security">情報漏洩・不正アクセス対策</span>
+            <span class="skill-tag skill-tag-security">防数据泄漏 · 防非法入侵</span>
             <span class="skill-tag skill-tag-security">Google Cloud (GCP) / Firebase</span>
-            <span class="skill-tag skill-tag-security">AWS対応可</span>
-            <span class="skill-tag skill-tag-security">セキュアAPI認証・暗号化</span>
+            <span class="skill-tag skill-tag-security">支持 AWS 架构</span>
+            <span class="skill-tag skill-tag-security">安全 API 鉴权与加密</span>
           </div>
         </div>
       </div>
@@ -787,21 +763,21 @@
     <!-- Development Policy / Privacy commitment -->
     <section>
       <div class="section-header">
-        <h2 class="section-title">セキュリティ・開発方針と安心への取り組み</h2>
+        <h2 class="section-title">安全准则与开发承诺</h2>
         <div class="section-line"></div>
       </div>
       <div class="policy-box">
         <div class="policy-item">
           <span class="check-icon">✓</span>
-          <span><strong>堅牢なクラウド・APIセキュリティ：</strong>サーバーサイド開発では大手クラウドのベストプラクティスに準拠し、脆弱性対策・アクセス制御・通信暗号化を徹底した安全なシステム基盤を提供します。</span>
+          <span><strong>坚固的云端与 API 安全防线：</strong>服务端开发严格遵循主流云厂商安全最佳实践，落实漏洞防范、访问权限隔离与全链路加密，交付经得起检验的商业级系统。</span>
         </div>
         <div class="policy-item">
           <span class="check-icon">✓</span>
-          <span><strong>プライバシーの最優先（Privacy by Design）：</strong>不要な個人情報や行動履歴の取得は行いません。日誌などの私的なデータはお使いの端末内（ローカル）または厳格に保護されたクラウド環境にのみ大切に保管されます。</span>
+          <span><strong>隐私保护优先（Privacy by Design）：</strong>绝不违规收集无关个人信息或行为轨迹。核心私密数据优先保存在终端本地或受严密防护的云端环境中。</span>
         </div>
         <div class="policy-item">
           <span class="check-icon">✓</span>
-          <span><strong>過度な通知・広告の排除：</strong>利用者の日常や業務を邪魔しない、シンプルで清潔・高信頼な設計を心がけています。</span>
+          <span><strong>中日双语无障碍对接：</strong>母语级中文高效沟通商业逻辑，地道日语打造完全符合日本用户习惯与合规要求的产品体验。</span>
         </div>
       </div>
     </section>
@@ -809,17 +785,17 @@
     <!-- Business Inquiry / Contact Section -->
     <section id="contact">
       <div class="section-header">
-        <h2 class="section-title">お仕事のご依頼・開発のご相談 (Contact)</h2>
+        <h2 class="section-title">项目合作与开发咨询 (Contact)</h2>
         <div class="section-line"></div>
       </div>
       <div class="contact-card">
-        <h3 class="contact-title">システム・アプリ開発パートナーをお探しの方へ</h3>
+        <h3 class="contact-title">正在寻找靠谱的在日系统 / App 开发合伙人？</h3>
         <p class="contact-desc">
-          新規アプリの企画・MVP開発、Java / Python / GoによるバックエンドAPI構築、既存システムのセキュリティ強化やクラウド移行など、上流工程から実装まで柔軟に対応いたします。<br>
-          「まだアイデア段階だけど相談したい」「セキュアなサーバー基盤とアプリをまとめて依頼したい」といったご相談も歓迎しております。
+          无论是面向日本市场的 App 企划与 MVP 开发、Java / Python / Go 后端 API 构建，还是现有系统的云安全加固与架构升级，均可从上流设计到落地交付全程独立承接。<br>
+          支持中日双语直接沟通——“只有一个初步想法想评估可行性”或“希望把服务端与双端 App 放心交给同一个人闭环完成”，欢迎随时发信交流。
         </p>
-        <a href="mailto:kapibara.developer@gmail.com?subject=%E3%80%90%E9%96%8B%E7%99%BA%E3%83%BB%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%E3%80%91" class="contact-btn">
-          ✉️ お仕事・開発のご相談はこちら (kapibara.developer@gmail.com)
+        <a href="mailto:kapibara.developer@gmail.com?subject=%E3%80%90%E9%A1%B9%E7%9B%AE%E5%90%88%E4%BD%9C%E4%B8%8E%E5%BC%80%E5%8F%91%E5%92%A8%E8%AF%A2%E3%80%91" class="contact-btn">
+          ✉️ 发送邮件咨询合作 (kapibara.developer@gmail.com)
         </a>
       </div>
     </section>
@@ -827,8 +803,9 @@
     <!-- Footer -->
     <footer>
       <div class="footer-links">
-        <a href="mailto:kapibara.developer@gmail.com">お問い合わせ (Support)</a>
+        <a href="mailto:kapibara.developer@gmail.com">联系支持 (Support)</a>
         <a href="https://github.com/kapibara91" target="_blank" rel="noopener">GitHub</a>
+        <a href="./index.html">日本語ページ</a>
       </div>
       <p>&copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
     </footer>
