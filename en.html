@@ -264,6 +264,13 @@
       color: var(--badge-text);
     }
 
+    .badge-dev {
+      background: var(--dev-badge-bg);
+      color: var(--dev-badge-text);
+      border: 1px solid var(--dev-badge-border);
+      font-weight: 600;
+    }
+
     .app-desc {
       font-size: 0.9rem;
       color: var(--text-body);
@@ -306,6 +313,52 @@
 
     .store-btn svg:not(.colored-icon) {
       fill: currentColor;
+    }
+
+    /* Development Status Badge */
+    .dev-status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #FFFBEB;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #D97706;
+      display: inline-block;
+      position: relative;
+    }
+
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: #D97706;
+      animation: pulse 2s infinite ease-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
     }
 
     .doc-link {
@@ -490,7 +543,7 @@
         flex-direction: column;
         align-items: stretch;
       }
-      .store-btn {
+      .store-btn, .dev-status-tag {
         justify-content: center;
       }
       .doc-link {
@@ -532,12 +585,43 @@
     <!-- Apps Showcase -->
     <section>
       <div class="section-header">
-        <h2 class="section-title">Published Applications</h2>
+        <h2 class="section-title">Applications &amp; Products</h2>
         <div class="section-line"></div>
       </div>
 
       <div class="app-list">
         
+        <!-- App 0: Repit (In Development) -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_repit.png" alt="Repit Icon" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Repit (レピット)</h3>
+                <span class="badge badge-dev">In Development</span>
+              </div>
+              <p class="app-subtitle">AI Receipt Scanner · Japan Invoice (T-Number) Verifier · Compliance Vault</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">Japan NTA API Integration</span>
+            <span class="badge">AI-OCR (8%/10% Tax Split)</span>
+            <span class="badge">SHA-256 Tamper-Proof Vault</span>
+            <span class="badge">Accountant CSV/ZIP Export</span>
+          </div>
+          <p class="app-desc">
+            An AI-powered expense and tax compliance vault tailored for freelancers, solo founders, and SMB teams in Japan. Features sub-second Qualified Invoice (T-Number) verification via the official National Tax Agency API, automated 8% reduced vs. 10% standard consumption tax splitting, Electronic Book Preservation Law compliance with SHA-256 integrity hashing and audit logs, and one-tap export for tax accountants.
+          </p>
+          <div class="app-links">
+            <div class="dev-status-tag">
+              <span class="pulse-dot"></span>
+              Actively in Development · Coming Soon
+            </div>
+          </div>
+        </article>
+
         <!-- App 1: Tsuzuri -->
         <article class="app-card">
           <div class="app-header">

@@ -319,6 +319,53 @@
       fill: currentColor;
     }
 
+    /* Development Status Badge */
+    .dev-status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #FFFBEB;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #D97706;
+      display: inline-block;
+      position: relative;
+    }
+
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: #D97706;
+      animation: pulse 2s infinite ease-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
+    }
+
     .doc-link {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -504,7 +551,8 @@
         align-items: stretch;
       }
 
-      .store-btn {
+      .store-btn,
+      .dev-status-tag {
         justify-content: center;
       }
 
@@ -552,11 +600,42 @@
     <!-- Apps Showcase -->
     <section>
       <div class="section-header">
-        <h2 class="section-title">已上架自研应用 (Applications)</h2>
+        <h2 class="section-title">自研应用作品 (Applications)</h2>
         <div class="section-line"></div>
       </div>
 
       <div class="app-list">
+
+        <!-- App 0: Repit (In Development) -->
+        <article class="app-card">
+          <div class="app-header">
+            <img src="./images/icon_repit.png" alt="Repit 图标" class="app-icon" width="60" height="60">
+            <div class="app-meta">
+              <div class="app-title-row">
+                <h3 class="app-title">Repit (レピット)</h3>
+                <span class="badge badge-dev">正在开发中</span>
+              </div>
+              <p class="app-subtitle">日本发票（インボイス）合规核验 · AI 领收书精算与电帐法安全云库</p>
+            </div>
+          </div>
+          <div class="app-badges">
+            <span class="badge">iOS</span>
+            <span class="badge">Android</span>
+            <span class="badge">日本国税厅 API 联动</span>
+            <span class="badge">AI-OCR (8%/10% 税率自动拆分)</span>
+            <span class="badge">电帐法合规 · SHA256 防篡改</span>
+            <span class="badge">税理士 CSV/ZIP 一键导出</span>
+          </div>
+          <p class="app-desc">
+            面向在日个人事业主、一人社长与小微团队的 AI 经费精算与《电子账簿保存法》合规云金库。支持拍照秒级识别日本收据、对接日本国税厅官方 API 0.5 秒核验适格请求书（T番号）真伪、AI 自动拆分 8% 轻减税率与 10% 标准税率、基于 SHA-256 数字指纹与审计日志的防篡改加密归档，以及一键导出弥生/freee/税理士专用规范文件包。
+          </p>
+          <div class="app-links">
+            <div class="dev-status-tag">
+              <span class="pulse-dot"></span>
+              正在加速研发中 · 即将上线 (In Development)
+            </div>
+          </div>
+        </article>
 
         <!-- App 1: Tsuzuri -->
         <article class="app-card">
