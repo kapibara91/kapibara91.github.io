@@ -43,6 +43,28 @@
       margin: 0 auto;
     }
 
+    /* Back to Home & Nav */
+    .back-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      color: var(--text-sumi-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--seal-red);
+    }
+
     /* ヘッダー */
     header {
       text-align: center;
@@ -287,10 +309,32 @@
         gap: 4px;
       }
     }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.82rem;
+      color: var(--text-sumi-faint);
+    }
+
+    .site-footer a {
+      color: var(--text-sumi-faint);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: var(--seal-red);
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <nav class="back-nav">
+      <a href="../" class="back-link">&larr; カピバラ９１ ホーム へ戻る</a>
+    </nav>
+
     <header>
       <div class="app-branding">
         <h1 class="app-title">Tsuzuri</h1>
@@ -416,6 +460,10 @@
         </details>
       </div>
     </main>
+
+    <footer class="site-footer">
+      <p><a href="../">カピバラ９１ ホーム</a> ｜ &copy; 2026 カピバラ９１ (Kapibara91). All rights reserved.</p>
+    </footer>
   </div>
 </body>
 </html>
