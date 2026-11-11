@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レピット (Repit) 公式サイト | 領収書AI読取・インボイスT番号取引日時点確認・電帳法クラウド金庫</title>
+  <meta name="description" content="「領収書を、ピッと撮るだけ。」国税庁Web-API連携によるインボイスT番号の取引日時点0.5秒真偽検証、8%/10%/非課税（宿泊税等）のAI 3段階自動仕訳と確定性算術ガード、2026年10月改正の50%経過措置・少額特例自動判定、電子帳簿保存法（スキャナ保存200dpi・SHA-256改ざん防止・事務処理規程1秒生成）完全準拠の次世代AI証憑クラウド金庫。">
+  <meta name="keywords" content="レピット,Repit,領収書 AI読取,インボイス T番号 確認,適格請求書 取引日時点,電子帳簿保存法 スキャナ保存 200dpi,50%経過措置 2026年10月,少額特例 1万円未満,事務処理規程 自動生成,確定申告 弥生会計 freee マネーフォワード CSV出力">
+  <link rel="canonical" href="https://kapibara91.github.io/repit/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://kapibara91.github.io/repit/">
+  <meta property="og:site_name" content="レピット (Repit) 公式ポータル">
+  <meta property="og:title" content="レピット (Repit) — 領収書を、ピッと撮るだけ。インボイス確認から電帳法保存まで0.5秒で完結。">
+  <meta property="og:description" content="複雑怪奇な従来型会計ソフトを不要にする次世代フィンテック金庫。Modulus 9＋国税庁API取引日検証、AI 3税率分離＆算術ガード、2026年10月50%経過措置エンジン、SHA-256改ざん防止＆7年AES-256冷備。">
+  <meta property="og:image" content="https://kapibara91.github.io/repit/og-card.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="レピット (Repit) 公式 | インボイスT番号確認・AI 3税率分離・電帳法クラウド金庫">
+  <meta name="twitter:description" content="「領収書を、ピッと撮るだけ。」2026年10月からの50%経過措置・少額特例自動判定、8%/10%/宿泊税の誤差0円AI分離、SHA-256改ざん防止＆事務処理規程PDF1秒生成。">
+  <meta name="twitter:image" content="https://kapibara91.github.io/repit/og-card.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./icon_repit.png">
+  <link rel="apple-touch-icon" href="./icon_repit.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./repit.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "レピット (Repit)",
+    "alternateName": "Repit — 領収書AI読取・インボイスT番号確認・電帳法クラウド金庫",
+    "operatingSystem": "iOS 17+, Android 14+, Web",
+    "applicationCategory": "BusinessApplication, FinanceApplication",
+    "url": "https://kapibara91.github.io/repit/",
+    "author": {
+      "@type": "Person",
+      "name": "カピバラ９１ (Kapibara91)",
+      "url": "https://kapibara91.github.io/"
+    },
+    "offers": [
+      { "@type": "Offer", "name": "Free プラン", "price": "0", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "Pro 年額プラン", "price": "3800", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "確定申告 90日集中パス（買い切り）", "price": "2980", "priceCurrency": "JPY" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="repitAppRoot" class="repit-lp-root theme-light" style="font-size: 16px;">
+    
+    <!-- Top Sticky Accessibility & Navigation Bar -->
+    <header class="repit-sticky-nav" role="banner">
+      <div class="nav-inner">
+        <div class="nav-brand-group">
+          <a href="https://kapibara91.github.io/" class="back-portfolio-link">
+            &larr; 開発者ホーム
+          </a>
+          <span class="nav-divider" aria-hidden="true">|</span>
+          <a href="#top" class="brand-logo-link">
+            <img src="./icon_repit.png" alt="レピット アイコン" width="32" height="32">
+            <span class="brand-name">レピット (Repit)</span>
+          </a>
+        </div>
+
+        <nav class="nav-anchor-links" aria-label="主要セクションナビゲーション">
+          <a href="#ux-advantage">UI/UX比較</a>
+          <a href="#sandbox">7標本ライブデモ</a>
+          <a href="#architecture">技術・算術ガード</a>
+          <a href="#security">3つの安全約束</a>
+          <a href="#legal-2026">日本税法・50%経過措置</a>
+          <a href="#founder">開発者ストーリー</a>
+          <a href="#pricing">料金プラン</a>
+        </nav>
+
+        <div class="nav-controls" role="group" aria-label="表示設定・アクセシビリティ">
+          <div class="font-scale-switcher" role="group" aria-label="文字サイズ切替">
+            <button type="button" class="font-btn active" data-scale="normal">標準</button>
+            <button type="button" class="font-btn" data-scale="large">大</button>
+            <button type="button" class="font-btn" data-scale="xlarge">特大</button>
+          </div>
+          <button type="button" id="themeToggleBtn" aria-label="テーマ切替（和紙ライト / 藍墨ダーク）" class="theme-toggle-btn">
+            🌙 藍墨ダーク
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" role="main">
+      
+      <!-- Hero Section -->
+      <section class="hero-section" aria-labelledby="hero-headline">
+        <div class="section-container hero-grid">
+          <div class="hero-copy-col">
+            <div class="hero-badge-row">
+              <span class="pill-badge pill-emerald">🏛️ 国税庁 インボイス公表システム Web-API 直結</span>
+              <span class="pill-badge pill-blue">🛡️ 電子帳簿保存法（スキャナ保存・電子取引）完全準拠</span>
+              <span class="pill-badge pill-amber">⚖️ 2026年10月「50%経過措置・少額特例」自動判定</span>
+            </div>
+            <h1 id="hero-headline" class="hero-title">
+              領収書を、ピッと撮るだけ。<br>
+              <span class="hero-gradient-text">インボイス検証から電帳法保存まで、0.5秒で完結。</span>
+            </h1>
+            <p class="hero-lead">
+              重くて高価な従来の会計ソフトを毎日開く必要はもうありません。
+              <strong>13桁T番号の「取引日時点」真偽検証</strong>、
+              <strong>8%・10%・宿泊税（不課税）のAI 3段階分離＆確定性算術ガード</strong>、
+              <strong>2026年10月改正「50%経過措置・少額特例」の自動判定</strong>、
+              そして<strong>SHA-256改ざん防止クラウド金庫＆弥生/freee/MF一括出力</strong>を、圧倒的に洗練されたUI/UXでひとつに。
+            </p>
+            <div class="hero-cta-group">
+              <a href="#sandbox" class="btn-primary-ruri">
+                登録不要・7大税務標本ライブデモを体験 &darr;
+              </a>
+              <a href="#architecture" class="btn-secondary-outline">
+                T番号 0.1ms 瞬時検証を試す
+              </a>
+            </div>
+
+            <!-- KPI Strip -->
+            <div class="hero-kpi-strip tnum" role="list" aria-label="主要技術パフォーマンス指標">
+              <div class="kpi-item" role="listitem">
+                <strong>0.1 ms</strong>
+                <span>端末内 Modulus 9 検査</span>
+              </div>
+              <div class="kpi-item" role="listitem">
+                <strong>¥0 誤差</strong>
+                <span>確定性算術ガード (Math Guard)</span>
+              </div>
+              <div class="kpi-item" role="listitem">
+                <strong>200 dpi+</strong>
+                <span>電帳法スキャナ保存自動判定</span>
+              </div>
+              <div class="kpi-item" role="listitem">
+                <strong>7 年間</strong>
+                <span>AES-256 東京リージョン冷備</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right FinTech Card -->
+          <div class="hero-visual-col" aria-label="Repit リアルタイムAI検証＆電帳法保存プレビュー">
+            <div class="hero-fintech-card">
+              <div class="fintech-card-top">
+                <span class="status-dot-emerald"></span>
+                <span class="fintech-card-title">Repit AI Engine v1.3 · 検証パイプライン完了 (0.42s)</span>
+              </div>
+              <div class="fintech-card-merchant">
+                <div>
+                  <small>国税庁公表商号（取引日時点有効）</small>
+                  <strong>株式会社セブン‐イレブン・ジャパン</strong>
+                  <code class="tnum">登録番号: T8010001032884 ✓</code>
+                </div>
+                <div class="fintech-total-box tnum">
+                  <small>税込合計</small>
+                  <strong>¥1,848</strong>
+                </div>
+              </div>
+              <div class="fintech-tax-breakdown tnum">
+                <div class="tax-pill pill-10">
+                  <span>10%標準 (コピー用紙等)</span>
+                  <strong>¥770 (税 ¥70)</strong>
+                </div>
+                <div class="tax-pill pill-8">
+                  <span>8%軽減 ※ (コーヒー軽食)</span>
+                  <strong>¥1,078 (税 ¥79)</strong>
+                </div>
+                <div class="tax-pill pill-0">
+                  <span>非課税・不課税</span>
+                  <strong>¥0</strong>
+                </div>
+              </div>
+              <div class="fintech-guard-bar tnum">
+                <span>✓ Deterministic Math Guard: ¥770 + ¥1,078 + ¥0 == ¥1,848 (誤差 ¥0)</span>
+              </div>
+              <div class="fintech-vault-footer tnum">
+                <span>🔒 312 dpi · 紙原本破棄可</span>
+                <span>SHA-256: e3b0c442...52b855</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: UI/UX Superiority -->
+      <section id="ux-advantage" aria-labelledby="ux-heading" class="repit-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-blue">✨ UI/UX パラダイムシフト</span>
+          </div>
+          <h2 id="ux-heading" class="section-title">
+            なぜ日本の従来の経費・会計ソフトは「毎日開くのが苦痛」なのか？
+          </h2>
+          <p class="section-lead">
+            チラシのように詰め込まれたボタン、5階層に及ぶメニュー遷移、手入力を強いる13桁のT番号、文字サイズを大きくすると崩れる画面——。
+            Repitは<strong>「粋 × 精緻 (Iki × Precision)」</strong>の設計思想のもと、日常の証憑整理を「最短3秒・1画面完結」へ再定義しました。
+          </p>
+
+          <div class="comparison-table-card" role="region" aria-label="従来型ソフトとRepitのUI/UX・機能比較表">
+            <table class="modern-comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">比較項目・実務シーン</th>
+                  <th scope="col" class="col-legacy">従来の日本の会計・経費精算ソフト</th>
+                  <th scope="col" class="col-repit">レピット (Repit) 次世代フィンテック設計</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">撮影から保存までの操作ステップ</th>
+                  <td class="col-legacy">アプリ起動 → メニュー → 取引登録 → 撮影 → 5〜6画面の確認遷移（約45〜90秒）</td>
+                  <td class="col-repit"><strong>ピッと撮影 → 1画面でAI仕訳・T番号・算術検証を確認 → 保存（最短3秒）</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">インボイスT番号（13桁）の検証</th>
+                  <td class="col-legacy">番号存在チェックのみ、または国税庁サイトで手入力検索（取引日時点の失効を見落とす）</td>
+                  <td class="col-repit"><strong>端末内0.1ms Modulus 9検証 ＋ 国税庁Web-APIで「取引日時点」の有効性を0.5秒判定</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">8%軽減・10%標準・宿泊税の混在</th>
+                  <td class="col-legacy">OCRが合計額しか読めず、電卓で8%/10%や東京都宿泊税（不課税）を手計算して修正</td>
+                  <td class="col-repit"><strong>マルチモーダルAI 3段階自動分離 ＋ 確定性算術ガード（Math Guard）で1円の誤差も阻止</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">2026年10月改正「50%経過措置」＆特例</th>
+                  <td class="col-legacy">「少額特例（1万円未満）」「公共交通特例（3万円未満）」「50%控除」を人間が判断して手選択</td>
+                  <td class="col-repit"><strong>税務ルールエンジン（`tax_rule_engine`）が金額・業種・日付から法定特例を100%自動判定</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">電帳法タイムスタンプ・改ざん防止費用</th>
+                  <td class="col-legacy">有料タイムスタンプオプション（月額数千円〜数万円）または複雑な規程の自作が必要</td>
+                  <td class="col-repit"><strong>SHA-256 ＋ PostgreSQL基底トリガー監査ログ ＋ 国税庁準拠『事務処理規程』PDFを0円で1秒生成</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">アクセシビリティ・文字拡大・ダークモード</th>
+                  <td class="col-legacy">固定ピクセル設計のため大文字設定で文字切れが多発、夜間作業で目が疲れる白背景のみ</td>
+                  <td class="col-repit"><strong>WAI-ARIA / VoiceOver完全対応・動的フォント拡大（130%でも崩れない）・和紙ライト＆藍墨ダーク対応</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 7-Scenario Live Sandbox -->
+      <section id="sandbox" aria-labelledby="sandbox-heading" class="repit-section sandbox-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-emerald">🏢 登録不要・ブラウザ完結 1クリック体験</span>
+            <span class="pill-badge pill-blue">iOS / Android / Web 共通エンジン稼働中</span>
+          </div>
+          <h2 id="sandbox-heading" class="section-title">
+            7大・日本の税務境界ケースを、今この場でライブ検証。
+          </h2>
+          <p class="section-lead">
+            アカウント登録もアプリインストールも不要です。日本の実務で最もミスや税務調査リスクが発生しやすい
+            <strong>7つの典型的な領収書・請求書標本</strong>
+            をクリックして、AI 3段階税率分離・確定性算術ガード・取引日時点T番号照合・電帳法監査ログの挙動を直接ご確認ください。
+          </p>
+
+          <!-- Scenario Tabs -->
+          <div id="scenarioTabs" role="tablist" aria-label="日本の税務・インボイス境界標本選択" class="scenario-tab-grid"></div>
+
+          <!-- Split Workbench -->
+          <div class="sandbox-split-grid" aria-live="polite">
+            
+            <!-- Left: Thermal Receipt Simulator -->
+            <div class="receipt-paper-card" aria-label="証憑原本プレビュー">
+              <div class="receipt-compliance-header">
+                <span id="receiptComplianceChip" class="compliance-chip chip-emerald">✓ 電帳法スキャナ保存 200dpi適合</span>
+                <span id="receiptResSpec" class="receipt-res-spec">1180 × 1600 px (312 dpi相当)</span>
+              </div>
+              <div class="thermal-receipt-body">
+                <div class="thermal-store-header">
+                  <p id="thermalStoreYago" class="thermal-store-yago">セブン-イレブン 港区赤坂一丁目店</p>
+                  <p id="thermalStoreLegal" class="thermal-store-legal">国税庁公表商号: 株式会社セブン‐イレブン・ジャパン</p>
+                  <p id="thermalTxDate" class="thermal-tx-date">取引日時: 2026-11-10 14:22</p>
+                  <p id="thermalTNum" class="thermal-t-num status-valid_at_tx_date">登録番号: T8010001032884</p>
+                </div>
+                <hr class="thermal-divider">
+                <ul id="thermalItemList" class="thermal-item-list" aria-label="明細一覧"></ul>
+                <hr class="thermal-divider">
+                <div class="thermal-total-block">
+                  <div class="thermal-total-row">
+                    <span>合計金額（税込）</span>
+                    <strong id="thermalTotalValue" class="thermal-total-value tnum">¥1,848</strong>
+                  </div>
+                  <div id="thermalSub10" class="thermal-sub-row tnum">
+                    <span>10%標準対象 (税込 ¥770)</span>
+                    <span>内消費税 ¥70</span>
+                  </div>
+                  <div id="thermalSub8" class="thermal-sub-row tnum">
+                    <span>8%軽減対象 ※ (税込 ¥1,078)</span>
+                    <span>内消費税 ¥79</span>
+                  </div>
+                  <div id="thermalSubNonTax" class="thermal-sub-row tnum">
+                    <span>非課税・不課税 (対象なし)</span>
+                    <span>¥0</span>
+                  </div>
+                </div>
+                <div class="thermal-sha-box">
+                  <span class="sha-label">SHA-256 改ざん防止デジタル指紋 (Cloudflare R2 Immutable)</span>
+                  <code id="thermalShaCode" class="sha-code">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Inspector Panel -->
+            <div class="inspector-panel">
+              <div class="inspector-header">
+                <span id="inspectorCategoryBadge" class="inspector-category-badge">8%/10% 三段階AI分離 ＆ 算術ガード</span>
+                <h3 id="inspectorTitle" class="inspector-title">セブン-イレブン（軽減税率8%飲食料品 ＋ 標準税率10%消耗品の混在レシート）</h3>
+                <p id="inspectorStatusBanner" class="inspector-status-banner">国税庁API照合済・取引日時点で有効（適格100%控除）</p>
+              </div>
+
+              <!-- 3-Tier Visual Bar -->
+              <div class="tax-visual-card">
+                <div class="tax-visual-header">
+                  <span>AI 3段階税率分解 ＆ 確定性算術ガード (Deterministic Math Guard)</span>
+                  <span class="math-guard-ok">✓ 算術検証合格 (誤差 ¥0)</span>
+                </div>
+                <div class="tax-bar-track" aria-hidden="true">
+                  <div id="seg10" class="tax-bar-seg seg-10" style="width: 42%;"></div>
+                  <div id="seg8" class="tax-bar-seg seg-8" style="width: 58%;"></div>
+                  <div id="segNonTax" class="tax-bar-seg seg-nontax" style="width: 0%;"></div>
+                </div>
+                <code id="mathFormulaBox" class="math-formula-box tnum">10%税込(¥770) + 8%税込(¥1,078) + 非課税(¥0) === 合計(¥1,848) [誤差 ¥0]</code>
+              </div>
+
+              <!-- Home-Office Allocation (家事按分) -->
+              <div class="anbun-interactive-box">
+                <div class="anbun-label-row">
+                  <label for="sandboxAnbunSlider">
+                    家事按分（事業割合）リアルタイム試算 — 推奨科目: <strong id="anbunAccountTitle">会議費 / 消耗品費</strong>
+                  </label>
+                  <span id="anbunRatioPill" class="anbun-ratio-pill tnum">100% 事業算入</span>
+                </div>
+                <input id="sandboxAnbunSlider" type="range" min="10" max="100" step="5" value="100" class="anbun-slider">
+                <div class="anbun-metrics-grid tnum">
+                  <div class="anbun-metric">
+                    <span>経費算入額（借方）</span>
+                    <strong id="anbunExpenseVal">¥1,848</strong>
+                  </div>
+                  <div class="anbun-metric">
+                    <span>事業主貸（家事分除外）</span>
+                    <strong id="anbunPrivateVal">¥0</strong>
+                  </div>
+                  <div class="anbun-metric">
+                    <span>実効仕入税額控除</span>
+                    <strong id="anbunTaxDeductVal" class="text-emerald">¥149</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Legal Commentary -->
+              <div class="legal-commentary-box">
+                <h4>⚖️ 税法・電帳法コンプライアンス解説</h4>
+                <p id="legalCommentaryText">コンビニ領収書で最も頻発する「軽減8%（※印）」と「標準10%」の混在ケース。RepitはAI構造化抽出後にPydantic確定性算術ガード（Math Guard）を実行し、10%対象額＋8%対象額が合計金額と1円の狂いもなく一致することを保証します。</p>
+              </div>
+
+              <!-- Audit Diff Box (For Scenario 6) -->
+              <div id="auditDiffBox" class="audit-diff-box" style="display: none;">
+                <div class="audit-diff-title">
+                  🔒 PostgreSQL 基底トリガー監査ログ (`trg_receipt_audit`)
+                </div>
+                <div class="audit-diff-row old-row">
+                  <span>変更前 (old_data):</span>
+                  <code id="auditOldVal"></code>
+                </div>
+                <div class="audit-diff-row new-row">
+                  <span>変更後 (new_data):</span>
+                  <code id="auditNewVal"></code>
+                </div>
+              </div>
+
+              <!-- Instant Accounting CSV Preview -->
+              <div class="csv-preview-box">
+                <div class="csv-preview-header">
+                  <span>📤 会計ソフト専用CSV 出力コード（経過措置・税区分自動マッピング）</span>
+                  <div class="csv-toggle-group">
+                    <button type="button" id="btnCsvYayoi" class="active">弥生会計 (Shift_JIS)</button>
+                    <button type="button" id="btnCsvFreee">freee会計 (UTF-8 BOM)</button>
+                  </div>
+                </div>
+                <pre class="csv-code-line"><code id="csvCodeLine"></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Technical Architecture & Verifier -->
+      <section id="architecture" aria-labelledby="arch-heading" class="repit-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-blue">⚡ エンタープライズ・システムアーキテクチャ</span>
+          </div>
+          <h2 id="arch-heading" class="section-title">
+            AIの「ハルシネーション（算術幻覚）」を決定論的コードで封じ込める、二段構えの技術基盤。
+          </h2>
+          <p class="section-lead">
+            生成AIだけに頼るOCRアプリは、時に消費税の端数や合計金額を誤認識し、試算表の不整合を引き起こします。
+            Repitは<strong>「マルチモーダルAIの文脈理解力」</strong>と<strong>「Python / Pydantic v2 / Modulus 9 の確定性アルゴリズム」</strong>を直列結合したハイブリッド設計を採用しています。
+          </p>
+
+          <!-- Interactive T-Number Verifier -->
+          <div class="verifier-mini-card" role="region" aria-label="インボイスT番号 Modulus 9 リアルタイム検証ツール">
+            <div class="verifier-mini-header">
+              <div>
+                <span class="pill-badge pill-emerald">ライブ体験ミニツール</span>
+                <h3>インボイス T番号 0.1ms Modulus 9 検査 ＆ 取引日時点ステータス判定</h3>
+              </div>
+              <div class="verifier-preset-pills">
+                <button type="button" id="presetValidSeven">✓ 有効標本 (セブン-イレブン)</button>
+                <button type="button" id="presetCancelled">⚠️ 取引日前に失効済の標本 (東京堂商事)</button>
+                <button type="button" id="presetTypo">✕ 1桁誤入力 (チェックデジット不正)</button>
+              </div>
+            </div>
+
+            <div class="verifier-input-row">
+              <div class="verifier-field">
+                <label for="liveTInput">登録番号（T＋13桁数字）</label>
+                <input id="liveTInput" type="text" value="T8010001032884" placeholder="例: T8010001032884" class="tnum">
+              </div>
+              <div class="verifier-field">
+                <label for="liveDateInput">領収書の取引年月日</label>
+                <input id="liveDateInput" type="date" value="2026-11-10" class="tnum">
+              </div>
+            </div>
+
+            <div id="verifierBanner" class="verifier-result-banner banner-valid" aria-live="polite">
+              <div id="verifierBannerTitle" class="verifier-result-title">✓ 検証クリア：Modulus 9 チェックデジット検証OK（国税庁規定の13桁アルゴリズム適合）</div>
+              <div id="verifierMerchantMeta" class="verifier-merchant-meta tnum">
+                <span>公表商号: 株式会社セブン‐イレブン・ジャパン</span>
+                <span>屋号連携: セブン-イレブン 港区赤坂一丁目店</span>
+                <span>登録日: 2023-10-01</span>
+                <span>判定結果: 適格請求書（100%控除可）</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-Layer Defense Architecture Card -->
+          <div class="architecture-pipeline-card" style="margin-top: 2rem;" role="region" aria-label="国税庁Web-API 4層防衛＆永続キャッシュアーキテクチャ">
+            <div class="pipeline-header">
+              <h3>🏛️ 国税庁「適格請求書発行事業者公表システム Web-API」4層防衛プロキシ設計</h3>
+              <p>
+                クライアントに国税庁App IDを一切露出させず、確定申告ピーク期のトラフィック急増や国税庁メンテナンス時にも<strong>稼働率99.9%・応答0.05秒</strong>を維持する多層キャッシュ基盤。
+              </p>
+            </div>
+            <div class="pipeline-steps-grid">
+              <div class="pipeline-step">
+                <span class="step-tag">Layer 1 · Client (0.1ms)</span>
+                <h4>端末内 Modulus 9 検査</h4>
+                <p>ネットワーク通信前に13桁の検査用数字を検証。タイポやOCR誤読による無効リクエストを99%端末内で即座に遮断。</p>
+              </div>
+              <div class="pipeline-step">
+                <span class="step-tag">Layer 2 · Cloud Run Edge</span>
+                <h4>認証プロキシ ＆ レート制限</h4>
+                <p>国税庁App IDをGCP Secret Manager内に完全隔離。IP/ユーザー単位のトークンバケット制限で悪用を防止。</p>
+              </div>
+              <div class="pipeline-step">
+                <span class="step-tag">Layer 3 · PostgreSQL (5ms)</span>
+                <h4>永続キャッシュ（命中率 95%+）</h4>
+                <p>`merchants_cache` テーブルに公表商号・登録日・失効日を蓄積。コンビニや主要インフラ企業の照合を5msで即答。</p>
+              </div>
+              <div class="pipeline-step">
+                <span class="step-tag">Layer 4 · NTA Official API</span>
+                <h4>取引日時点タイムライン照合</h4>
+                <p>`registration_date &lt;= 取引日 &lt;= cancellation_date` を厳密判定。万一の国税庁API障害時もStale-While-Revalidateで無停止稼働。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Security & Zero-Trust 3 Promises -->
+      <section id="security" aria-labelledby="security-heading" class="repit-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-emerald">🛡️ ゼロトラスト・金融級データ保護</span>
+            <span class="pill-badge pill-blue">東京リージョン (asia-northeast1) 完結</span>
+          </div>
+          <h2 id="security-heading" class="section-title">
+            個人事業主から上場企業レベルの監査まで耐え抜く、「3つの安心・安全のお約束」。
+          </h2>
+          <p class="section-lead">
+            領収書や請求書には、取引先・単価・プロジェクト名など事業の機密情報が凝縮されています。
+            Repitは<strong>「データは100%ユーザー自身の資産であり、AI学習にもロックインにも一切利用しない」</strong>という原則を、利用規約の文言だけでなく<strong>システム構造（コード・DBトリガー・IAM権限）</strong>で強制しています。
+          </p>
+
+          <div class="three-promises-grid">
+            <article class="promise-card">
+              <div class="promise-num-badge">お約束 ①</div>
+              <h3>AIモデルの学習への完全不利用（Zero Data Retention）</h3>
+              <p>
+                エンタープライズ商用契約（Google Cloud Vertex AI / Gemini Paid Commercial Tier）を採用。
+                アップロードされた領収書画像・PDF・取引先・金額データは<strong>基盤AIモデルの学習・再トレーニングには一切使用されません</strong>。機密保持契約（NDA）下の案件経費も安心して処理いただけます。
+              </p>
+              <ul class="promise-spec-list">
+                <li>✓ 商用Paid API枠による学習オプトアウト保証</li>
+                <li>✓ 推論完了後のメモリ即時破棄</li>
+                <li>✓ 第三者へのデータ提供・広告利用ゼロ</li>
+              </ul>
+            </article>
+
+            <article class="promise-card">
+              <div class="promise-num-badge">お約束 ②</div>
+              <h3>金融機関基準の暗号化 ＆ 日本国内保管 ＆ 7年冷備</h3>
+              <p>
+                通信経路はすべて<strong>TLS 1.3</strong>、保存データは<strong>AES-256</strong>で暗号化。
+                アプリケーション基盤は<strong>Google Cloud 東京リージョン（`asia-northeast1`）</strong>で稼働し、証憑原本を保管するCloudflare R2バケットはIAMレベルで<strong>削除権限（`DeleteObject`）を完全遮断（WORM不変ストレージ）</strong>しています。
+              </p>
+              <ul class="promise-spec-list">
+                <li>✓ 毎日03:00 JST 自動 `pg_dump + OpenSSL AES-256` 暗号化バックアップ</li>
+                <li>✓ 日次30日・月次スナップショット<strong>7年間（84ヶ月）</strong>遠隔冷備</li>
+                <li>✓ 解約・期限切れ後も7年間いつでも原本ZIP・CSV出力可能</li>
+              </ul>
+            </article>
+
+            <article class="promise-card">
+              <div class="promise-num-badge">お約束 ③</div>
+              <h3>電帳法・インボイス制度100%合法準拠（追加タイムスタンプ費用 ¥0）</h3>
+              <p>
+                電子帳簿保存法の「真実性の確保」要件を満たすため、原本の<strong>SHA-256デジタル指紋</strong>と、PostgreSQLカーネルレベルの<strong>不可逆監査トリガー（`trg_receipt_audit`）</strong>を標準装備。
+                さらに、有料タイムスタンプの代替として法律で認められている<strong>国税庁準拠『事務処理規程』PDFを1秒・¥0で自動生成</strong>します。
+              </p>
+              <ul class="promise-spec-list">
+                <li>✓ `UPDATE / DELETE` を自動捕捉する JSONB 変更前後スナップショット</li>
+                <li>✓ 屋号・法人名入り『電帳法・事務処理規程』PDF 即時発行</li>
+                <li>✓ 200dpi / RGB 自動判定による「紙原本の即時破棄」サポート</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Japanese Tax Law & 50% Transitional Measure Simulator -->
+      <section id="legal-2026" aria-labelledby="legal-heading" class="repit-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-amber">⚖️ 2026年10月1日 税制改正対応</span>
+            <span class="pill-badge pill-blue">インボイス制度 × 電子帳簿保存法 × 税理士法 準拠</span>
+          </div>
+          <h2 id="legal-heading" class="section-title">
+            日本の税制・法律の「細部」まで知り尽くした、2026年10月「50%経過措置」完全防衛設計。
+          </h2>
+          <p class="section-lead">
+            2026年10月1日より、インボイス登録番号（T番号）のない免税事業者からの仕入税額控除は<strong>80%から50%へ半減</strong>しました。
+            しかし、日本の消費税法には<strong>「T番号がなくても100%控除できる3つの法定特例」</strong>が存在します。Repitの税務ルールエンジン（`tax_rule_engine`）は、取引日・金額・業種からこれらを自動識別し、合法的な控除漏れを徹底的に防ぎます。
+          </p>
+
+          <!-- Timeline Grid -->
+          <div class="tax-timeline-grid">
+            <div class="timeline-phase-card phase-past">
+              <span class="phase-period tnum">2023年10月1日 〜 2026年9月30日</span>
+              <h3>第1段階：80%控除期間（終了）</h3>
+              <p>免税事業者からの課税仕入れでも消費税相当額の80%を控除可能だった緩和期間。</p>
+            </div>
+            <div class="timeline-phase-card phase-active">
+              <span class="phase-badge-now">現在適用中（最重要防衛フェーズ）</span>
+              <span class="phase-period tnum">2026年10月1日 〜 2029年9月30日</span>
+              <h3>第2段階：50%控除 ＋ 少額特例（〜2029/09）</h3>
+              <p>
+                原則<strong>50%控除へ半減</strong>。ただし<strong>税込1万円未満の少額特例（100%控除）</strong>や<strong>3万円未満の公共交通機関特例（100%控除）</strong>の正確な仕訳・税区分コード出力が損得を大きく左右します。
+              </p>
+            </div>
+            <div class="timeline-phase-card phase-future">
+              <span class="phase-period tnum">2029年10月1日 以降</span>
+              <h3>経過措置終了（0%控除・3万円特例のみ存続）</h3>
+              <p>経過措置が完全撤廃。3万円未満の公共交通機関・自販機特例を除き、T番号の真偽・失効管理が必須に。</p>
+            </div>
+          </div>
+
+          <!-- Interactive 50% Tax Simulator -->
+          <div class="simulator-card" role="region" aria-label="2026年10月 50%経過措置・少額特例 節税シミュレーター">
+            <div class="simulator-header">
+              <div>
+                <span class="pill-badge pill-emerald">リアルタイム試算</span>
+                <h3>「1万円未満・少額特例」×「50%経過措置」自動仕訳による年間消費税防衛シミュレーター</h3>
+              </div>
+              <div class="simulator-highlight-box tnum">
+                <span>少額特例の自動識別による年間追加防衛額</span>
+                <strong id="simSavedAmount" class="saved-amount">+¥58,909 / 年</strong>
+                <small id="simRoiBadge">（Pro年額プラン ¥3,800 の約 16 倍の節税効果）</small>
+              </div>
+            </div>
+
+            <div class="simulator-sliders-grid">
+              <div class="sim-slider-group">
+                <div class="sim-label-row">
+                  <label for="simMonthlySpend">
+                    月間のT番号なし支出額（個人タクシー・小規模飲食店・駐車場・外注等）
+                  </label>
+                  <strong id="simMonthlySpendLabel" class="tnum">月 18 万円（年 216 万円）</strong>
+                </div>
+                <input id="simMonthlySpend" type="range" min="5" max="100" step="1" value="18">
+              </div>
+
+              <div class="sim-slider-group">
+                <div class="sim-label-row">
+                  <label for="simUnder10kRatio">
+                    うち1回あたり税込1万円未満（少額特例・100%控除対象）の割合
+                  </label>
+                  <strong id="simUnder10kRatioLabel" class="tnum">65%</strong>
+                </div>
+                <input id="simUnder10kRatio" type="range" min="10" max="95" step="5" value="65">
+              </div>
+            </div>
+
+            <div class="simulator-kpi-row tnum">
+              <div class="sim-kpi">
+                <span>年間対象支出（税込）</span>
+                <strong id="simAnnualSpend">¥2,160,000</strong>
+              </div>
+              <div class="sim-kpi">
+                <span>内包される消費税相当額（10%換算）</span>
+                <strong id="simAnnualTax">¥196,364</strong>
+              </div>
+              <div class="sim-kpi">
+                <span>Repit自動判定による年間控除可能総額</span>
+                <strong id="simTotalDeductible" class="text-emerald">¥162,000</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Electronic Book Preservation Act Two Pillars -->
+          <div class="legal-pillars-grid">
+            <div class="legal-pillar-card">
+              <span class="pill-badge pill-blue">電帳法第4条第3項</span>
+              <h3>📸 スキャナ保存（紙の領収書・レシート）</h3>
+              <p>
+                スマホカメラで撮影した紙の領収書をデジタル保存し、<strong>紙の原本を合法的に破棄</strong>するための要件を自動化。
+              </p>
+              <ul class="legal-req-list">
+                <li><strong>解像度・階調検査</strong>：撮影時に `≥ 200dpi` 相当（長辺1600px以上）＆ RGB 256階調を端末内で即時検証。</li>
+                <li><strong>真実性の確保</strong>：SHA-256ハッシュ＋訂正削除履歴（Audit Log）＋国税庁準拠『事務処理規程』でタイムスタンプ費用を¥0化。</li>
+              </ul>
+            </div>
+
+            <div class="legal-pillar-card">
+              <span class="pill-badge pill-emerald">電帳法第7条（完全義務化）</span>
+              <h3>📄 電子取引データ保存（PDF請求書・EC領収書）</h3>
+              <p>
+                Amazonビジネス、楽天、SaaS利用料（AWS / Adobe / Stripe等）のPDF領収書は、紙に印刷して保存することが<strong>法律で原則禁止</strong>されています。
+              </p>
+              <ul class="legal-req-list">
+                <li><strong>可視性の確保（3条件検索）</strong>：①取引年月日（範囲）、②取引金額（範囲）、③取引先名の3条件複合インデックス検索を標準搭載。</li>
+                <li><strong>一括ドラッグ＆ドロップ</strong>：PCブラウザから複数のPDF請求書を一括投入し、即座に電帳法準拠フォーマットで永久保存。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Founder Story -->
+      <section id="founder" aria-labelledby="founder-heading" class="repit-section">
+        <div class="section-container">
+          <div class="founder-story-card">
+            <div class="section-eyebrow-row">
+              <span class="pill-badge pill-blue">👨‍💻 開発者ストーリー（当事者目線）</span>
+            </div>
+            <h2 id="founder-heading" class="section-title">
+              「自分自身が毎年苦しんでいた確定申告と、日本の経費ソフトの使いづらさを終わらせたかった。」
+            </h2>
+            <div class="founder-prose">
+              <p>
+                日本で独立エンジニア・個人事業主として日々開発やクライアントワークを行う中で、私が最もストレスを感じていたのが<strong>「日々の領収書整理とインボイス・電帳法対応」</strong>でした。
+              </p>
+              <p>
+                既存の日本のクラウド会計ソフトや経費精算システムは、複式簿記のあらゆる機能を詰め込んだ結果、<strong>「ただコンビニやタクシーの領収書を1枚登録したいだけなのに、起動が遅く、メニューが5階層もあり、8%と10%や宿泊税のズレを電卓で直さなければならない」</strong>という状態になっていました。しかも年額15,000円〜30,000円以上の固定費がかかります。
+              </p>
+              <p>
+                私たちが日常本当に欲しいのは、重い会計ソフトを毎日開くことではありません。
+                <strong>「財布から領収書を出したその瞬間に、スマホでピッと撮れば、T番号の取引日時点確認も、8%/10%/非課税の分離も、2026年10月からの50%経過措置や1万円未満特例の判定も、電帳法の改ざん防止保存もすべて0.5秒で終わり、月末や確定申告前にワンタップで税理士や弥生・freeeへ渡せる『超高速な前哨基地（クラウド金庫）』」</strong>です。
+              </p>
+              <p>
+                その理想を、<strong>iOS (SwiftUI) / Android (Jetpack Compose) の100%ネイティブ実装</strong>と、<strong>確定性算術ガードを備えた最新のマルチモーダルAI基盤</strong>で形にしたのが「レピット (Repit)」です。
+              </p>
+            </div>
+            <div class="founder-signature-row">
+              <div>
+                <strong>カピバラ９１ (Kapibara91)</strong>
+                <span>フルスタックアーキテクト ／ iOS・Android・Cloud エンジニア（東京）</span>
+              </div>
+              <a href="https://kapibara91.github.io/" class="btn-secondary-outline">
+                開発者ポートフォリオ・全プロダクト一覧を見る &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Transparent Pricing -->
+      <section id="pricing" aria-labelledby="pricing-heading" class="repit-section">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-emerald">💎 全額「通信費・システム利用料」として経費算入可能</span>
+            <span class="pill-badge pill-blue">解約後も7年間データ閲覧・出力100%保証</span>
+          </div>
+          <h2 id="pricing-heading" class="section-title">
+            従来型ソフトの「約1/5〜1/8」の価格で、最高峰のAI読取と電帳法7年金庫を。
+          </h2>
+          <p class="section-lead">
+            インボイスT番号の検索・取引日時点確認と、電子帳簿保存法の3条件検索は<strong>永久無料（¥0）</strong>。
+            有料プランのご利用料金はすべて適格請求書（インボイス）に対応しており、<strong>100%事業の必要経費として計上可能</strong>です。
+          </p>
+
+          <div class="pricing-cards-grid">
+            
+            <!-- Free Plan -->
+            <article class="pricing-card">
+              <div class="plan-header">
+                <span class="plan-badge">まずはここから</span>
+                <h3>Free プラン</h3>
+                <div class="plan-price tnum">
+                  <strong>¥0</strong>
+                  <span>/ 永久無料</span>
+                </div>
+                <p class="plan-desc">T番号の瞬時確認と、月15枚までの小規模な領収書管理に。</p>
+              </div>
+              <ul class="plan-features">
+                <li>✓ <strong>インボイスT番号 瞬時検証 無制限</strong></li>
+                <li>✓ <strong>AI領収書3税率読取：月 15 枚まで</strong></li>
+                <li>✓ 200dpi検査・SHA-256改ざん防止保存</li>
+                <li>✓ 電帳法3条件検索（日付・金額・取引先）</li>
+                <li>✓ 汎用CSV出力（直近3ヶ月分）</li>
+              </ul>
+            </article>
+
+            <!-- Pro Annual Plan -->
+            <article class="pricing-card pricing-featured">
+              <div class="featured-ribbon">一番人気・34% OFF（月あたり約¥316）</div>
+              <div class="plan-header">
+                <span class="plan-badge badge-emerald">個人事業主・一人社長の決定版</span>
+                <h3>Pro 年額プラン</h3>
+                <div class="plan-price tnum">
+                  <strong>¥3,800</strong>
+                  <span>/ 年（税込）</span>
+                </div>
+                <p class="plan-desc">月額プラン（¥480/月）より年間¥1,960お得。日々の経理ストレスをゼロに。</p>
+              </div>
+              <ul class="plan-features">
+                <li>✓ <strong>AI領収書・PDF読取：月 150 枚（年間1,800枚）</strong></li>
+                <li>✓ <strong>2026年10月「50%経過措置・少額特例」完全自動判定</strong></li>
+                <li>✓ <strong>弥生会計・freee・MF専用CSV ＆ 連番画像ZIP一括出力</strong></li>
+                <li>✓ <strong>国税庁準拠『電帳法・事務処理規程』PDF 1秒自動生成</strong></li>
+                <li>✓ <strong>7年間（84ヶ月）AES-256暗号化クラウド金庫保存</strong></li>
+                <li>✓ 家事按分（事業割合）の自動計算・仕訳反映</li>
+              </ul>
+            </article>
+
+            <!-- 90-Day Pass -->
+            <article class="pricing-card">
+              <div class="plan-header">
+                <span class="plan-badge badge-amber">自動更新なし・買い切り</span>
+                <h3>確定申告 90日集中パス</h3>
+                <div class="plan-price tnum">
+                  <strong>¥2,980</strong>
+                  <span>/ 90日間（買い切り）</span>
+                </div>
+                <p class="plan-desc">「サブスクは苦手」「1〜3月の確定申告前に1年分を一気に片付けたい」方に。</p>
+              </div>
+              <ul class="plan-features">
+                <li>✓ <strong>90日間すべてのPro機能を完全解放</strong></li>
+                <li>✓ <strong>AI領収書一括読取：合計 500 枚パック付与</strong></li>
+                <li>✓ <strong>自動課金・自動更新一切なし（安心の買い切り）</strong></li>
+                <li>✓ 弥生・freee・MF出力 ＆ 事務処理規程PDF生成</li>
+                <li>✓ <strong>90日経過後も7年間データの閲覧・検索・再出力が可能</strong></li>
+              </ul>
+            </article>
+
+            <!-- Team Plan -->
+            <article class="pricing-card">
+              <div class="plan-header">
+                <span class="plan-badge">マイクロ法人・小規模チーム</span>
+                <h3>Team 法人プラン</h3>
+                <div class="plan-price tnum">
+                  <strong>¥1,480</strong>
+                  <span>/ 月（税込・3名分含む）</span>
+                </div>
+                <p class="plan-desc">年額 ¥14,800（4名以上は +¥400/人/月）。社員の立替経費精算と承認を1つに。</p>
+              </div>
+              <ul class="plan-features">
+                <li>✓ <strong>AI読取プール枠：月 500 枚共有</strong></li>
+                <li>✓ <strong>社員のスマホ立替申請 ＆ 社長・経理のPC承認ワークフロー</strong></li>
+                <li>✓ 社員間の重複領収書アップロード自動ブロック</li>
+                <li>✓ 顧問税理士向け「パスワード付・読み取り専用共有リンク」</li>
+                <li>✓ 部門・プロジェクト別タグ集計 ＆ 消費税控除ダッシュボード</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="data-freedom-banner">
+            <h4>🔓 「データ人質化ゼロ（Zero Lock-in）」宣言</h4>
+            <p>
+              他社サービスのように「解約したら過去の領収書が見られなくなる」「データを人質に取られて解約できない」といったことは一切ありません。
+              Proプランの解約後や90日パスの期間終了後も、保存済みの証憑データは<strong>法定保存期間（7年間）そのまま閲覧・3条件検索・税務調査用の原本ZIP/CSVダウンロードが可能</strong>です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Official Enterprise & Legal Footer -->
+    <footer class="repit-footer" role="contentinfo">
+      <div class="section-container footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="./icon_repit.png" alt="レピット アイコン" width="36" height="36">
+            <strong>レピット (Repit)</strong>
+          </div>
+          <p>
+            「領収書を、ピッと撮るだけ。インボイス確認から電帳法保存まで一瞬で。」<br>
+            iOS (SwiftUI) / Android (Jetpack Compose) / Web 大画面ワークベンチ対応。
+          </p>
+          <p class="tax-law-disclaimer">
+            ※本サービスは光学文字認識（AI-OCR）、国税庁Web-APIとの機械的照合、および電子帳簿保存法に準拠した電磁的記録の保存・CSV出力を行う業務効率化ツールであり、税理士法第2条に規定される税務代理・税務書類の作成・税務相談を行うものではありません。
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>法的表記・コンプライアンス規約</h4>
+          <ul>
+            <li><a href="./terms/">利用規約（税理士法第2条免責条項含む）</a></li>
+            <li><a href="./privacy/">プライバシーポリシー（AI学習完全不利用宣言）</a></li>
+            <li><a href="./tokushoho/">特定商取引法に基づく表記</a></li>
+            <li><a href="https://kapibara91.github.io/">&larr; 開発者ポートフォリオ（カピバラ９１）へ戻る</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-container footer-bottom tnum">
+        <span>&copy; 2026 Kapibara91 / Repit Project. All rights reserved.</span>
+        <span>Package ID: com.kpbr.repit · Region: asia-northeast1 (Tokyo)</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Client-side Script -->
+  <script>
+  (function() {
+    const scenarios = [{"id": "convenience-mixed-tax", "badgeNumber": "標本 ①", "shortTitle": "コンビニ 8%・10%混在", "fullTitle": "セブン-イレブン（軽減税率8%飲食料品 ＋ 標準税率10%消耗品の混在レシート）", "categoryTag": "8%/10% 三段階AI分離 ＆ 算術ガード", "storeName": "セブン-イレブン 港区赤坂一丁目店", "legalMerchantName": "株式会社セブン‐イレブン・ジャパン", "tNumber": "T8010001032884", "tNumberStatus": "VALID_AT_TX_DATE", "tNumberStatusBadge": "国税庁API照合済・取引日時点で有効（適格100%控除）", "transactionDate": "2026-11-10 14:22", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1180 × 1600 px (312 dpi相当・RGB 24bit) — 紙原本破棄可", "totalAmount": 1848, "subtotal10Incl": 770, "tax10": 70, "subtotal8Incl": 1078, "tax8": 79, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥770) + 8%税込(¥1,078) + 非課税(¥0) === 合計(¥1,848) [誤差 ¥0]", "deductionRuleCode": "QUALIFIED_INVOICE_100", "deductionRuleBadge": "適格請求書・100%仕入税額控除", "deductionRatePercent": 100, "recommendedAccountTitle": "会議費 / 消耗品費（複合仕訳自動生成）", "paymentMethod": "事業用クレジットカード", "defaultBusinessRatio": 100, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "lineItems": [{"name": "セブンカフェ ホットコーヒーL（来客用）", "taxMark": "※軽減8%", "amountIncl": 540}, {"name": "ミックスサンドイッチ（打合せ軽食）", "taxMark": "※軽減8%", "amountIncl": 538}, {"name": "コクヨ A4コピー用紙・ボールペン", "taxMark": "標準10%", "amountIncl": 770}], "legalCommentaryJa": "コンビニ領収書で最も頻発する「軽減8%（※印）」と「標準10%」の混在ケース。RepitはAI構造化抽出後にPydantic確定性算術ガード（Math Guard）を実行し、10%対象額＋8%対象額が合計金額と1円の狂いもなく一致することを保証します。", "yayoiCsvPreview": "2026/11/10,会議費,1078,課対仕入(軽)8%,未払金,セブン‐イレブン・ジャパン,T8010001032884 / 消耗品費,770,課対仕入10%", "freeeCsvPreview": "支出,2026-11-10,会議費,1078,課対仕入8%（軽）,株式会社セブン‐イレブン・ジャパン,T8010001032884,適格請求書"}, {"id": "hotel-accommodation-tax", "badgeNumber": "標本 ②", "shortTitle": "ホテル宿泊税（不課税分離）", "fullTitle": "東京都内ビジネスホテル（10%宿泊料 ＋ 不課税「東京都宿泊税」の精密分離）", "categoryTag": "非課税・不課税（宿泊税/入湯税）自動分離", "storeName": "アパホテル＆リゾート〈六本木駅東〉", "legalMerchantName": "アパホテル株式会社", "tNumber": "T2010401088912", "tNumberStatus": "VALID_AT_TX_DATE", "tNumberStatusBadge": "国税庁API照合済・取引日時点で有効（適格100%控除）", "transactionDate": "2026-11-05 09:15", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1200 × 1600 px (320 dpi相当・RGB 24bit) — 紙原本破棄可", "totalAmount": 14500, "subtotal10Incl": 14300, "tax10": 1300, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 200, "nonTaxableReason": "東京都宿泊税（対象外・不課税 ¥200）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥14,300) + 8%税込(¥0) + 不課税宿泊税(¥200) === 合計(¥14,500) [誤差 ¥0]", "deductionRuleCode": "QUALIFIED_INVOICE_100", "deductionRuleBadge": "適格請求書・宿泊税¥200を不課税分離済", "deductionRatePercent": 100, "recommendedAccountTitle": "旅費交通費（出張宿泊費）", "paymentMethod": "事業用クレジットカード", "defaultBusinessRatio": 100, "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "lineItems": [{"name": "シングルルーム宿泊料（1泊・素泊まり）", "taxMark": "標準10%", "amountIncl": 14300}, {"name": "東京都宿泊税（地方税・消費税対象外）", "taxMark": "不課税", "amountIncl": 200}], "legalCommentaryJa": "汎用OCRが最も誤認識しやすい「ホテルの宿泊税（¥100〜¥500）」「温泉の入湯税（¥150）」「軽油引取税」。総額¥14,500に単純に10/110を掛けると消費税が過大計上され税務調査で指摘されます。Repitは地方税（不課税）を自動分離し、正確な消費税¥1,300のみを抽出します。", "yayoiCsvPreview": "2026/11/05,旅費交通費,14300,課対仕入10%,未払金,アパホテル株式会社,T2010401088912 / 租税公課(宿泊税),200,対象外", "freeeCsvPreview": "支出,2026-11-05,旅費交通費,14300,課対仕入10%,アパホテル株式会社,T2010401088912,東京都宿泊税200円対象外分離"}, {"id": "shinkansen-30k-exemption", "badgeNumber": "標本 ③", "shortTitle": "新幹線 3万円未満特例", "fullTitle": "JR東海 東海道新幹線（T番号なしでも税込3万円未満・公共交通機関特例で100%控除）", "categoryTag": "消費税法施行令第49条・公共交通機関特例", "storeName": "JR東海 東京駅 券売機領収書", "legalMerchantName": "東海旅客鉄道株式会社（JR東海）", "tNumber": null, "tNumberStatus": "EXEMPT_RULE", "tNumberStatusBadge": "インボイス不要特例適合・3万円未満公共交通機関特例（100%仕入税額控除）", "transactionDate": "2026-11-08 07:30", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1140 × 1600 px (300 dpi相当・RGB 24bit) — 紙原本破棄可", "totalAmount": 14720, "subtotal10Incl": 14720, "tax10": 1338, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥14,720) [法定特例判定: 3万円未満公共交通機関 -> 帳簿のみ保存で100%控除]", "deductionRuleCode": "EXEMPT_PUBLIC_TRANSIT_30K", "deductionRuleBadge": "3万円未満公共交通機関特例（帳簿保存のみで全額控除可能）", "deductionRatePercent": 100, "recommendedAccountTitle": "旅費交通費（東海道新幹線 東京〜新大阪）", "paymentMethod": "事業用クレジットカード", "defaultBusinessRatio": 100, "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a", "lineItems": [{"name": "のぞみ 指定席特急券・乗車券（東京→新大阪）", "taxMark": "標準10%", "amountIncl": 14720}], "legalCommentaryJa": "駅の自動券売機で発券される切符領収書にはT番号が印字されない場合があります。日本の消費税法では「税込3万円未満の公共交通機関（新幹線・在来線・バス・船舶）」はインボイスの保存義務が免除され、法定帳簿への記載のみで100%控除が認められます。Repitはこれを自動識別し、控除漏れを防ぎます。", "yayoiCsvPreview": "2026/11/08,旅費交通費,14720,課対仕入10%,未払金,JR東海,3万円未満公共交通機関特例(帳簿のみで全額控除)", "freeeCsvPreview": "支出,2026-11-08,旅費交通費,14720,課対仕入10%,東海旅客鉄道株式会社,,公共交通機関特例（3万円未満）"}, {"id": "non-invoice-transitional-50", "badgeNumber": "標本 ④", "shortTitle": "免税店 50%経過措置＆少額特例", "fullTitle": "個人経営の喫茶店（インボイス未登録・2026年10月新税制「50%経過措置」自動仕訳）", "categoryTag": "2026年10月改正・50%経過措置＆1万円未満少額特例", "storeName": "純喫茶 琥珀堂（個人経営・インボイス未登録）", "legalMerchantName": "免税事業者（適格請求書発行事業者登録なし）", "tNumber": null, "tNumberStatus": "TRANSITIONAL_50", "tNumberStatusBadge": "免税事業者判定・2026年10月〜2029年9月 経過措置50%控除自動適用", "transactionDate": "2026-11-09 15:40", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1120 × 1600 px (295 dpi相当・RGB 24bit) — 紙原本破棄可", "totalAmount": 13200, "subtotal10Incl": 13200, "tax10": 1200, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥13,200) 内税額¥1,200 × 50%経過措置 = 控除税額 ¥600 (事業主負担 ¥600)", "deductionRuleCode": "TRANSITIONAL_MEASURE_50", "deductionRuleBadge": "2026年10月改正・50%経過措置自動マッピング", "deductionRatePercent": 50, "recommendedAccountTitle": "接待交際費（クライアント打合せ）", "paymentMethod": "現金決済", "defaultBusinessRatio": 100, "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d", "lineItems": [{"name": "ブレンド珈琲・自家製ケーキセット × 6名（商談）", "taxMark": "10%相当", "amountIncl": 13200}], "legalCommentaryJa": "2026年10月1日より、インボイス登録のない事業者からの仕入税額控除は従来の80%から50%へ引き下げられました。1万円以上の場合、消費税額の半分（¥600）しか控除できません。Repitは取引日付（2026年10月以降）を判定し、弥生会計の税区分コード「課対仕入10%(経過措置50%)」やfreeeの「控50」を完全自動で割り当てます。", "yayoiCsvPreview": "2026/11/09,接待交際費,13200,課対仕入10%(経過措置50%),現金,純喫茶 琥珀堂,経過措置(50%控除)対象", "freeeCsvPreview": "支出,2026-11-09,接待交際費,13200,課対仕入（控50）10%,純喫茶 琥珀堂,,インボイス経過措置50%適用"}, {"id": "cancelled-t-number-block", "badgeNumber": "標本 ⑤", "shortTitle": "失効・取消済T番号の阻止", "fullTitle": "領収書にT番号が印字されているが「取引日以前に登録取消・失効済」の不正インボイス検知", "categoryTag": "取引日時点ステータス検証（国税庁API時系列照合）", "storeName": "東京堂商事株式会社", "legalMerchantName": "東京堂商事株式会社（2026/09/30 登録取消済）", "tNumber": "T5010002044816", "tNumberStatus": "INVALID_CANCELLED", "tNumberStatusBadge": "【警告】取引日（2026/11/02）時点でインボイス登録が取消済（2026/09/30失効）", "transactionDate": "2026-11-02 16:00", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1160 × 1600 px (305 dpi相当・RGB 24bit)", "totalAmount": 55000, "subtotal10Incl": 55000, "tax10": 5000, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥55,000) — ※T番号失効のため100%控除不可（経過措置50%へ自動降格保護）", "deductionRuleCode": "INVALID_AT_TX_DATE_FALLBACK_50", "deductionRuleBadge": "取引日時点でT番号無効 → 経過措置50%へ安全フォールバック", "deductionRatePercent": 50, "recommendedAccountTitle": "外注工賃", "paymentMethod": "普通預金振込", "defaultBusinessRatio": 100, "sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451", "lineItems": [{"name": "イベント展示用什器製作費（旧レシート印字の失効T番号）", "taxMark": "10%印字", "amountIncl": 55000}], "legalCommentaryJa": "単に「13桁の番号が存在するか」を見るだけの簡易チェッカーでは防げない最大の罠です。事業者が過去にインボイス登録を取りやめたにもかかわらず古いレジ設定のままT番号を印字している場合、Repitは「領収書の取引年月日」と国税庁APIの「登録年月日・取消年月日・失効年月日」を時系列比較し、無効な100%控除計上を未然にブロックします。", "yayoiCsvPreview": "2026/11/02,外注工賃,55000,課対仕入10%(経過措置50%),普通預金,東京堂商事株式会社,※警告:T5010002044816は2026/09/30失効済", "freeeCsvPreview": "支出,2026-11-02,外注費,55000,課対仕入（控50）10%,東京堂商事株式会社,,取引日時点でT番号失効のため50%経過措置適用"}, {"id": "audit-log-diff-trail", "badgeNumber": "標本 ⑥", "shortTitle": "電帳法・訂正履歴Diff監査", "fullTitle": "電子帳簿保存法第4条・第7条「真実性の確保」：PostgreSQL 基底トリガーによる改ざん防止・訂正削除履歴", "categoryTag": "DBカーネル強制 JSONB 監査スナップショット ＆ 事務処理規程", "storeName": "ヨドバシカメラ マルチメディアAkiba", "legalMerchantName": "株式会社ヨドバシカメラ", "tNumber": "T2011101018721", "tNumberStatus": "VALID_AT_TX_DATE", "tNumberStatusBadge": "国税庁API照合済・電帳法「訂正・削除履歴」記録済（タイムスタンプ代替要件充足）", "transactionDate": "2026-11-07 18:10", "preservationType": "SCANNER_200DPI", "resolutionSpec": "1200 × 1600 px (320 dpi相当・RGB 24bit) — 紙原本破棄可", "totalAmount": 24800, "subtotal10Incl": 24800, "tax10": 2254, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥24,800) × 家事按分(事業割合80%) = 経費算入額 ¥19,840（事業主貸 ¥4,960）", "deductionRuleCode": "QUALIFIED_INVOICE_100", "deductionRuleBadge": "電帳法・訂正履歴（Audit Diff）記録済 ＋ 家事按分80%", "deductionRatePercent": 100, "recommendedAccountTitle": "消耗品費（PC周辺機器・家事按分80%）", "paymentMethod": "個人クレジットカード（事業主借）", "defaultBusinessRatio": 80, "sha256": "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae", "lineItems": [{"name": "ロジクール MX Master 3S ワイヤレスマウス・USB-Cハブ", "taxMark": "標準10%", "amountIncl": 24800}], "legalCommentaryJa": "電子帳簿保存法では、高額な認定タイムスタンプを付与しない場合、「訂正・削除の履歴が残るシステム」または「事務処理規程の備付け」が求められます。Repitは両方を提供：PostgreSQLのAFTER UPDATE/DELETEトリガーが変更前後のJSONBを改ざん不能テーブルへ強制記録し、さらに国税庁準拠の『事務処理規程』PDFも1秒で自動生成します。", "yayoiCsvPreview": "2026/11/07,消耗品費,19840,課対仕入10%,事業主借,株式会社ヨドバシカメラ,T2011101018721(家事按分80%:事業主貸4960)", "freeeCsvPreview": "支出,2026-11-07,消耗品費,19840,課対仕入10%,株式会社ヨドバシカメラ,T2011101018721,家事按分80%適用・監査ログID#9042", "auditDiffSample": {"timestampUtc": "2026-11-07T09:14:22.418Z", "actor": "user_89a1f (本人確認済セッション)", "fieldChanged": "account_title / business_ratio", "oldValue": "{\"account_title\": \"雑費\", \"business_ratio\": 100, \"deductible_amount\": 24800}", "newValue": "{\"account_title\": \"消耗品費\", \"business_ratio\": 80, \"deductible_amount\": 19840}", "triggerName": "trg_receipt_audit (PostgreSQL Kernel Trigger)"}}, {"id": "aws-electronic-invoice-pdf", "badgeNumber": "標本 ⑦", "shortTitle": "AWS・SaaS 電子取引PDF", "fullTitle": "Amazon Web Services / クラウド利用料（電子帳簿保存法第7条「電子取引データ保存」完全対応）", "categoryTag": "電子取引データ保存（PDF原本SHA-256 ＆ 3条件検索）", "storeName": "Amazon Web Services Japan 合同会社", "legalMerchantName": "アマゾン・ウェブ・サービス・ジャパン合同会社", "tNumber": "T4010001035544", "tNumberStatus": "VALID_AT_TX_DATE", "tNumberStatusBadge": "国税庁API照合済・電子取引データ原本保存（紙出力保存の廃止に対応）", "transactionDate": "2026-11-01 00:00", "preservationType": "ELECTRONIC_PDF", "resolutionSpec": "Vector PDF 原本 (SHA-256 署名検証済) — 電子取引データ保存", "totalAmount": 18700, "subtotal10Incl": 18700, "tax10": 1700, "subtotal8Incl": 0, "tax8": 0, "nonTaxableAmount": 0, "nonTaxableReason": "対象なし（¥0）", "mathGuardPassed": true, "mathGuardFormula": "10%税込(¥18,700) × 家事按分(通信費70%) = 経費算入額 ¥13,090", "deductionRuleCode": "QUALIFIED_INVOICE_100", "deductionRuleBadge": "電帳法第7条・電子取引データ保存 ＆ 適格100%控除", "deductionRatePercent": 100, "recommendedAccountTitle": "通信費（クラウドサーバー利用料・家事按分70%）", "paymentMethod": "事業用クレジットカード", "defaultBusinessRatio": 70, "sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce", "lineItems": [{"name": "AWS Cloud Infrastructure (Tokyo ap-northeast-1) 2026年10月度請求書PDF", "taxMark": "標準10%", "amountIncl": 18700}], "legalCommentaryJa": "令和6年（2024年）1月より完全義務化された「電子取引データの電子保存」（PDF請求書やAmazon領収書を紙に印刷して保存する宥恕措置の廃止）に完全対応。PCブラウザからPDFをドラッグ＆ドロップするだけで、原本ハッシュ計算・取引年月日×金額×取引先の3条件検索インデックス登録が1秒で完了します。", "yayoiCsvPreview": "2026/11/01,通信費,13090,課対仕入10%,未払金,アマゾン・ウェブ・サービス・ジャパン合同会社,T4010001035544(電子取引保存)", "freeeCsvPreview": "支出,2026-11-01,通信費,13090,課対仕入10%,アマゾン・ウェブ・サービス・ジャパン合同会社,T4010001035544,電帳法電子取引データ保存済"}];
+    let currentScenario = scenarios[0];
+    let customRatio = null;
+    let exportFormat = 'yayoi';
+    let currentTheme = 'light';
+
+    // Elements
+    const rootEl = document.getElementById('repitAppRoot');
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const fontBtns = document.querySelectorAll('.font-btn');
+
+    // Theme toggle
+    themeBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      rootEl.className = 'repit-lp-root theme-' + currentTheme;
+      themeBtn.textContent = currentTheme === 'light' ? '🌙 藍墨ダーク' : '☀️ 和紙ライト';
+    });
+
+    // Font scale
+    const fontScaleMap = {
+      normal: 16,
+      large: 18.4,
+      xlarge: 20.8
+    };
+    fontBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        fontBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const scale = btn.getAttribute('data-scale');
+        rootEl.style.fontSize = fontScaleMap[scale] + 'px';
+      });
+    });
+
+    // 1. Render Scenario Tabs
+    const tabsContainer = document.getElementById('scenarioTabs');
+    scenarios.forEach((sc, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'scenario-tab-btn' + (idx === 0 ? ' active' : '');
+      btn.innerHTML = '<span class="scenario-badge-num">' + sc.badgeNumber + '</span>' +
+                      '<span class="scenario-tab-title">' + sc.shortTitle + '</span>';
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.scenario-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentScenario = sc;
+        customRatio = null;
+        renderScenario();
+      });
+      tabsContainer.appendChild(btn);
+    });
+
+    // Render active scenario
+    function renderScenario() {
+      const sc = currentScenario;
+      const ratio = customRatio ?? sc.defaultBusinessRatio;
+      const deductibleExp = Math.round((sc.totalAmount * ratio) / 100);
+      const privateDraw = sc.totalAmount - deductibleExp;
+      const rawTax = sc.tax10 + sc.tax8;
+      const deductibleTax = Math.round(rawTax * (sc.deductionRatePercent / 100) * (ratio / 100));
+
+      const pct10 = Math.round((sc.subtotal10Incl / sc.totalAmount) * 100);
+      const pct8 = Math.round((sc.subtotal8Incl / sc.totalAmount) * 100);
+      const pctNonTax = Math.max(0, 100 - pct10 - pct8);
+
+      // Left: Receipt
+      document.getElementById('receiptComplianceChip').textContent =
+        sc.preservationType === 'SCANNER_200DPI' ? '✓ 電帳法スキャナ保存 200dpi適合' : '✓ 電帳法第7条 電子取引原本';
+      document.getElementById('receiptResSpec').textContent = sc.resolutionSpec;
+      document.getElementById('thermalStoreYago').textContent = sc.storeName;
+      document.getElementById('thermalStoreLegal').textContent = '国税庁公表商号: ' + sc.legalMerchantName;
+      document.getElementById('thermalTxDate').textContent = '取引日時: ' + sc.transactionDate;
+
+      const tNumEl = document.getElementById('thermalTNum');
+      tNumEl.className = 'thermal-t-num status-' + sc.tNumberStatus.toLowerCase();
+      tNumEl.textContent = sc.tNumber ? '登録番号: ' + sc.tNumber : '記載なし（適格請求書番号なし）';
+
+      const itemListEl = document.getElementById('thermalItemList');
+      itemListEl.innerHTML = '';
+      sc.lineItems.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'thermal-item-row';
+        li.innerHTML = '<div class="thermal-item-name"><span>' + item.name + '</span><span class="thermal-tax-tag">' + item.taxMark + '</span></div>' +
+                       '<span class="thermal-item-price tnum">¥' + item.amountIncl.toLocaleString('ja-JP') + '</span>';
+        itemListEl.appendChild(li);
+      });
+
+      document.getElementById('thermalTotalValue').textContent = '¥' + sc.totalAmount.toLocaleString('ja-JP');
+      document.getElementById('thermalSub10').innerHTML = '<span>10%標準対象 (税込 ¥' + sc.subtotal10Incl.toLocaleString('ja-JP') + ')</span><span>内消費税 ¥' + sc.tax10.toLocaleString('ja-JP') + '</span>';
+      document.getElementById('thermalSub8').innerHTML = '<span>8%軽減対象 ※ (税込 ¥' + sc.subtotal8Incl.toLocaleString('ja-JP') + ')</span><span>内消費税 ¥' + sc.tax8.toLocaleString('ja-JP') + '</span>';
+      document.getElementById('thermalSubNonTax').innerHTML = '<span>非課税・不課税 (' + sc.nonTaxableReason + ')</span><span>¥' + sc.nonTaxableAmount.toLocaleString('ja-JP') + '</span>';
+      document.getElementById('thermalShaCode').textContent = sc.sha256;
+
+      // Right: Inspector
+      document.getElementById('inspectorCategoryBadge').textContent = sc.categoryTag;
+      document.getElementById('inspectorTitle').textContent = sc.fullTitle;
+      document.getElementById('inspectorStatusBanner').textContent = sc.tNumberStatusBadge;
+
+      document.getElementById('seg10').style.width = pct10 + '%';
+      document.getElementById('seg8').style.width = pct8 + '%';
+      document.getElementById('segNonTax').style.width = pctNonTax + '%';
+      document.getElementById('mathFormulaBox').textContent = sc.mathGuardFormula;
+
+      document.getElementById('anbunAccountTitle').textContent = sc.recommendedAccountTitle;
+      document.getElementById('anbunRatioPill').textContent = ratio + '% 事業算入';
+      document.getElementById('sandboxAnbunSlider').value = ratio;
+      document.getElementById('anbunExpenseVal').textContent = '¥' + deductibleExp.toLocaleString('ja-JP');
+      document.getElementById('anbunPrivateVal').textContent = '¥' + privateDraw.toLocaleString('ja-JP');
+      document.getElementById('anbunTaxDeductVal').textContent = '¥' + deductibleTax.toLocaleString('ja-JP');
+
+      document.getElementById('legalCommentaryText').textContent = sc.legalCommentaryJa;
+
+      // Audit diff
+      const auditBox = document.getElementById('auditDiffBox');
+      if (sc.auditDiffSample) {
+        auditBox.style.display = 'flex';
+        document.getElementById('auditOldVal').textContent = sc.auditDiffSample.oldValue;
+        document.getElementById('auditNewVal').textContent = sc.auditDiffSample.newValue;
+      } else {
+        auditBox.style.display = 'none';
+      }
+
+      // CSV preview
+      document.getElementById('csvCodeLine').textContent =
+        exportFormat === 'yayoi' ? sc.yayoiCsvPreview : sc.freeeCsvPreview;
+    }
+
+    // Anbun slider
+    document.getElementById('sandboxAnbunSlider').addEventListener('input', (e) => {
+      customRatio = Number(e.target.value);
+      renderScenario();
+    });
+
+    // CSV Toggles
+    const btnYayoi = document.getElementById('btnCsvYayoi');
+    const btnFreee = document.getElementById('btnCsvFreee');
+    btnYayoi.addEventListener('click', () => {
+      exportFormat = 'yayoi';
+      btnYayoi.classList.add('active');
+      btnFreee.classList.remove('active');
+      renderScenario();
+    });
+    btnFreee.addEventListener('click', () => {
+      exportFormat = 'freee';
+      btnFreee.classList.add('active');
+      btnYayoi.classList.remove('active');
+      renderScenario();
+    });
+
+    // Initial render
+    renderScenario();
+
+    // 2. Modulus 9 Live Verifier
+    function validateTNumberModulus9(raw) {
+      const clean = (raw || '').replace(/[Ｔｔ]/g, 'T').replace(/[０-９]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xfee0)).replace(/[\s\-ー]/g, '').toUpperCase();
+      const digitsOnly = clean.startsWith('T') ? clean.slice(1) : clean;
+      if (!/^\d{13}$/.test(digitsOnly)) {
+        return { isValid: false, reason: 'T＋13桁の半角数字（計14文字）で入力してください。', digitsOnly };
+      }
+      const actualCheck = Number(digitsOnly[0]);
+      if (actualCheck === 0) return { isValid: false, reason: '先頭の検査数字に0は使用されません。', digitsOnly };
+
+      let sum = 0;
+      for (let n = 1; n <= 12; n++) {
+        const digitIndex = 13 - n;
+        const pn = Number(digitsOnly[digitIndex]);
+        const qn = n % 2 === 1 ? 1 : 2;
+        sum += pn * qn;
+      }
+      const expectedCheck = 9 - (sum % 9);
+      return {
+        isValid: actualCheck === expectedCheck,
+        expectedCheck,
+        actualCheck,
+        digitsOnly,
+        reason: actualCheck === expectedCheck ? 'Modulus 9 チェックデジット検証OK（国税庁規定適合）' : 'チェックデジット不一致（期待値: ' + expectedCheck + ', 入力値: ' + actualCheck + '）'
+      };
+    }
+
+    const presetMerchants = {
+      T8010001032884: { legalName: '株式会社セブン‐イレブン・ジャパン', yago: 'セブン-イレブン 港区赤坂一丁目店', regDate: '2023-10-01', cancelDate: null },
+      T7010001008844: { legalName: '株式会社ローソン', yago: 'ローソン 六本木三丁目店', regDate: '2023-10-01', cancelDate: null },
+      T5010002044816: { legalName: '東京堂商事株式会社', yago: '東京堂商事', regDate: '2023-10-01', cancelDate: '2026-09-30' }
+    };
+
+    const liveTInput = document.getElementById('liveTInput');
+    const liveDateInput = document.getElementById('liveDateInput');
+    const verifierBanner = document.getElementById('verifierBanner');
+    const verifierBannerTitle = document.getElementById('verifierBannerTitle');
+    const verifierMerchantMeta = document.getElementById('verifierMerchantMeta');
+
+    function updateVerifier() {
+      const val = liveTInput.value.trim();
+      const txDate = liveDateInput.value;
+      const res = validateTNumberModulus9(val);
+      const normalized = val.startsWith('T') ? val.toUpperCase() : 'T' + res.digitsOnly;
+      const merchant = presetMerchants[normalized];
+      const isCancelled = merchant && merchant.cancelDate && txDate > merchant.cancelDate;
+
+      if (!res.isValid) {
+        verifierBanner.className = 'verifier-result-banner banner-error';
+        verifierBannerTitle.textContent = '✕ 端末内 0.1ms ブロック：' + res.reason;
+        verifierMerchantMeta.style.display = 'none';
+      } else if (isCancelled) {
+        verifierBanner.className = 'verifier-result-banner banner-warning';
+        verifierBannerTitle.textContent = '⚠️ 取引日時点ステータス警告：番号形式は有効ですが、取引日（' + txDate + '）以前に登録が失効（' + merchant.cancelDate + '取消）しています！';
+        verifierMerchantMeta.style.display = 'flex';
+        verifierMerchantMeta.innerHTML = '<span>公表商号: ' + merchant.legalName + '</span><span>屋号: ' + merchant.yago + '</span><span>登録日: ' + merchant.regDate + '</span><span>判定結果: 経過措置50%へ自動降格保護</span>';
+      } else {
+        verifierBanner.className = 'verifier-result-banner banner-valid';
+        verifierBannerTitle.textContent = '✓ 検証クリア：' + res.reason;
+        verifierMerchantMeta.style.display = 'flex';
+        if (merchant) {
+          verifierMerchantMeta.innerHTML = '<span>公表商号: ' + merchant.legalName + '</span><span>屋号連携: ' + merchant.yago + '</span><span>登録日: ' + merchant.regDate + '</span><span>判定結果: 適格請求書（100%控除可）</span>';
+        } else {
+          verifierMerchantMeta.innerHTML = '<span>形式検査: 合格（国税庁公式Web-API照合可能）</span>';
+        }
+      }
+    }
+
+    liveTInput.addEventListener('input', updateVerifier);
+    liveDateInput.addEventListener('change', updateVerifier);
+
+    document.getElementById('presetValidSeven').addEventListener('click', () => {
+      liveTInput.value = 'T8010001032884';
+      liveDateInput.value = '2026-11-10';
+      updateVerifier();
+    });
+    document.getElementById('presetCancelled').addEventListener('click', () => {
+      liveTInput.value = 'T5010002044816';
+      liveDateInput.value = '2026-11-10';
+      updateVerifier();
+    });
+    document.getElementById('presetTypo').addEventListener('click', () => {
+      liveTInput.value = 'T1010001032884';
+      updateVerifier();
+    });
+
+    // 3. 50% Transitional Measure Simulator
+    const simMonthlyInput = document.getElementById('simMonthlySpend');
+    const simUnder10kInput = document.getElementById('simUnder10kRatio');
+
+    function updateSimulator() {
+      const monthlyMan = Number(simMonthlyInput.value);
+      const under10kRatio = Number(simUnder10kInput.value);
+
+      document.getElementById('simMonthlySpendLabel').textContent = '月 ' + monthlyMan + ' 万円（年 ' + (monthlyMan * 12) + ' 万円）';
+      document.getElementById('simUnder10kRatioLabel').textContent = under10kRatio + '%';
+
+      const annualSpend = monthlyMan * 10000 * 12;
+      const annualTax = Math.round((annualSpend * 10) / 110);
+      const savedAmount = Math.round(annualTax * (under10kRatio / 100) * 0.5);
+      const totalDeductible = Math.round(annualTax * (under10kRatio / 100) * 1.0) + Math.round(annualTax * ((100 - under10kRatio) / 100) * 0.5);
+
+      document.getElementById('simSavedAmount').textContent = '+¥' + savedAmount.toLocaleString('ja-JP') + ' / 年';
+      const roi = Math.max(1, Math.round(savedAmount / 3800));
+      document.getElementById('simRoiBadge').textContent = '（Pro年額プラン ¥3,800 の約 ' + roi + ' 倍の節税効果）';
+
+      document.getElementById('simAnnualSpend').textContent = '¥' + annualSpend.toLocaleString('ja-JP');
+      document.getElementById('simAnnualTax').textContent = '¥' + annualTax.toLocaleString('ja-JP');
+      document.getElementById('simTotalDeductible').textContent = '¥' + totalDeductible.toLocaleString('ja-JP');
+    }
+
+    simMonthlyInput.addEventListener('input', updateSimulator);
+    simUnder10kInput.addEventListener('input', updateSimulator);
+
+    updateSimulator();
+
+  })();
+  </script>
+</body>
+</html>

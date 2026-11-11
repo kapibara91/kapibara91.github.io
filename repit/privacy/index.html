@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レピット (Repit) プライバシーポリシー | 個人情報保護方針・AIモデル不学習宣言</title>
+  <link rel="stylesheet" href="../repit.css">
+  <link rel="icon" type="image/png" href="../icon_repit.png">
+</head>
+<body class="theme-light">
+  <main class="legal-doc-container">
+    <nav aria-label="戻るリンク">
+      <a href="../" class="back-portfolio-link">&larr; レピット (Repit) 公式サイトへ戻る</a>
+    </nav>
+
+    <h1>レピット (Repit) プライバシーポリシー（個人情報保護方針）</h1>
+    <p class="tnum" style="color: var(--text-muted); font-size: 0.85rem;">最終改定日：2026年11月11日</p>
+
+    <section>
+      <h2>1. 基本方針</h2>
+      <p>
+        レピット開発チーム（以下「当チーム」）は、日本の『個人情報の保護に関する法律』（平成15年法律第57号、以下「個人情報保護法」）および関連法令・ガイドラインを遵守し、お客様の個人情報および財務・証憑データを最高水準のセキュリティ体制で保護することをお約束いたします。
+      </p>
+    </section>
+
+    <section>
+      <h2>2. AIモデルの学習への完全不利用宣言（Zero Data Retention for AI Training）</h2>
+      <p>
+        当チームは、お客様のデータ主権を最重要視しています。
+        お客様が本サービスにアップロードされた領収書画像、PDF請求書、取引先名、屋号、取引年月日、税額、および勘定科目明細等のすべての事業データは、<strong>基盤AIモデル（Google Cloud Vertex AI / Gemini等）の事前学習・再トレーニング・ファインチューニングには一切使用されません</strong>。
+      </p>
+      <p>
+        当チームはエンタープライズ商用契約（Paid Commercial Tier）を締結しており、文字認識推論の完了後、AIプロバイダ側における入力データは直ちにメモリ上から破棄され、蓄積されることはありません。守秘義務契約（NDA）下にあるクライアント案件の経費証憑も安心してご利用いただけます。
+      </p>
+    </section>
+
+    <section>
+      <h2>3. 取得する情報および利用目的</h2>
+      <p>本サービスでは、以下の情報を取得・利用します。</p>
+      <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li><strong>アカウント情報</strong>：メールアドレス、認証トークン（Apple / Googleサインイン等の外部ID連携識別子）</li>
+        <li><strong>証憑データ</strong>：領収書・レシート・請求書の画像およびPDF、取引金額、税率別内訳、取引年月日、発行事業者名、T番号</li>
+        <li><strong>税務設定情報</strong>：屋号・法人名、代表者氏名、科目別家事按分初期比率</li>
+        <li><strong>技術・ログ情報</strong>：端末OS種別、IPアドレス、API利用履歴、SHA-256デジタルハッシュ、監査ログ（訂正・削除履歴）</li>
+      </ul>
+      <p>これらの情報は、領収書の自動OCR解析、国税庁Web-API照合、電帳法スキャナ保存要件の履行、事務処理規程PDFの発行、およびカスタマーサポートの提供のためにのみ利用されます。</p>
+    </section>
+
+    <section>
+      <h2>4. 金融機関基準の安全管理措置</h2>
+      <p>当チームは、取り扱う個人データおよび財務証憑の漏洩・滅失・毀損の防止のため、以下の安全管理措置を講じています。</p>
+      <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li><strong>通信暗号化</strong>：すべての通信経路において最新のTLS 1.3暗号化通信を強制。</li>
+        <li><strong>保存時暗号化</strong>：データベースおよびオブジェクトストレージにおいてAES-256規格で暗号化して保管。</li>
+        <li><strong>国内リージョン完結</strong>：サーバーおよびデータベースはGoogle Cloud 東京リージョン（<code>asia-northeast1</code>）で稼働。</li>
+        <li><strong>改ざん防止（WORM）</strong>：証憑原本を保管するCloudflare R2ストレージはIAM権限により削除（<code>DeleteObject</code>）を遮断。</li>
+        <li><strong>不可変監査ログ</strong>：PostgreSQLカーネルレベルのデータベーストリガーにより、訂正・削除前の変更履歴スナップショットを自動記録。</li>
+        <li><strong>7年間遠隔冷備</strong>：毎日03:00 JSTに暗号化バックアップを実行し、電帳法の法定期間である7年間（84ヶ月）安全に保管。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. 第三者提供および委託の制限</h2>
+      <p>
+        当チームは、個人情報保護法等の法令に定められた場合を除き、あらかじめお客様の同意を得ることなく第三者へ個人情報を提供することはありません。ただし、インボイス登録番号の適格性確認（国税庁公式Web-API）および有料課金決済（Stripe / Apple / Google）の履行に必要な最小限の範囲において、業務委託先に限定的な通信を行う場合があります。
+      </p>
+    </section>
+
+    <section>
+      <h2>6. データの開示・訂正・完全削除権</h2>
+      <p>
+        お客様は、本サービスの操作画面またはサポート窓口を通じて、いつでも自己の登録情報および保存証憑の開示、訂正、CSV/ZIPダウンロード、またはアカウントの退会およびデータの完全抹消を要求することができます。
+      </p>
+    </section>
+
+    <section>
+      <h2>7. お問い合わせ窓口</h2>
+      <p>
+        本プライバシーポリシーに関するご質問、個人情報の開示請求等については、下記窓口まで電子メールにてご連絡ください。
+      </p>
+      <p>
+        <strong>レピット (Repit) 個人情報保護担当窓口</strong><br>
+        E-mail: <code>ousannjp@gmail.com</code><br>
+        運営者：カピバラ９１ (Kapibara91)
+      </p>
+    </section>
+  </main>
+</body>
+</html>

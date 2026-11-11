@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="レピット (Repit) — 領収書AI読取・インボイスT番号確認・電帳法クラウド金庫">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="cardGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Japanese Grid Pattern -->
+  <g stroke="#334155" stroke-opacity="0.22" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126"/>
+    <line x1="0" y1="252" x2="1200" y2="252"/>
+    <line x1="0" y1="378" x2="1200" y2="378"/>
+    <line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/>
+  </g>
+
+  <!-- Glow Orbs -->
+  <circle cx="980" cy="140" r="240" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="880" cy="490" r="210" fill="#059669" fill-opacity="0.16"/>
+
+  <!-- Top Bar Accent -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accentBlue)"/>
+
+  <!-- Left Column: Brand & Value Proposition -->
+  <g transform="translate(72, 76)">
+    <!-- Compliance Pill -->
+    <rect x="0" y="0" width="540" height="38" rx="19" fill="#059669" fill-opacity="0.18" stroke="#34D399" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle cx="22" cy="19" r="5" fill="#34D399"/>
+    <text x="38" y="25" fill="#6EE7B7" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="15" font-weight="700">
+      国税庁Web-API連携 × 電子帳簿保存法準拠 × 2026年10月50%経過措置対応
+    </text>
+
+    <!-- Brand Title -->
+    <text x="0" y="106" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="56" font-weight="800" letter-spacing="-1">
+      レピット (Repit)
+    </text>
+    <text x="0" y="164" fill="#60A5FA" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="32" font-weight="700">
+      「領収書を、ピッと撮るだけ。」
+    </text>
+    <text x="0" y="212" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="22" font-weight="500">
+      T番号の取引日時点検証・8%/10%/非課税AI仕訳から
+    </text>
+    <text x="0" y="246" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif" font-size="22" font-weight="500">
+      SHA-256改ざん防止保存・弥生/freee出力まで0.5秒で完結。
+    </text>
+
+    <!-- 4 Key Technical Badges -->
+    <g transform="translate(0, 290)">
+      <rect x="0" y="0" width="295" height="62" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.2"/>
+      <text x="18" y="26" fill="#60A5FA" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">⚡ Modulus 9 ＋ 国税庁API</text>
+      <text x="18" y="48" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="16" font-weight="700">T番号・取引日時点0.5秒真偽判定</text>
+
+      <rect x="312" y="0" width="295" height="62" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.2"/>
+      <text x="330" y="26" fill="#34D399" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">🛡️ Deterministic Math Guard</text>
+      <text x="330" y="48" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="16" font-weight="700">8%・10%・宿泊税を誤差0円で分離</text>
+
+      <rect x="0" y="78" width="295" height="62" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.2"/>
+      <text x="18" y="104" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">⚖️ 2026年10月改正〜2029年対応</text>
+      <text x="18" y="126" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="16" font-weight="700">50%経過措置・少額/交通特例エンジン</text>
+
+      <rect x="312" y="78" width="295" height="62" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.2"/>
+      <text x="330" y="104" fill="#A78BFA" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">🔒 AI学習完全不利用・東京保管</text>
+      <text x="330" y="126" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="16" font-weight="700">AES-256暗号化＆7年自動バックアップ</text>
+    </g>
+
+    <!-- Bottom URL -->
+    <text x="0" y="485" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="600">
+      https://kapibara91.github.io/repit/   |   iOS / Android / Web
+    </text>
+  </g>
+
+  <!-- Right Column: Receipt & Verification Card Mockup -->
+  <g transform="translate(740, 72)">
+    <rect x="0" y="0" width="396" height="486" rx="22" fill="url(#cardGlass)" stroke="#475569" stroke-width="1.5"/>
+    <rect x="24" y="24" width="348" height="36" rx="10" fill="#059669" fill-opacity="0.2" stroke="#34D399" stroke-opacity="0.5"/>
+    <text x="42" y="47" fill="#6EE7B7" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">
+      ✓ 適格請求書・電帳法200dpi要件クリア (原本破棄可)
+    </text>
+
+    <text x="24" y="92" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="13" font-weight="600">取引先（屋号 / 国税庁公表商号）</text>
+    <text x="24" y="118" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="20" font-weight="800">セブン-イレブン 港区赤坂店</text>
+    <text x="24" y="142" fill="#60A5FA" font-family="ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700">登録番号: T8010001032884 [取引日有効]</text>
+
+    <line x1="24" y1="162" x2="372" y2="162" stroke="#334155" stroke-dasharray="4 4"/>
+
+    <!-- Tax 3-tier breakdown -->
+    <text x="24" y="192" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="15">標準税率 10% 対象 (税込)</text>
+    <text x="372" y="192" text-anchor="end" fill="#F8FAFC" font-family="ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700">¥770 (税 ¥70)</text>
+
+    <text x="24" y="226" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="15">軽減税率 8% 対象 ※ (税込)</text>
+    <text x="372" y="226" text-anchor="end" fill="#34D399" font-family="ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700">¥1,078 (税 ¥79)</text>
+
+    <text x="24" y="260" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="15">非課税・不課税（宿泊税等）</text>
+    <text x="372" y="260" text-anchor="end" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700">¥0</text>
+
+    <!-- Visual Bar -->
+    <rect x="24" y="280" width="145" height="10" rx="5" fill="#3B82F6"/>
+    <rect x="175" y="280" width="197" height="10" rx="5" fill="#10B981"/>
+
+    <line x1="24" y1="310" x2="372" y2="310" stroke="#334155"/>
+
+    <text x="24" y="348" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="15" font-weight="700">合計金額 (Math Guard 検証済)</text>
+    <text x="372" y="352" text-anchor="end" fill="#F8FAFC" font-family="ui-monospace, SFMono-Regular, monospace" font-size="30" font-weight="800">¥1,848</text>
+
+    <rect x="24" y="376" width="348" height="44" rx="10" fill="#0F172A" stroke="#334155"/>
+    <text x="38" y="395" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">SHA-256 Digital Fingerprint (R2 Immutable)</text>
+    <text x="38" y="411" fill="#60A5FA" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12">e3b0c44298fc1c149afbf4c8996fb924...b855</text>
+
+    <rect x="24" y="432" width="348" height="34" rx="8" fill="#2563EB"/>
+    <text x="198" y="454" text-anchor="end" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif" font-size="14" font-weight="700">
+      弥生・freee・MF 仕訳出力準備完了
+    </text>
+  </g>
+</svg>
+
