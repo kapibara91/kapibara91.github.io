@@ -81,10 +81,13 @@
         </nav>
 
         <div class="nav-controls" role="group" aria-label="表示設定・アクセシビリティ">
-          <div class="font-scale-switcher" role="group" aria-label="文字サイズ切替">
-            <button type="button" class="font-btn active" data-scale="normal">標準</button>
-            <button type="button" class="font-btn" data-scale="large">大</button>
-            <button type="button" class="font-btn" data-scale="xlarge">特大</button>
+          <div class="font-scale-group" role="group" aria-label="文字サイズ切替（アクセシビリティ）">
+            <span class="font-scale-label" aria-hidden="true">文字サイズ</span>
+            <div class="font-scale-switcher">
+              <button type="button" class="font-btn active" data-scale="normal" title="文字サイズ: 標準 (100%)">標準</button>
+              <button type="button" class="font-btn" data-scale="large" title="文字サイズ: 拡大 (115%)">大</button>
+              <button type="button" class="font-btn" data-scale="xlarge" title="文字サイズ: 特大 (130%)">特大</button>
+            </div>
           </div>
           <button type="button" id="themeToggleBtn" aria-label="テーマ切替（和紙ライト / 藍墨ダーク）" class="theme-toggle-btn">
             🌙 藍墨ダーク
@@ -865,7 +868,7 @@
       themeBtn.textContent = currentTheme === 'light' ? '🌙 藍墨ダーク' : '☀️ 和紙ライト';
     });
 
-    // Font scale
+    // Font scale (Dynamic Type Accessibility)
     const fontScaleMap = {
       normal: 16,
       large: 18.4,
@@ -876,7 +879,9 @@
         fontBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const scale = btn.getAttribute('data-scale');
-        rootEl.style.fontSize = fontScaleMap[scale] + 'px';
+        const targetPx = fontScaleMap[scale] || 16;
+        document.documentElement.style.fontSize = targetPx + 'px';
+        rootEl.style.fontSize = targetPx + 'px';
       });
     });
 

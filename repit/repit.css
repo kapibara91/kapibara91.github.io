@@ -221,13 +221,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .nav-brand-group {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .back-portfolio-link {
@@ -240,6 +242,7 @@ button {
   border: 1px solid var(--border-subtle);
   transition: all 0.15s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .back-portfolio-link:hover {
@@ -249,35 +252,48 @@ button {
 
 .nav-divider {
   color: var(--border-strong);
+  flex-shrink: 0;
 }
 
 .brand-logo-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-logo-link img {
   border-radius: 8px;
   display: block;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  white-space: nowrap;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .nav-anchor-links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.15rem;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .nav-anchor-links a {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color 0.15s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-anchor-links a:hover {
@@ -288,23 +304,47 @@ button {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.font-scale-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.font-scale-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .font-scale-switcher {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   background: var(--bg-card-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 2px;
+  flex-shrink: 0;
 }
 
 .font-scale-switcher button {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.55rem;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
   border-radius: 6px;
   transition: all 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .font-scale-switcher button.active {
@@ -323,6 +363,8 @@ button {
   border-radius: 8px;
   transition: all 0.15s ease;
   white-space: nowrap;
+  flex-shrink: 0;
+}
 }
 
 .theme-toggle-btn:hover {
@@ -1994,7 +2036,20 @@ button {
 /* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
+@media (max-width: 1200px) {
+  .nav-anchor-links {
+    gap: 0.65rem;
+  }
+  .nav-anchor-links a {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 1024px) {
+  .nav-anchor-links {
+    display: none;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -2073,3 +2128,4 @@ button {
     gap: 0.5rem;
   }
 }
+
