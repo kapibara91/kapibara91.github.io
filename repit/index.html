@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="theme-light" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +53,7 @@
   }
   </script>
 </head>
-<body>
+<body class="theme-light">
   <div id="repitAppRoot" class="repit-lp-root theme-light" style="font-size: 16px;">
     
     <!-- Top Sticky Accessibility & Navigation Bar -->
@@ -860,10 +860,17 @@
     const fontBtns = document.querySelectorAll('.font-btn');
 
     // Theme toggle
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.className = 'theme-' + theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.body.className = 'theme-' + theme;
+      rootEl.className = 'repit-lp-root theme-' + theme;
+      themeBtn.textContent = theme === 'light' ? '🌙 藍墨ダーク' : '☀️ 和紙ライト';
+    }
+
     themeBtn.addEventListener('click', () => {
-      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-      rootEl.className = 'repit-lp-root theme-' + currentTheme;
-      themeBtn.textContent = currentTheme === 'light' ? '🌙 藍墨ダーク' : '☀️ 和紙ライト';
+      applyTheme(currentTheme === 'light' ? 'dark' : 'light');
     });
 
     // Font scale (Dynamic Type Accessibility)
@@ -877,6 +884,7 @@
         fontBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const scale = btn.getAttribute('data-scale');
+        document.documentElement.setAttribute('data-font-scale', scale);
         const targetPx = fontScaleMap[scale] || 16;
         document.documentElement.style.fontSize = targetPx + 'px';
         rootEl.style.fontSize = targetPx + 'px';
