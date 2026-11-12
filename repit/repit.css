@@ -860,9 +860,10 @@ button {
 /* Split-View Workbench */
 .sandbox-split-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(320px, 360px) minmax(0, 1fr);
   gap: 2rem;
   align-items: flex-start;
+  width: 100%;
 }
 
 /* Left Panel: Thermal Receipt Simulator */
@@ -990,43 +991,52 @@ button {
   gap: 0.55rem;
 }
 
-/* 3-Column Precise Grid Alignment: Item Name | Tax Tag | Price */
+/* Precise Flex Alignment: Item Name | Meta (Tax Tag + Price) */
 .thermal-item-row {
-  display: grid;
-  grid-template-columns: 1fr 4.6rem 4.2rem;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0.75rem;
 }
 
 .thermal-item-name {
+  flex: 1;
   min-width: 0;
   font-family: var(--font-sans);
   line-height: 1.45;
   word-break: break-word;
 }
 
-.thermal-item-col-tax {
-  text-align: right;
+.thermal-item-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .thermal-tax-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-ruri);
   white-space: nowrap;
-  padding: 0.12rem 0.35rem;
+  padding: 0.12rem 0.45rem;
   background: var(--badge-blue-bg);
   border-radius: 4px;
   line-height: 1.2;
+  min-width: 4.1rem;
+  text-align: center;
 }
 
-.thermal-item-col-price {
-  text-align: right;
+.thermal-item-price {
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
+  text-align: right;
+  min-width: 3.5rem;
 }
 
 .thermal-total-block {
@@ -1052,22 +1062,23 @@ button {
   white-space: nowrap;
 }
 
-/* 3-Column Matching Grid for Subtotal / Tax Breakdown: Rate Label | Vat Label | Amount */
+/* Matching Flex Row for Subtotal / Tax Breakdown */
 .thermal-sub-row {
-  display: grid;
-  grid-template-columns: 1fr 4.6rem 4.2rem;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0.5rem;
   font-size: 0.75rem;
   color: var(--text-muted);
-  padding: 0.15rem 0;
+  padding: 0.2rem 0;
 }
 
 .thermal-sub-target {
-  min-width: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .thermal-sub-label {
@@ -1078,23 +1089,30 @@ button {
   color: var(--text-muted);
 }
 
-.thermal-sub-col-vat-label {
-  text-align: right;
+.thermal-sub-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.thermal-sub-vat-label {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   color: var(--text-muted);
-  white-space: nowrap;
 }
 
-.thermal-sub-col-vat-val {
-  text-align: right;
+.thermal-sub-vat-val {
   font-weight: 600;
   color: var(--text-secondary);
-  white-space: nowrap;
+  min-width: 2.5rem;
+  text-align: right;
 }
 
 .thermal-sub-reason {
-  grid-column: 1 / -1;
+  width: 100%;
   font-size: 0.7rem;
   color: var(--text-muted);
   padding-left: 0.5rem;
@@ -1132,6 +1150,10 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .inspector-header {
@@ -2181,7 +2203,7 @@ html[data-font-scale="xlarge"] .nav-anchor-links {
   }
 
   .sandbox-split-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .three-promises-grid {
