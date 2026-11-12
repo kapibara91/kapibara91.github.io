@@ -294,16 +294,33 @@
                     <strong id="thermalTotalValue" class="thermal-total-value tnum">¥1,848</strong>
                   </div>
                   <div id="thermalSub10" class="thermal-sub-row tnum">
-                    <span>10%標準対象 (税込 ¥770)</span>
-                    <span>内消費税 ¥70</span>
+                    <div class="thermal-sub-left">
+                      <span class="thermal-sub-label">10%標準対象</span>
+                      <span class="thermal-sub-base">(税込 ¥770)</span>
+                    </div>
+                    <div class="thermal-sub-right">
+                      <span class="thermal-sub-vat-label">内消費税</span>
+                      <span class="thermal-sub-vat-val">¥70</span>
+                    </div>
                   </div>
                   <div id="thermalSub8" class="thermal-sub-row tnum">
-                    <span>8%軽減対象 ※ (税込 ¥1,078)</span>
-                    <span>内消費税 ¥79</span>
+                    <div class="thermal-sub-left">
+                      <span class="thermal-sub-label">8%軽減対象 ※</span>
+                      <span class="thermal-sub-base">(税込 ¥1,078)</span>
+                    </div>
+                    <div class="thermal-sub-right">
+                      <span class="thermal-sub-vat-label">内消費税</span>
+                      <span class="thermal-sub-vat-val">¥79</span>
+                    </div>
                   </div>
-                  <div id="thermalSubNonTax" class="thermal-sub-row tnum">
-                    <span>非課税・不課税 (対象なし)</span>
-                    <span>¥0</span>
+                  <div id="thermalSubNonTax" class="thermal-sub-row thermal-sub-nontax tnum">
+                    <div class="thermal-sub-left">
+                      <span class="thermal-sub-label">非課税・不課税</span>
+                    </div>
+                    <div class="thermal-sub-right">
+                      <span class="thermal-sub-vat-val">¥0</span>
+                    </div>
+                    <div class="thermal-sub-reason">内訳: 対象なし（¥0）</div>
                   </div>
                 </div>
                 <div class="thermal-sha-box">
@@ -944,15 +961,25 @@
       sc.lineItems.forEach(item => {
         const li = document.createElement('li');
         li.className = 'thermal-item-row';
-        li.innerHTML = '<div class="thermal-item-name"><span>' + item.name + '</span><span class="thermal-tax-tag">' + item.taxMark + '</span></div>' +
-                       '<span class="thermal-item-price tnum">¥' + item.amountIncl.toLocaleString('ja-JP') + '</span>';
+        li.innerHTML = '<div class="thermal-item-name"><span>' + item.name + '</span></div>' +
+                       '<div class="thermal-item-meta">' +
+                         '<span class="thermal-tax-tag">' + item.taxMark + '</span>' +
+                         '<span class="thermal-item-price tnum">¥' + item.amountIncl.toLocaleString('ja-JP') + '</span>' +
+                       '</div>';
         itemListEl.appendChild(li);
       });
 
       document.getElementById('thermalTotalValue').textContent = '¥' + sc.totalAmount.toLocaleString('ja-JP');
-      document.getElementById('thermalSub10').innerHTML = '<span>10%標準対象 (税込 ¥' + sc.subtotal10Incl.toLocaleString('ja-JP') + ')</span><span>内消費税 ¥' + sc.tax10.toLocaleString('ja-JP') + '</span>';
-      document.getElementById('thermalSub8').innerHTML = '<span>8%軽減対象 ※ (税込 ¥' + sc.subtotal8Incl.toLocaleString('ja-JP') + ')</span><span>内消費税 ¥' + sc.tax8.toLocaleString('ja-JP') + '</span>';
-      document.getElementById('thermalSubNonTax').innerHTML = '<span>非課税・不課税 (' + sc.nonTaxableReason + ')</span><span>¥' + sc.nonTaxableAmount.toLocaleString('ja-JP') + '</span>';
+      document.getElementById('thermalSub10').innerHTML =
+        '<div class="thermal-sub-left"><span class="thermal-sub-label">10%標準対象</span> <span class="thermal-sub-base">(税込 ¥' + sc.subtotal10Incl.toLocaleString('ja-JP') + ')</span></div>' +
+        '<div class="thermal-sub-right"><span class="thermal-sub-vat-label">内消費税</span> <span class="thermal-sub-vat-val">¥' + sc.tax10.toLocaleString('ja-JP') + '</span></div>';
+      document.getElementById('thermalSub8').innerHTML =
+        '<div class="thermal-sub-left"><span class="thermal-sub-label">8%軽減対象 ※</span> <span class="thermal-sub-base">(税込 ¥' + sc.subtotal8Incl.toLocaleString('ja-JP') + ')</span></div>' +
+        '<div class="thermal-sub-right"><span class="thermal-sub-vat-label">内消費税</span> <span class="thermal-sub-vat-val">¥' + sc.tax8.toLocaleString('ja-JP') + '</span></div>';
+      document.getElementById('thermalSubNonTax').innerHTML =
+        '<div class="thermal-sub-left"><span class="thermal-sub-label">非課税・不課税</span></div>' +
+        '<div class="thermal-sub-right"><span class="thermal-sub-vat-val">¥' + sc.nonTaxableAmount.toLocaleString('ja-JP') + '</span></div>' +
+        (sc.nonTaxableReason ? '<div class="thermal-sub-reason">内訳: ' + sc.nonTaxableReason + '</div>' : '');
       document.getElementById('thermalShaCode').textContent = sc.sha256;
 
       // Right: Inspector
