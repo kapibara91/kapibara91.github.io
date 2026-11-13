@@ -881,6 +881,15 @@
     tabBatch.setAttribute('aria-selected', String(!isSingle));
     panelSingle.hidden = !isSingle;
     panelBatch.hidden = isSingle;
+    panelSingle.style.display = isSingle ? '' : 'none';
+    panelBatch.style.display = isSingle ? 'none' : '';
+    panelSingle.setAttribute('aria-hidden', String(!isSingle));
+    panelBatch.setAttribute('aria-hidden', String(isSingle));
+    announce(
+      isSingle
+        ? '単一ナンバー瞬時確認モードに切り替えました。'
+        : '一括貼り付け・CSV確認モードに切り替えました。'
+    );
   }
 
   tabSingle.addEventListener('click', () => setMode('single'));
@@ -1526,8 +1535,10 @@
   }
 
   // Initial Boot
+  setMode('single');
   updateSingleMicrostatus();
   updateBatchPrecheck();
   renderHistory();
   void runSingleVerify(false);
 })();
+
