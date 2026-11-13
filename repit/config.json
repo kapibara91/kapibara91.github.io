@@ -1,0 +1,4 @@
+{
+  "api_base_url": "https://repit-backend-prod-mj6funzwoa-an.a.run.app/api/v1",
+  "staging_api_base_url": "https://repit-backend-staging-mj6funzwoa-an.a.run.app/api/v1"
+}
