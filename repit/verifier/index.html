@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja" class="theme-light" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インボイス T番号 瞬時・一括確認ツール（無料・登録不要）| レピット (Repit)</title>
+  <meta name="description" content="国税庁適格請求書発行事業者登録番号（T番号・13桁）を0.1ms Modulus 9検証＋取引日時点で瞬時・一括チェック。全角・ハイフン・メール文面からの自動抽出、Shift_JIS CSV読込、2026年10月改正「50%経過措置・1万円未満少額特例」控除率判定、Excel対応CSV出力まで完全無料。">
+  <meta name="keywords" content="インボイス 番号 検索,適格請求書 T番号 一括確認,インボイス T番号 チェック,インボイス 取引日 時点 確認,適格請求書発行事業者 検索 CSV,50%経過措置 2026年10月,少額特例 1万円未満,モジュラス9 チェックデジット,レピット,Repit">
+  <link rel="canonical" href="https://kapibara91.github.io/repit/verifier/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://kapibara91.github.io/repit/verifier/">
+  <meta property="og:site_name" content="レピット (Repit) 公式ツール">
+  <meta property="og:title" content="インボイス T番号 瞬時・一括確認ツール（登録不要・無料）| レピット (Repit)">
+  <meta property="og:description" content="領収書の取引日時点でのT番号有効性（途中取消・未登録検知）、1桁タイポ即時検知、メール文面/CSV一括照合、2026年10月50%経過措置＆少額特例判定をブラウザだけで完結。">
+  <meta property="og:image" content="https://kapibara91.github.io/repit/og-card.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="インボイス T番号 瞬時・一括確認ツール（無料・登録不要）| Repit">
+  <meta name="twitter:description" content="0.1ms Modulus 9 × 取引日時点ステータス × 2026年50%経過措置自動判定。CSVドラッグ＆ドロップ対応。">
+  <meta name="twitter:image" content="https://kapibara91.github.io/repit/og-card.svg">
+
+  <!-- Favicon & Styles -->
+  <link rel="icon" type="image/png" href="../icon_repit.png">
+  <link rel="apple-touch-icon" href="../icon_repit.png">
+  <link rel="stylesheet" href="../repit.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "レピット (Repit) インボイス T番号 瞬時・一括確認ツール",
+        "url": "https://kapibara91.github.io/repit/verifier/",
+        "applicationCategory": "BusinessApplication, FinanceApplication",
+        "operatingSystem": "All (Web Browser)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "description": "日本の適格請求書発行事業者登録番号（T+13桁）の取引日時点有効性チェック、Modulus 9 チェックデジット検証、一括CSV照合、2026年10月改正50%経過措置判定を提供する無料Webツール。"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "「T」を付けずに13桁の数字だけでも検索できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。13桁のみ、全角数字、ハイフン入りのいずれでも自動で正規化して検証します。メールや請求書本文からの自動抽出にも対応しています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "なぜ取引日時点でのT番号確認が必要なのですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "取引先が年の途中で適格請求書発行事業者の登録を取り消した場合、領収書の取引日時点で有効だったかを判定しないと消費税の仕入税額控除区分を誤るリスクがあるためです。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "2026年10月以降の免税事業者経過措置の控除率は何%ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "2026年10月1日から2029年9月30日までは原則50%控除となります。ただし税込1万円未満の少額特例などの要件を満たす場合は100%控除が可能です。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="theme-light">
+  <div id="repitVerifierRoot" class="repit-lp-root theme-light" style="font-size: 16px;">
+    <!-- Screen Reader Live Announcer -->
+    <div id="srAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Top Sticky Accessibility & Navigation Bar -->
+    <header class="repit-sticky-nav" role="banner">
+      <div class="nav-inner">
+        <div class="nav-brand-group">
+          <a href="../" class="back-portfolio-link">&larr; Repit トップ</a>
+          <span class="nav-divider" aria-hidden="true">|</span>
+          <a href="#verifier-top" class="brand-logo-link">
+            <img src="../icon_repit.png" alt="レピット アイコン" width="32" height="32">
+            <span class="brand-name">T番号確認ツール</span>
+          </a>
+        </div>
+
+        <nav class="nav-anchor-links" aria-label="ページ内ナビゲーション">
+          <a href="#verifier-cockpit">瞬時・一括照合</a>
+          <a href="#verifier-guide">2026年50%経過措置</a>
+          <a href="#verifier-faq">よくある質問</a>
+          <a href="../#sandbox">7大標本デモ</a>
+        </nav>
+
+        <div class="nav-controls" role="group" aria-label="表示設定・アクセシビリティ">
+          <div class="font-scale-group" role="group" aria-label="文字サイズ切替（アクセシビリティ）">
+            <span class="font-scale-label" aria-hidden="true">文字サイズ</span>
+            <div class="font-scale-switcher">
+              <button type="button" class="font-btn active" data-scale="normal" aria-pressed="true" title="文字サイズ: 標準 (100%)">標準</button>
+              <button type="button" class="font-btn" data-scale="large" aria-pressed="false" title="文字サイズ: 拡大 (115%)">大</button>
+              <button type="button" class="font-btn" data-scale="xlarge" aria-pressed="false" title="文字サイズ: 特大 (130%)">特大</button>
+            </div>
+          </div>
+          <button type="button" id="themeToggleBtn" aria-label="テーマ切替（和紙ライト / 藍墨ダーク）" class="theme-toggle-btn">
+            🌙 藍墨ダーク
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="verifier-top" role="main">
+      <!-- Compact Tool Hero -->
+      <section class="verifier-hero-section" aria-labelledby="verifier-hero-title">
+        <div class="section-container">
+          <div class="hero-badge-row">
+            <span class="pill-badge pill-emerald">🛡️ 登録不要・完全無料（0.1ms Modulus 9 検査）</span>
+            <span class="pill-badge pill-blue">🏛️ 国税庁 公表データ × 取引日時点ステータス判定</span>
+            <span class="pill-badge pill-amber">⚖️ 2026年10月「50%経過措置・1万円少額特例」自動試算</span>
+          </div>
+
+          <h1 id="verifier-hero-title" class="verifier-hero-title">
+            インボイス T番号 <span class="hero-gradient-text">瞬時・一括確認ツール</span>
+          </h1>
+
+          <p class="verifier-hero-lead">
+            全角数字・ハイフン・メール文面からの自動抽出に対応。単なる番号の存在確認だけでなく、
+            <strong>「領収書の取引日時点で登録が有効だったか（途中取消・未登録の検知）」</strong>と
+            <strong>「2026年10月改正 50%経過措置・少額特例の控除率」</strong>までブラウザだけで一瞬で判定します。
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Interactive Cockpit -->
+      <section id="verifier-cockpit" class="verifier-cockpit-section" aria-label="インボイスT番号確認ワークベンチ">
+        <div class="section-container">
+          <div class="verifier-cockpit-card">
+            <div class="verifier-cockpit-topbar">
+              <div id="modeTabList" role="tablist" aria-label="確認モード切替" class="verifier-mode-tabs">
+                <button type="button" role="tab" id="tab-single" aria-selected="true" aria-controls="panel-single" class="verifier-mode-tab active">
+                  <span>⚡ 単一ナンバー瞬時確認</span>
+                </button>
+                <button type="button" role="tab" id="tab-batch" aria-selected="false" aria-controls="panel-batch" class="verifier-mode-tab">
+                  <span>📋 一括貼り付け・CSV確認（最大20件無料）</span>
+                </button>
+              </div>
+
+              <div class="verifier-security-note">
+                <span>🛡️ 入力データはサーバーに保存・AI学習へ利用されません</span>
+              </div>
+            </div>
+
+            <!-- ============================================================
+                 PANEL 1: SINGLE INSTANT VERIFICATION
+                 ============================================================ -->
+            <div id="panel-single" role="tabpanel" aria-labelledby="tab-single" class="verifier-panel-body">
+              <div class="verifier-presets-bar">
+                <span class="presets-label">標本テスト：</span>
+                <div class="verifier-preset-pills" id="singlePresetBar">
+                  <button type="button" data-t="T8010001032884" data-date="2026-11-10" data-amt="1480">✓ セブン-イレブン</button>
+                  <button type="button" data-t="T4010001035544" data-date="2026-11-10" data-amt="18400">✓ Amazon.co.jp</button>
+                  <button type="button" data-t="T9810452109380" data-date="2026-11-10" data-amt="1100">✓ 個人事業主 (佐藤健一)</button>
+                  <button type="button" data-t="T5010002044816" data-date="2026-11-10" data-amt="24200">⚠️ 9/30取消済 (東京堂)</button>
+                  <button type="button" data-t="T1010001032884" data-date="2026-11-10" data-amt="">✕ 1桁タイポ (不正)</button>
+                </div>
+              </div>
+
+              <form id="singleVerifyForm" class="verifier-single-form">
+                <div class="verifier-single-input-grid">
+                  <div class="verifier-field verifier-field-main">
+                    <label for="singleTInput">登録番号（T＋13桁数字 / 全角・ハイフン可）</label>
+                    <div class="verifier-input-with-actions">
+                      <input id="singleTInput" type="text" value="T8010001032884" placeholder="例: T8010001032884 または 8010-0010-32884" class="tnum verifier-big-input" autocomplete="off" spellcheck="false">
+                      <button type="button" id="singleClearBtn" aria-label="入力をクリア" class="input-icon-btn" title="クリア">✕</button>
+                      <button type="button" id="singlePasteBtn" class="input-paste-btn" title="クリップボードから貼り付けて即検証">📋 貼付</button>
+                    </div>
+                    <div id="singleLiveMicrostatus" class="verifier-live-microstatus tnum" aria-live="polite"></div>
+                  </div>
+
+                  <div class="verifier-field">
+                    <label for="singleDateInput">領収書の取引年月日</label>
+                    <input id="singleDateInput" type="date" value="2026-11-10" class="tnum">
+                    <div class="date-quick-pills">
+                      <button type="button" id="quickDateToday">本日</button>
+                      <button type="button" data-quick-date="2026-09-30">9/30 (80%最終)</button>
+                      <button type="button" data-quick-date="2026-10-01">10/1 (50%開始)</button>
+                    </div>
+                  </div>
+
+                  <div class="verifier-field">
+                    <label for="singleAmountInput">税込金額（任意・少額特例判定）</label>
+                    <div class="amount-input-wrap">
+                      <span class="amount-yen-prefix" aria-hidden="true">¥</span>
+                      <input id="singleAmountInput" type="number" min="0" step="1" value="1480" placeholder="例: 8400" class="tnum">
+                    </div>
+                    <span class="micro-muted">1万円未満なら少額特例を自動試算</span>
+                  </div>
+                </div>
+
+                <div class="verifier-submit-row">
+                  <button type="submit" id="singleSubmitBtn" class="btn-primary-ruri verifier-submit-btn">
+                    <span>🔍 取引日時点で照合する</span>
+                  </button>
+                </div>
+              </form>
+
+              <div id="singleResultContainer" class="single-result-wrapper" aria-live="polite"></div>
+            </div>
+
+            <!-- ============================================================
+                 PANEL 2: BATCH PASTE & CSV VERIFICATION
+                 ============================================================ -->
+            <div id="panel-batch" role="tabpanel" aria-labelledby="tab-batch" class="verifier-panel-body" hidden>
+              <div class="verifier-presets-bar">
+                <span class="presets-label">一括サンプル：</span>
+                <div class="verifier-preset-pills" id="batchPresetBar">
+                  <button type="button" data-batch-preset="mixed-real">有効・取消・誤入力混在 (5件)</button>
+                  <button type="button" data-batch-preset="email-extract">メール・請求書本文からの自動抽出</button>
+                  <button type="button" data-batch-preset="transitional-2026">2026年9月(80%) vs 10月(50%)・少額特例比較</button>
+                </div>
+              </div>
+
+              <div id="batchDropWrapper" class="batch-drop-wrapper">
+                <div class="batch-textarea-header">
+                  <label for="batchTextarea" class="batch-textarea-label">
+                    T番号リスト・CSV・メール文面を貼り付け（1行に1件、または文章ごと貼り付けOK）
+                  </label>
+                  <div class="batch-file-actions">
+                    <span id="uploadedFileBadge" class="pill-badge pill-blue tnum" hidden></span>
+                    <input id="batchCsvFileInput" type="file" accept=".csv,.tsv,.txt" class="sr-only">
+                    <button type="button" id="batchUploadBtn" class="batch-upload-btn">
+                      <span>📤 CSV / TXT を選択（Shift_JIS対応）</span>
+                    </button>
+                    <button type="button" id="batchClearBtn" class="batch-clear-btn">
+                      <span>🗑️ クリア</span>
+                    </button>
+                  </div>
+                </div>
+
+                <textarea id="batchTextarea" rows="6" class="batch-textarea tnum" spellcheck="false" placeholder="例:&#10;T8010001032884, 2026-11-10, セブン-イレブン, ¥1480&#10;T5010002044816, 2026-10-05, 東京堂商事, ¥24200&#10;または請求書メール文面をそのまま貼り付け..."></textarea>
+
+                <div class="batch-controls-footer">
+                  <div class="batch-date-picker-inline">
+                    <label for="batchDefaultDate">基準取引日（行内に日付がない場合に使用）</label>
+                    <input id="batchDefaultDate" type="date" value="2026-11-10" class="tnum">
+                  </div>
+
+                  <div id="batchPrecheckStats" class="batch-precheck-stats tnum"></div>
+
+                  <button type="button" id="batchRunBtn" class="btn-primary-ruri verifier-submit-btn">
+                    <span>✨ 一括検証を実行する</span>
+                  </button>
+                </div>
+              </div>
+
+              <div id="batchResultsContainer" class="batch-results-container" aria-live="polite" hidden></div>
+            </div>
+
+            <!-- Local History Strip -->
+            <div id="historyStrip" class="verifier-history-strip" hidden>
+              <div class="history-header">
+                <span class="history-title">🕒 最近の確認履歴（ブラウザ内のみ保存）</span>
+                <button type="button" id="clearHistoryBtn" class="history-clear-btn">履歴クリア</button>
+              </div>
+              <div id="historyChipsRow" class="history-chips-row"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO Guide Section -->
+      <section id="verifier-guide" class="repit-section" aria-labelledby="guide-heading">
+        <div class="section-container">
+          <div class="section-eyebrow-row">
+            <span class="pill-badge pill-blue">📚 経理・確定申告の実務知識</span>
+          </div>
+          <h2 id="guide-heading" class="section-title">
+            国税庁サイトの単発検索では見落としがちな「3つの税務リスク」を自動防御。
+          </h2>
+          <p class="section-lead">
+            適格請求書（インボイス）の確認は「番号が存在するか」だけでは不十分です。実務で追徴リスクを防ぐためにチェックすべき重要ポイントを、Repitはすべて自動化しています。
+          </p>
+
+          <div class="three-promises-grid">
+            <article class="promise-card">
+              <div class="promise-num-badge">ポイント ①</div>
+              <h3>取引日時点での有効性（途中取消の罠）</h3>
+              <p>
+                取引先が「インボイス登録を取り消した（または失効した）」場合、現在の日付や番号単体のチェックだけでは見落とすことがあります。Repitは<strong>領収書・請求書の取引年月日</strong>と国税庁の<strong>登録日・取消日・失効日</strong>を照合し、取引当日に適格事業者だったかを厳密に判定します。
+              </p>
+            </article>
+
+            <article class="promise-card">
+              <div class="promise-num-badge">ポイント ②</div>
+              <h3>0.1ms Modulus 9（1桁の打ち間違い検知）</h3>
+              <p>
+                日本のT番号（T＋13桁）は、先頭1桁が残り12桁から計算される検査用数字（Modulus 9）です。レシートの印字かすれや「1」と「7」、「8」と「3」のOCR誤読も、通信ゼロの端末内計算で<strong>期待される正しい先頭桁</strong>まで即座に指摘します。
+              </p>
+            </article>
+
+            <article class="promise-card">
+              <div class="promise-num-badge">ポイント ③</div>
+              <h3>2026年10月「50%経過措置」と少額特例</h3>
+              <p>
+                2026年10月1日より、免税事業者等からの仕入税額控除は80%から<strong>50%へ縮小</strong>されました。ただし<strong>税込1万円未満の少額特例（基準期間課税売上1億円以下等）</strong>や<strong>3万円未満の公共交通機関特例</strong>に該当する場合は引き続き100%控除が可能です。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ + Repit App Bridge -->
+      <section id="verifier-faq" class="repit-section" aria-labelledby="faq-heading">
+        <div class="section-container">
+          <h2 id="faq-heading" class="section-title">よくある質問（インボイス T番号確認）</h2>
+
+          <div class="verifier-faq-grid">
+            <article class="verifier-faq-card">
+              <h3>Q. 「T」を付けずに13桁の数字だけでも検索できますか？</h3>
+              <p>
+                はい。<code>8010001032884</code> のような13桁のみ、全角（<code>Ｔ８０１０...</code>）、ハイフン入り（<code>T8010-0010-32884</code>）のいずれでも自動で正規化して検証します。メールや請求書PDFの本文をそのまま貼り付けてT番号だけを抜き出すことも可能です。
+              </p>
+            </article>
+            <article class="verifier-faq-card">
+              <h3>Q. 無料版と Pro プランの一括確認の違いは何ですか？</h3>
+              <p>
+                公開版Webツールでは登録不要で<strong>1回あたり最大20件</strong>まで完全無料・回数無制限で一括確認とExcel対応CSV出力をご利用いただけます。Repit Proプランでは<strong>最大1,000件/回</strong>の大規模CSV照合に加え、スマホ撮影からの自動8%/10%/宿泊税分離と電帳法7年保存が連携します。
+              </p>
+            </article>
+            <article class="verifier-faq-card">
+              <h3>Q. 入力した取引先のT番号やCSVデータは保存されますか？</h3>
+              <p>
+                いいえ。お客様が入力・アップロードしたCSVデータや確認結果はサーバー上の学習データ等に一切保存されません。確認履歴はご利用中のブラウザ内（LocalStorage）にのみ一時保持され、ワンクリックで消去できます。
+              </p>
+            </article>
+          </div>
+
+          <div class="verifier-bridge-cta">
+            <div class="bridge-cta-copy">
+              <span class="pill-badge pill-emerald">📱 スマホで撮るだけで全自動化</span>
+              <h3>レシートを1枚ずつ手入力するのは、もう終わりにしませんか？</h3>
+              <p>
+                レピット (Repit) なら、領収書をピッと撮るだけで「T番号の取引日時点検証」「8%・10%・宿泊税（不課税）のAI 3段階分離」「50%経過措置・少額特例判定」「電帳法SHA-256保存＆弥生/freee/MF用CSV出力」まで0.5秒で完了します。
+              </p>
+            </div>
+            <div class="bridge-cta-actions">
+              <a href="../#sandbox" class="btn-primary-ruri">7大税務標本ライブデモを見る &rarr;</a>
+              <a href="../#pricing" class="btn-secondary-outline">料金プラン（Free ¥0〜）を見る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="repit-footer" role="contentinfo">
+      <div class="section-container footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="../icon_repit.png" alt="レピット アイコン" width="36" height="36">
+            <strong>レピット (Repit)</strong>
+          </div>
+          <p>
+            公開版「インボイス T番号」瞬時・一括確認 Web ツール（<code>/repit/verifier</code>）
+          </p>
+          <p class="tax-law-disclaimer">
+            ※本ツールは国税庁「適格請求書発行事業者公表システム Web-API」仕様およびモジュラス9検査アルゴリズムに基づく機械的照合ツールであり、税理士法第2条に規定される税務相談・税務代理を行うものではありません。最終的な税務申告判断は管轄の税務署または税理士にご確認ください。
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4>ナビゲーション・規約</h4>
+          <ul>
+            <li><a href="../">レピット (Repit) 公式サイトへ</a></li>
+            <li><a href="../terms/">利用規約（税理士法第2条免責条項含む）</a></li>
+            <li><a href="../privacy/">プライバシーポリシー（AI学習不利用宣言）</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-container footer-bottom tnum">
+        <span>&copy; 2026 Kapibara91 / Repit Project. All rights reserved.</span>
+        <span>Package ID: com.kpbr.repit · Region: asia-northeast1 (Tokyo)</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./verifier.js"></script>
+</body>
+</html>
